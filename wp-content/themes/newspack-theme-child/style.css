@@ -1,0 +1,890 @@
+/*
+Theme Name: Newspack Child
+Theme URI: https://github.com/Automattic/newspack-theme
+Template: newspack-theme
+Author: Automattic
+Author URI: https://newspack.blog
+Version: 1.12.0.1594865653
+Updated: 2020-07-15 19:14:13
+
+*/
+
+<<<<<<< HEAD
+
+/* === Angel City Customizations === */
+
+
+/* Navigation */
+
+/*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+
+
+/* links in main content area */
+.entry-content a,
+.entry-content a:active, 
+.entry-content a:visited {
+    color: #f6223d;
+}
+
+.entry-content a:hover {
+    color: #ce0015;
+}
+
+/* links in test widgets */
+.widget_text .textwidget a {
+    color: #f6223d;
+}
+
+
+/* Layout */
+
+/* changed top margin from 1.5rem */
+.site-content {
+  min-height: 30vh;
+  margin-top: 1rem;
+}
+
+/* changed top margin from 4rem */
+@media only screen and (min-width: 782px) {
+  .site-content {
+    margin-top: 3rem;
+  }
+}
+
+/* changed width from 65 to 70% */
+@media only screen and (min-width: 782px) {
+  .has-sidebar .main-content,
+  .single .main-content {
+    width: 70%;
+  }
+}
+
+/* changed width from 35 to 30% */
+@media only screen and (min-width: 782px) {
+  .has-sidebar #secondary,
+  .single #secondary {
+    width: calc( 30% - 2rem);
+  }
+}
+
+/* changed width from 35 to 30% */
+@media only screen and (min-width: 1168px) {
+  .has-sidebar #secondary,
+  .single #secondary {
+    width: calc( 30% - 3rem);
+  }
+}
+
+
+
+/* Sidebars */
+
+/* adds bottom margin to sidebar */
+#secondary .widget:last-child {
+    margin-bottom: 2rem;
+}
+
+
+#secondary .widget-title {
+  font-size: 1em;
+}
+
+
+/* Widgets */
+.widget {
+  font-family:  "Raleway","-apple-system","BlinkMacSystemFont","Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","sans-serif";
+  font-size: 0.8em;
+  margin: 0 0 1rem;
+  word-wrap: break-word;
+  /* Make sure select elements fit in widgets. */
+}
+
+@media only screen and (min-width: 782px) {
+  .widget {
+    margin: 0 0 1rem;
+  }
+}
+
+/*fixing big gap in responsive mode https://github.com/WordPress/gutenberg/issues/10109#issuecomment-510240899 */
+.wp-embed-responsive .wp-has-aspect-ratio iframe {
+    height: 100% !important;
+    width: 100% !important;
+}
+
+
+/* styling text widgets */
+.widget-area .widget.widget_text  {
+ font-family:  "Raleway","-apple-system","BlinkMacSystemFont","Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","sans-serif";
+ background-color: #eeeeee; 
+ padding: 5%;
+ border-bottom: none;
+}
+
+/* styling html widgets like spotify */
+.widget_text.widget.widget_custom_html {
+ background-color: inherit; 
+ padding: inherit;
+ border-bottom: none;
+}
+
+.wp-block-embed-spotify iframe {
+	width: 100%;
+}
+
+/* mailchimp form - setting max width for input box */
+.mc4wp-form-fields input[type='email'],
+textarea {
+  max-width: 100%;
+}
+
+/* mailchimp form - setting button color in the footer */
+.footer-widgets .widget_mc4wp_form_widget .wp-block-buttons .wp-block-button .has-white-color {
+	color: #767676;
+}
+	
+
+
+
+/* === Angel City Customizations === */
+
+
+/* this removes something */
+.site-info .imprint{ 
+	display: none;
+}
+
+.accent-header,
+.article-section-title {
+	text-transform: uppercase;
+	border-bottom: none;
+}
+
+.accent-header, .article-section-title,
+.entry .entry-footer a:hover {
+	color: #2b2b2e;
+}
+
+
+/* this hides author and date from posts in the watch category */
+.category-watch .entry-meta   {
+	display:none;
+}
+
+/* this hides author and date from posts in the 2020 VR Festival category */
+.category-2020-vr-festival .entry-meta   {
+	display:none;
+}
+
+
+
+/* this removes header margin on ACJ Festival landing page */
+.page-id-130 .site-content,
+.page-id-130 .entry .entry-content:first-child,
+.page-id-3285 .site-content,
+.page-id-3285 .entry .entry-content:first-child {
+ margin-top: 0;
+ margin-bottom: 0;	
+}
+
+
+/* this removes header margin on Explorations landing page */
+.page-id-559 .site-content,
+.page-id-559 .entry .entry-content:first-child {
+ margin-top: 0;
+ margin-bottom: 0;	
+}
+
+
+/* LA Creators */
+.tag-la-creators .entry-content .wp-block-group .wp-block-group__inner-container:first-child {
+    padding-top: 20px;
+}
+
+.tag-la-creators .entry-footer {
+	margin-bottom: 20px;
+	margin-top: 0;
+}
+
+/*making youtube vids the same height in ornette coleman post*/
+.postid-1687 .wp-block-column .wp-block-embed-youtube iframe {
+	max-height: 290px;
+}
+
+
+/* this removes header margin on Watch landing page */
+.page-id-531 .site-content,
+.page-id-531 .entry .entry-content:first-child {
+ margin-top: 0;
+ margin-bottom: 0;	
+}
+
+/* this removes header margin on Festival Video landing page */
+.page-id-3208 .site-content,
+.page-id-3208 .entry .entry-content:first-child {
+ margin-top: 0;
+ margin-bottom: 0;	
+}
+
+/* this removes header margin on Young Artist Competition landing page */
+.page-id-465 .site-content {
+ margin-top: 0;
+}
+
+/*adding bottom margin to commerce and 404 pages */
+.entry .entry-content .woocommerce > :last-child,
+.error-404,
+.search .site-content {
+    margin-bottom: 32px;
+}	
+	
+
+
+
+
+/* this adjusts the header margin on pages *
+.page-template-default .entry-header {
+=======
+.site-info .imprint{
+	display: none;
+}
+
+.single .entry-subhead {
+  display: none;
+}
+
+
+/* this removes the margin between the top container on pages */
+.page .site-content {
+ margin-top:0;
+}
+
+/* this adjusts the header margin on pages */
+.page .entry-header {
+>>>>>>> 0684dff50ad88161f19338cc90d4beb6fc613879
+ margin-top: 30px;
+ margin-bottom: 15px;	
+}
+
+<<<<<<< HEAD
+/* Groups, Covers and Columns */ 
+
+
+/* removes the margin for a full-width group with columns */
+.entry .entry-content .wp-block-group.alignfull .wp-block-group__inner-container .wp-block-columns .wp-block-column >{
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+
+/* this removes the top margin if the first bit of content is a full-width group*/
+.entry .entry-content .wp-block-group.alignfull:first-child {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.entry .entry-content .wp-block-group .wp-block-group__inner-container > *:first-child {
+  margin-top: 0;
+}
+
+/* this removes the top margin if the first bit of content is a full-width group*/
+.entry .entry-content .wp-block-group.alignfull:last-child {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.entry .entry-content .wp-block-group .wp-block-group__inner-container > *:last-child {
+  margin-bottom: 0;
+}
+
+/* this overrides the negative margin for stacking two group blocks - line 5296 */
+.entry .entry-content .wp-block-group.has-background + .wp-block-group.has-background {
+  margin-top: inherit;
+}
+
+/* this removes the vertical margins between containers on pages; the margin-top also removed space between paragraphs */
+.entry .entry-content .no-vertical-margin,
+.entry .entry-content .no-horizontal-margin {
+=======
+/* this removes the margin between the top container on the front page */
+.newspack-front-page .entry .entry-content  > * {
+margin-top:0;
+margin-bottom:0;	
+}
+
+/* this removes the margins between containers on pages; the margin-top also removed space between paragraphs */
+.page-template-single-wide .entry .entry-content > * {
+>>>>>>> 0684dff50ad88161f19338cc90d4beb6fc613879
+margin-top:0;
+margin-bottom:0;
+}
+
+<<<<<<< HEAD
+
+
+/* this removes the horizontal margins between columns with the class .no-horizontal-margin */
+.entry .entry-content .no-horizontal-margin .wp-block-columns > .wp-block-column {
+=======
+/* this removes the margins between columns with the class .nomargin */
+.nomargin .wp-block-columns .wp-block-column {
+>>>>>>> 0684dff50ad88161f19338cc90d4beb6fc613879
+margin-left: 0;
+margin-right: 0;
+margin-top:0;
+margin-bottom:0;	
+}
+
+<<<<<<< HEAD
+/* removes the top and bottom margin for a cover with columns */
+.entry .entry-content .wp-block-cover__inner-container .wp-block-columns .wp-block-column {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/*still working on the supporters block
+.entry .entry-content .programs .wp-block-cover__inner-container > * {
+    margin: inherit;
+}    
+
+
+/* controls the margins in the supporters block */
+.entry .entry-content .supporters .wp-block-group__inner-container > *  {
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.supporters .wp-block-columns .wp-block-column > * {
+    margin-bottom: 0px;
+    margin-top: 16px;
+}
+
+
+
+
+/* this removes the negative margin in the supporter column on the festival page */
+.page-template-single-wide .entry .entry-content .supporters .wp-block-group.has-background + .wp-block-group.has-background {
+=======
+
+
+/* this removes the negative margin in the supporter column on the festival page */
+.page-template-single-wide .entry .entry-content .wp-block-group.has-background + .wp-block-group.has-background {
+>>>>>>> 0684dff50ad88161f19338cc90d4beb6fc613879
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+
+
+/* this removes the borders in the supporters block */
+<<<<<<< HEAD
+
+
+.entry .entry-content .wp-block-separator, .entry .entry-content hr {
+    display: none;
+}
+
+
+
+=======
+.entry .entry-content .wp-block-separator, .entry .entry-content hr {
+    border: 0;
+    height: 0;
+    margin: 0;
+}
+
+>>>>>>> 0684dff50ad88161f19338cc90d4beb6fc613879
+.wp-block-columns.is-style-borders > .wp-block-column::after {
+	  border: 0;
+}
+
+/* this removes the text in the supporters block */
+.wp-block-columns .newspack-supporter-info > p {
+    visibility: hidden;
+}
+
+
+/* ensure the citation is the same color as the pullquote */
+.wp-block-pullquote cite, .wp-block-pullquote footer {
+	color: inherit;
+}
+
+
+/*--------------------------------------------------------------
+## Footer
+--------------------------------------------------------------*/
+/* Site footer */
+.site-footer {
+  margin: 0;
+	background-color: #f1f1f1;
+  color:  #111;
+}
+
+.site-footer .footer-branding .wrapper {
+  display: none;
+}
+
+.site-footer .footer-branding .wrapper {
+  padding-top: 1rem;
+	border: none;
+}
+
+/*--------------------------------------------------------------
+## Event styles
+--------------------------------------------------------------*/
+
+<<<<<<< HEAD
+
+ 
+ /* this header/title stuff  from events */
+.tribe_events-template-default  .entry-header   {
+	display:none;
+}
+
+/* this hides author and date from events */
+.tribe_events-template-default  .entry-meta   {
+	display:none;
+}
+
+
+/* this removes the margin between the top container on pages and events */
+/* .page .site-content, */
+.single-tribe_events .site-content, 
+.single-tribe_events .entry .entry-content > *:first-child {
+ margin-top:0;
+}
+=======
+/* https://theeventscalendar.com/knowledgebase/k/how-to-customize-templates-and-css-in-a-view/ */ 
+/* 
+.tribe-events-pro .tribe-events-pro-photo__event-title {
+  font-size: 18px;
+  font-weight: regular;
+}
+ */
+ 
+/* 
+.tribe-common--breakpoint-medium.tribe-events-pro .tribe-events-pro-photo__event-title {
+  font-size: 20px;
+}
+ */
+>>>>>>> 0684dff50ad88161f19338cc90d4beb6fc613879
+ 
+.tribe-events-view {
+ position:relative;
+}
+
+<<<<<<< HEAD
+/* ### Events grid using homepage blocks - Making subtitle bold  */
+
+.events-grid article .entry-wrapper p,
+.events-grid article .newspack-post-subtitle {
+ font-weight: 700;
+}
+
+/* ### Single page */
+
+/* hides event end date on single event and sidebar widget */
+.single-tribe_events .tribe-events-schedule__datetime .tribe-events-schedule__date--end,
+.single-tribe_events .tribe-mini-calendar-event .tribe-event-date-end {
+    display: none;
+}
+
+
+/* hides time from  single event page */
+.tribe_events-template-default .tribe-events-schedule__time,
+.tribe_events-template-default .tribe-events-schedule__all-day,  
+.tribe_events-template-default .tribe-events-schedule__separator {
+ display:none;
+}
+
+/* hides price from  single event page */
+.tribe_events-template-default .tribe-block__event-price {
+ display:none;
+}
+
+/* adds margin between artist descriptions on single event page */
+.tribe_events-template-default .wp-block-media-text {
+ margin-bottom: 32px;
+}
+
+/* adds margin between columns on single event page */
+.tribe_events-template-default .wp-block-columns {
+ margin-top: 32px;
+ margin-bottom: 32px;
+}
+
+/* removes background and border around event date */
+.single-tribe_events .tribe-events-schedule {
+ background:inherit;
+ border:none;
+ margin: 0;
+ padding: 0;
+}
+
+
+/*removes bottom margin in event blocks */
+.tribe-blocks-editor .wp-block-columns .wp-block-column > * {
+    margin-bottom: 0px;
+}
+
+
+/* ### Grid view / Shortcode */
+
+/* ensures featured image display in grids is flex? */
+.tribe-events-pro .tribe-events-pro-photo__event-featured-image-wrapper {
+    display: flex;
+    margin-bottom: 6px;
+}
+
+/* overriding minimum height so grid display isn't so huge; also setting padding with the container */
+.entry-content .tribe-events .tribe-events-l-container,
+.entry-content .tribe-common--breakpoint-medium.tribe-events .tribe-events-l-container {
+ padding-bottom: 0px;
+ padding-top:  0px;
+ padding-left: 0px;
+ padding-right: 0px;
+ min-height:0;
+}
+
+
+
+.tribe-common .tribe-common-g-row {
+ display:flex;
+ flex-wrap:wrap;
+}
+
+/* overrides negative margin set in tribe styles */
+.tribe-common .tribe-common-g-row--gutters {
+ margin-left: 0px;
+ margin-right: 0px;
+}
+
+.tribe-common--breakpoint-medium.tribe-common .tribe-common-g-row--gutters {
+ margin-left:0px;
+ margin-right:0px;
+=======
+.entry-content .tribe-events .tribe-events-l-container {
+ padding-bottom: 20px;
+ padding-top: 20px;
+ margin:0px;	
+ min-height:600px
+}
+
+.nomargin .tribe-events .tribe-events-l-container {
+ padding-bottom: 20px;
+ padding-top: 20px;
+ margin:0px;	
+ min-height:600px
+}
+
+.tribe-common .tribe-common-g-row {
+ display:flex;
+ flex-wrap:wrap;
+}
+
+.tribe-common .tribe-common-g-row--gutters {
+ margin-left: 0px;
+ margin-right: 0px;
+}
+
+.tribe-common .tribe-common-g-row--gutters > .tribe-common-g-col {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 20px;
+}
+
+.tribe-common--breakpoint-medium.tribe-events .tribe-events-l-container {
+ padding-bottom:20px;
+ padding-top:20px;
+ margin:0px;
+ min-height:700px
+}
+
+
+
+.tribe-common--breakpoint-medium.tribe-common .tribe-common-g-row--gutters {
+ margin-left:0px;
+ margin-right:0px;
+}
+
+.tribe-common .tribe-common-g-row--gutters>.tribe-common-g-col {
+ padding-left:20px;
+ padding-right:20px;
+}
+
+.tribe-common--breakpoint-medium.tribe-common .tribe-common-g-row--gutters>.tribe-common-g-col {
+ padding-left:20px;
+ padding-right:20px;
+}
+
+ 
+.tribe-events-pro .tribe-events-pro-photo__event {
+  margin-bottom: 30px;
+}
+ 
+.tribe-common--breakpoint-medium.tribe-events-pro .tribe-events-pro-photo__event {
+  margin-bottom: 30px;
+>>>>>>> 0684dff50ad88161f19338cc90d4beb6fc613879
+}
+
+
+
+<<<<<<< HEAD
+
+/* left / right padding between events; margin underneath in grid */
+.tribe-common .tribe-common-g-row--gutters > .tribe-common-g-col {
+ padding-left:24px;
+ padding-right:24px;
+ margin-bottom:  24px;
+}
+
+.tribe-common--breakpoint-medium.tribe-common .tribe-common-g-row--gutters>.tribe-common-g-col {
+ padding-left:24px;
+ padding-right:24px;
+ margin-bottom:  24px;
+}
+
+
+
+
+/* resizing calendar icon in list widget */
+.tribe-mini-calendar-event .list-date {
+margin: 10px 3% 10px 0;
+overflow: hidden;
+padding: 3px;
+text-align: center;
+width: 17%;
+}
+
+
+
+/* adding calendar icon onto photo  https://theeventscalendar.com/knowledgebase/k/how-to-customize-templates-and-css-in-a-view/ */
+=======
+/* KCRW STYLES We'll need this to contain the date tag when we set it to absolute positioning 
+.tribe-events-pro .tribe-events-pro-photo__event-details-wrapper {
+  position: relative;
+}
+
+/* Re-position the date tag and give it a background 
+.tribe-events-pro .tribe-events-pro-photo__event-date-tag {
+  background: #fff;
+  padding: 5px;
+  position: absolute;
+  right: 0;
+  top: -2rem;
+  width: 60px;
+}
+
+/* Adds a border and some breathing room around the date 
+.tribe-events-pro .tribe-events-pro-photo__event-date-tag-datetime {
+  border: 1px solid #c5c5c5;
+  padding-top: 3px;
+}
+
+/* Updates the color of the month name 
+  .tribe-events-pro .tribe-events-pro-photo__event-date-tag-month {
+  color: #fa5a41
+}
+
+
+/* trying https://theeventscalendar.com/knowledgebase/k/how-to-customize-templates-and-css-in-a-view/ */
+>>>>>>> 0684dff50ad88161f19338cc90d4beb6fc613879
+.tribe-events-pro .tribe-events-pro-photo__event-featured-image-link {
+  position: relative;
+}
+ 
+.tribe-events-pro .tribe-events-pro-photo__event-featured-image-date-tag {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 6px 12px;
+}
+ 
+.tribe-events-pro .tribe-events-pro-photo__event-featured-image-date-tag-datetime {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+ 
+.tribe-events-pro .tribe-events-pro-photo__event-featured-image-date-tag-month {
+  color: #141827;
+  font-family: "Helvetica Neue", Helvetica, -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #727272;
+  text-transform: uppercase;
+}
+
+<<<<<<< HEAD
+
+ 
+ /* WooCommerce 3.0 Gallery */
+ 
+/* this removes the breadcrumbs from the product pages - https://docs.woocommerce.com/document/customise-the-woocommerce-breadcrumb/ */
+.woocommerce-breadcrumb {
+visibility:hidden;
+}
+
+/* this removes the sku and categories from the product pages https://www.8theme.com/topic/how-can-i-hide-sku-and-category-on-product-detail-page/ */
+.product_meta{
+display: none;
+}
+
+/*clears product title */
+.single-product .entry .entry-title {
+margin-top: 0;
+clear: both;
+}
+
+
+/*adds margin beneath product gallery images */
+.single-product div.product .images,
+.single-product div.product .woocommerce-product-gallery {
+margin-bottom: 3em;
+margin-top: 0; 
+}
+
+/*adds margin between product gallery images */
+
+.woocommerce-product-gallery .flex-control-thumbs li {
+    list-style: none;
+    cursor: pointer;
+    float: left;
+    margin-bottom: 1em;
+}
+
+/*
+vanbo/wc-css-make-storefront-product-tabs-horizontal
+credit: https://gist.github.com/vanbo/c05e9b9512bd53e3680c82e1c6e4e6a3
+*/
+.product .woocommerce-tabs ul.tabs {
+	width: 100%;
+	float: none;
+	margin-right: 5.8823529412%;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs {
+	list-style: none;
+	padding: 0;
+	/*padding: 0 0 0 1em;*/
+	margin: 0 0 1.618em;
+	overflow: hidden;
+	position: relative;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs::before {
+	position: absolute;
+	content: ' ';
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	/*border-bottom: 1px solid #d3ced2;*/
+	z-index: 1;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li {
+	border: 1px solid #d3ced2;
+	border-radius: 4px 4px 0 0;
+	/*background-color: #ebe9eb;*/
+	display: inline-block;
+	position: relative;
+	z-index: 0;
+	/*margin: 0 -5px;*/
+	padding: 0 1em;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+	/*background: #fff;*/
+	z-index: 2;
+	border-bottom-color: #777;
+	background-color: #ebe9eb;
+	border: 1px solid #555;
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs li::after,
+.woocommerce div.product .woocommerce-tabs ul.tabs li::before {
+	border: 1px solid #d3ced2;
+	position: absolute;
+	bottom: -1px;
+	width: 0;
+	height: 0;
+	content: ' ';
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs li::before {
+	left: -6px;
+	border-bottom-right-radius: 4px;
+	border-width: 0 1px 1px 0;
+	box-shadow: 2px 2px 0 #ebe9eb;
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active::before {
+	box-shadow: 2px 2px 0 #fff;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li::after {
+	right: -6px;
+	border-bottom-left-radius: 4px;
+	border-width: 0 0 1px 1px;
+	box-shadow: -2px 2px 0 #ebe9eb;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active::after {
+	box-shadow: -2px 2px 0 #fff;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li a {
+	display: inline-block;
+	padding: .5em 0;
+	/*font-weight: 700;*/
+	color: #515151;
+	text-decoration: none;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active a {
+	color: inherit;
+	text-shadow: inherit;
+	font-weight:bold;
+}
+
+/* https://stackoverflow.com/questions/14144426/remove-outline-from-active-jquery-ui-tab */
+.woocommerce .wc-tabs li a:focus, .ui-state-focus:focus { outline: none !important }
+
+.ui-tabs-anchor:active, .ui-tabs-anchor:focus{
+     outline:none;
+}
+
+.woocommerce-tabs ul li {
+    margin: 0;
+=======
+/* stuff the child theme did not pick up */
+	
+		
+.accent-header,
+.article-section-title {
+	text-transform: uppercase;
+}
+
+.accent-header, .article-section-title,
+.entry .entry-footer a:hover {
+	color: #2b2b2e;
+}
+
+#secondary .widget-title {
+  font-size: 1em;
+>>>>>>> 0684dff50ad88161f19338cc90d4beb6fc613879
+}
+
+
+
+<<<<<<< HEAD
+
+
+
+
+
+
+=======
+>>>>>>> 0684dff50ad88161f19338cc90d4beb6fc613879

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # WordPress #
 ############
 wp-config-local.php
@@ -55,3 +56,6 @@ Thumbs.db
 # SASS #
 ##########
 .sass-cache
+=======
+behat_params.sh
+>>>>>>> upstream/master
