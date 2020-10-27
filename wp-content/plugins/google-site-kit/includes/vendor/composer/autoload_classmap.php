@@ -104,6 +104,7 @@ return array(
     'Google\\Site_Kit\\Core\\Util\\Synthetic_WP_Query' => $baseDir . '/Core/Util/Synthetic_WP_Query.php',
     'Google\\Site_Kit\\Core\\Util\\Tracking' => $baseDir . '/Core/Util/Tracking.php',
     'Google\\Site_Kit\\Core\\Util\\Tracking_Consent' => $baseDir . '/Core/Util/Tracking_Consent.php',
+    'Google\\Site_Kit\\Core\\Util\\User_Input_Settings' => $baseDir . '/Core/Util/User_Input_Settings.php',
     'Google\\Site_Kit\\Core\\Util\\WP_Context_Switcher_Trait' => $baseDir . '/Core/Util/WP_Context_Switcher_Trait.php',
     'Google\\Site_Kit\\Core\\Util\\WP_Query_Factory' => $baseDir . '/Core/Util/WP_Query_Factory.php',
     'Google\\Site_Kit\\Modules\\AdSense' => $baseDir . '/Modules/AdSense.php',

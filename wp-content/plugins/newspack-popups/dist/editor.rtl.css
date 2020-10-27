@@ -1639,3 +1639,6 @@ body[class*="admin_page_newspack-"] #wpfooter:before {
 .newspack-logo-wrapper svg {
   z-index: 1; }
 
+.block-editor-post-preview__button-toggle {
+  display: none; }
+
