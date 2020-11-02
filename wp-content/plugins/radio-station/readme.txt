@@ -3,7 +3,7 @@ Contributors: tonyzeoli, majick
 Donate link: https://netmix.co/donate
 Tags: dj, music, playlist, radio, shows, scheduling, broadcasting
 Requires at least: 3.3.1
-Tested up to: 5.4.1
+Tested up to: 5.5.3
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -184,7 +184,25 @@ You may translate the plugin into another language. Please visit our [WordPress 
 
 == Changelog ==
 
-= 2.3.3.3 = Minor Bug Fix to Upcoming Shows Widget; display showtimes when show starts before midnight and ends after midnight
+= 2.3.3.5 =
+* Fixed: use schedule based on start_day if specified for Schedule view
+* Fixed: day left/right shifting on Schedule table/tab mobile views
+* Added: past/today/future filter for Schedule Override List 
+* Added: filter for Schedule display start day (and to accept today)
+* Added: current playlist (if any) to Broadcast Data endpoint
+
+= 2.3.3.4 =
+* Improved: auto-match show description to info height on Show pages
+* Improved: allow multiple Related Show selection for single post
+* Improved: ability to assign Post to relate to multiple Shows
+* Added: Related Show Post List column and Quick Edit field
+* Added: Related Show selection Bulk Edit Action for Post List
+* Added: filters for label texts and title attributes on Show Page
+* Added: filter for label text above Show Player (default empty)
+
+= 2.3.3.3 =
+* Fixed: improved Current Show and Upcoming Shows calculations
+* (Display showtimes when show starts before and ends after midnight)
 
 = 2.3.3.2 =
 * Update: Freemius SDK (2.4.0)
@@ -192,12 +210,6 @@ You may translate the plugin into another language. Please visit our [WordPress 
 * Fixed: Current Show for Shows ending at midnight
 * Fixed: incorrect AJAX Widget plugin setting value
 * Fixed: use pageload data for schedules before transients
-
-= 2.3.3.1 =
-* Fix to conflict with plugins using AJAX save_post calls
-* Improved accuracy for responsive table/tab Schedule views
-* Added color improvements to Show Shift interface
-* Fix to calculate Current Show (transient no longer used)
 
 = 2.3.3 =
 * Update: Plugin Loader (1.1.3) with non-strict select match fix
@@ -596,26 +608,17 @@ You may translate the plugin into another language. Please visit our [WordPress 
 
 == Upgrade Notice ==
 
-<<<<<<< HEAD
-= 2.3.3.2 =
-* Update: Freemius SDK (2.4.0)
-* Update: Plugin Loader (1.1.4) with weird isset glitch fix
-* Fixed: Current Show for Shows ending at midnight
-* Fixed: incorrect AJAX Widget plugin setting value
-* Fixed: use pageload data for schedules before transients
+= 2.3.3.5 =
+* Ability to assign Post to relate to multiple Shows
+* Added Admin Filtering, Bulk Edit and Quick Edit interfaces
+* Fixes for Schedule display left/right shifting on mobiles
+* Fixes for starting Schedule display on different day
 
-= 2.3.3.1 =
-* Fix to conflict with plugins using AJAX save_post calls
-* Improved accuracy for responsive table/tab Schedule views
-* Added color improvements to Show Shift interface
-* Fix to calculate Current Show (transient no longer used)
-=======
 = 2.3.3.3 =
 * Current and Upcoming Shows Widget Fix
 
 = 2.3.3.2 =
 * Minor Bugfix Update
->>>>>>> release/2.3.3.3
 
 = 2.3.3 =
 * Important Bugfix Update
