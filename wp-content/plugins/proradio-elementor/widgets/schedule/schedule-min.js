@@ -1,0 +1,1 @@
+!function(e){var n=function(e,n){n("body").hasClass("elementor-editor-active")&&n.ProRadioMainObj.fn.tabsComponent()};e(window).on("elementor/frontend/init",function(){elementorFrontend.hooks.addAction("frontend/element_ready/proradio-elementor-schedule.default",n)})}(jQuery);

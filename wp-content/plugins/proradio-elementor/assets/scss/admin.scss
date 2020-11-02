@@ -1,0 +1,34 @@
+@charset "UTF-8";
+.proradio-elementor-icons {
+    background: linear-gradient(to bottom left, #ec2224 0%, #ff000d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 40px;
+    &:before {
+    	vertical-align: bottom;
+    }
+}
+
+#elementor-panel #elementor-panel-header{
+	background-color:#212121;
+	color: #fff;
+	 #elementor-panel-header-title {
+	 	position: relative;
+	 	color: transparent;
+		img {
+			opacity: 0;
+		}
+		&::after {
+			display: block;
+			width: 200px;
+			height: 100%;
+			top:0;
+			content: " ";
+			background-image: url("../img/logo-negative.svg");
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center center;
+			position: absolute;
+		}
+	}
+}

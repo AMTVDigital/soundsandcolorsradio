@@ -1,0 +1,16 @@
+
+.proradio-videogalleries__filters {
+	margin-bottom: 20px;
+	a {
+		font-size: 16px;
+		padding: 6px 12px;
+		text-transform: uppercase;
+		font-family:"Arial", Sans Serif;
+		border: 2px solid;
+		margin: 0 2px;
+		text-decoration: none;
+		&:hover, &:visited, &:active , &:focus {
+			text-decoration: none;
+		}
+	}
+}
