@@ -199,6 +199,31 @@ final class Newspack_Popups_Model {
 	}
 
 	/**
+	 * Get overlay test popups.
+	 *
+	 * @return array Overlay test popup objects.
+	 */
+	public static function retrieve_overlay_test_popups() {
+		$args = [
+			'post_type'   => Newspack_Popups::NEWSPACK_PLUGINS_CPT,
+			'post_status' => 'publish',
+			'meta_query'  => [ // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query
+				[
+					'key'     => 'placement',
+					'value'   => 'inline',
+					'compare' => '!=',
+				],
+				[
+					'key'   => 'frequency',
+					'value' => 'test',
+				],
+			],
+		];
+
+		return self::retrieve_popups_with_query( new WP_Query( $args ) );
+	}
+
+	/**
 	 * Retrieve first overlay popup matching post categries.
 	 *
 	 * @return object|null Popup object.
@@ -396,7 +421,7 @@ final class Newspack_Popups_Model {
 	 * @param object $popup The popup object.
 	 * @return boolean True if it is an inline popup.
 	 */
-	protected static function is_inline( $popup ) {
+	public static function is_inline( $popup ) {
 		return 'inline' === $popup['options']['placement'];
 	}
 
@@ -419,7 +444,11 @@ final class Newspack_Popups_Model {
 	 * @return string Prints the generated amp-analytics element.
 	 */
 	protected static function insert_event_tracking( $popup, $body, $element_id ) {
-		if ( Newspack_Popups::previewed_popup_id() || 'test' === $popup['options']['frequency'] ) {
+		if (
+			Newspack_Popups::previewed_popup_id() ||
+			'test' === $popup['options']['frequency'] ||
+			Newspack_Popups_Settings::is_non_interactive()
+		) {
 			return '';
 		}
 		global $wp;
@@ -428,11 +457,13 @@ final class Newspack_Popups_Model {
 
 		// Mailchimp.
 		$mailchimp_form_selector = '';
+		$email_form_field_name   = 'email';
 		if ( preg_match( '/wp-block-jetpack-mailchimp/', $body ) !== 0 ) {
 			$mailchimp_form_selector = '.wp-block-jetpack-mailchimp form';
 		}
 		if ( preg_match( '/mc4wp-form/', $body ) !== 0 ) {
 			$mailchimp_form_selector = '.mc4wp-form';
+			$email_form_field_name   = 'EMAIL';
 		}
 
 		?>
@@ -452,7 +483,7 @@ final class Newspack_Popups_Model {
 									"popup_id": "<?php echo esc_attr( self::canonize_popup_id( $popup['id'] ) ); ?>",
 									"cid": "CLIENT_ID( <?php echo esc_attr( Newspack_Popups_Segmentation::NEWSPACK_SEGMENTATION_CID_NAME ); ?> )",
 									"mailing_list_status": "subscribed",
-									"email": "${formFields[email]}"
+									"email": "${formFields[<?php echo esc_attr( $email_form_field_name ); ?>]}"
 								}
 							}
 						},
@@ -633,6 +664,9 @@ final class Newspack_Popups_Model {
 	 * @param object $popup Popup.
 	 */
 	public static function get_access_attrs( $popup ) {
+		if ( Newspack_Popups_Settings::is_non_interactive() ) {
+			return '';
+		}
 		if (
 			( 'test' === $popup['options']['frequency'] || Newspack_Popups::previewed_popup_id() ) &&
 			is_user_logged_in() &&
@@ -688,7 +722,7 @@ final class Newspack_Popups_Model {
 					<h1 class="newspack-popup-title"><?php echo esc_html( $popup['title'] ); ?></h1>
 				<?php endif; ?>
 						<?php echo ( $body ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-						<?php if ( $dismiss_text ) : ?>
+						<?php if ( $dismiss_text && ! Newspack_Popups_Settings::is_non_interactive() ) : ?>
 					<form class="popup-not-interested-form popup-action-form"
 						method="POST"
 						action-xhr="<?php echo esc_url( $endpoint ); ?>"
@@ -738,6 +772,7 @@ final class Newspack_Popups_Model {
 		$classes              = array( 'newspack-lightbox', 'newspack-lightbox-placement-' . $popup['options']['placement'] );
 		$classes[]            = ( ! empty( $popup['title'] ) && $display_title ) ? 'newspack-lightbox-has-title' : null;
 		$classes[]            = $is_newsletter_prompt ? 'newspack-newsletter-prompt-overlay' : null;
+		$is_scroll_triggered  = 'scroll' === $popup['options']['trigger_type'];
 
 		add_filter(
 			'newspack_analytics_events',
@@ -788,9 +823,11 @@ final class Newspack_Popups_Model {
 				<button style="opacity: <?php echo floatval( $overlay_opacity ); ?>;background-color:<?php echo esc_attr( $overlay_color ); ?>;" class="newspack-lightbox-shim" on="tap:<?php echo esc_attr( $element_id ); ?>.hide"></button>
 			</form>
 		</amp-layout>
-		<div id="page-position-marker" style="position: absolute; top: <?php echo esc_attr( $popup['options']['trigger_scroll_progress'] ); ?>%"></div>
-		<amp-position-observer target="page-position-marker" on="enter:showAnim.start;" once layout="nodisplay"></amp-position-observer>
-		<amp-animation id="showAnim" layout="nodisplay">
+		<?php if ( $is_scroll_triggered ) : ?>
+			<div id="page-position-marker" style="position: absolute; top: <?php echo esc_attr( $popup['options']['trigger_scroll_progress'] ); ?>%"></div>
+			<amp-position-observer target="page-position-marker" on="enter:showAnim.start;" once layout="nodisplay"></amp-position-observer>
+		<?php endif; ?>
+		<amp-animation id="showAnim" layout="nodisplay" <?php echo $is_scroll_triggered ? '' : 'trigger="visibility"'; ?>>
 			<script type="application/json">
 				{
 					"duration": "125ms",

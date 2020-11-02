@@ -1,0 +1,169 @@
+$gutter-width : 10px;
+.proradio-videogalleries-masonry {
+
+}
+.#{$pluginprefix}row {
+	margin: 0 #{ - $gutter-width / 2 };
+	> .#{$pluginprefix}row {
+		margin: 0;
+	}
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+	.#{$pluginprefix}col {
+		float: left;
+		box-sizing: border-box;
+		padding: 0 $gutter-width / 2;
+		margin-bottom: 10px;
+		$i: 1;
+		@while $i <= $num-cols {
+			$perc: unquote((100 / ($num-cols / $i)) + "%");
+			&.#{$pluginprefix}s#{$i} {
+				width: $perc;
+				margin-left: auto;
+				left: auto;
+				right: auto;
+			}
+			$i: $i + 1;
+		}
+
+		$i: 1;
+		@while $i <= $num-cols {
+			$indexclear: $num-cols / $i;
+			&.#{$pluginprefix}s#{$i} {
+				&:nth-child(#{$indexclear}n+1) {
+					clear: left;
+				}
+			}
+			$i: $i + 1;
+		}
+
+	}
+}
+
+/**================================================================
+ * Tablet Styles
+ ================================================================*/
+@media #{$small-and-up} {
+	.#{$pluginprefix}row {
+		
+
+		margin: 0 #{ - $gutter-width / 2 };
+		.#{$pluginprefix}col {
+			padding: 0 $gutter-width / 2;
+			$i: 1;
+			@while $i <= $num-cols {
+				$perc: unquote((100 / ($num-cols / $i)) + "%");
+				$indexclear: $num-cols / $i;
+				&.#{$pluginprefix}m#{$i} {
+					width: $perc;
+					margin-left: auto;
+					left: auto;
+					right: auto;
+				}
+				&.#{$pluginprefix}s#{$i} {
+					&:nth-child(#{$indexclear}n+1) {
+						clear: none;
+					}
+				}
+				$i: $i + 1;
+			}
+
+			$i: 1;
+			@while $i <= $num-cols {
+				$indexclear: $num-cols / $i;
+				&.#{$pluginprefix}m#{$i} {
+					&:nth-child(#{$indexclear}n+1) {
+						clear: left;
+					}
+				}
+				$i: $i + 1;
+			}
+
+			&__post {
+				margin-bottom: 20px;
+				.#{$pluginprefix}post {
+					&__ver {
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+/**================================================================
+ * Desktop Styles
+ ================================================================*/
+@media #{$large-and-up} {
+	.#{$pluginprefix}row {
+		margin: 0 #{ - $gutter-width / 2 };
+		.#{$pluginprefix}col {
+			padding: 0 $gutter-width / 2;
+			$i: 1;
+			@while $i <= $num-cols {
+				$perc: unquote((100 / ($num-cols / $i)) + "%");
+				$indexclear: $num-cols / $i;
+				&.#{$pluginprefix}l#{$i} {
+					width: $perc;
+					margin-left: auto;
+					left: auto;
+					right: auto;
+				}
+				&.#{$pluginprefix}m#{$i}, &.#{$pluginprefix}s#{$i} {
+					&:nth-child(#{$indexclear}n+1) {
+						clear: none;
+					}
+				}
+				$i: $i + 1;
+			}
+
+			$i: 1;
+			@while $i <= $num-cols {
+				$indexclear: $num-cols / $i;
+				&.#{$pluginprefix}l#{$i} {
+					&:nth-child(#{$indexclear}n+1) {
+						// clear: left;
+					}
+				}
+				$i: $i + 1;
+			}
+
+			$i: 1;
+			@while $i <= $num-cols {
+				$perc: unquote( (100 / ($num-cols / $i) ) + "%");
+				&.#{$pluginprefix}offset-l#{$i} {
+					margin-left: $perc;
+				}
+				&.#{$pluginprefix}pull-l#{$i} {
+					right: $perc;
+				}
+				&.#{$pluginprefix}push-l#{$i} {
+					left: $perc;
+				}
+				$i: $i + 1;
+			}
+			&__post {
+				margin-bottom: 30px;
+				// .#{$pluginprefix}post {
+				// 	&__ver {
+				// 		margin-bottom: 20px;
+				// 	}
+				// }
+			}
+		}
+		&__nogap {
+			margin: 0;
+			.#{$pluginprefix}col {
+				padding: 0;
+			}
+
+		}
+	}
+}

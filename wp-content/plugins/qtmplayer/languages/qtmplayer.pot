@@ -1,0 +1,1313 @@
+# This file is distributed under the GNU General Public License v2 or later.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: "
+"Qantumthemes Music Player "
+"Player\n"
+"POT-Creation-Date: "
+"2019-01-22 11:49+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Your "
+"Name <you@example.com>\n"
+"Language-Team: "
+"ProRadio "
+"<noreply@proradio."
+"com>\n"
+"Report-Msgid-Bugs-To: "
+"Translator Name "
+"<translations@example."
+"com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; "
+"charset=UTF-8\n"
+"Content-Transfer-"
+"Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; "
+"plural=n != 1;\n"
+"X-Textdomain-Support: "
+"yesX-Generator: Poedit "
+"1.6.4\n"
+"X-Poedit-SourceCharset: "
+"UTF-8\n"
+"X-Poedit-KeywordsList: __;"
+"_e;esc_html_e;"
+"esc_html_x:1,2c;"
+"esc_html__;esc_attr_e;"
+"esc_attr_x:1,2c;"
+"esc_attr__;_ex:1,2c;"
+"_nx:4c,1,2;"
+"_nx_noop:4c,1,2;_x:1,2c;"
+"_n:1,2;_n_noop:1,2;"
+"__ngettext:1,2;"
+"__ngettext_noop:1,2;_c,"
+"_nc:4c,1,2\n"
+"X-Poedit-Basepath: ..\n"
+"Language: en_US\n"
+"X-Generator: Poedit "
+"1.8.9\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: customizer/kirki-config-class/include-kirki.php:41
+#, php-format
+msgid ""
+"The plugin is installed "
+"but not activated. Please "
+"<a href=\"%s\">activate "
+"it</a>."
+msgstr ""
+
+#: customizer/kirki-config-class/include-kirki.php:58
+msgid ""
+"If you want to take full "
+"advantage of the options "
+"this theme has to "
+"provide, please install "
+"the Kirki plugin."
+msgstr ""
+
+#: customizer/kirki-configuration/fields.php:12
+msgid ""
+"Show cover in desktop"
+msgstr ""
+
+#: customizer/kirki-configuration/fields.php:14
+msgid ""
+"Show or hide track cover "
+"in desktop mode"
+msgstr ""
+
+#: customizer/kirki-configuration/fields.php:21
+msgid ""
+"Custom player in post "
+"contents"
+msgstr ""
+
+#: customizer/kirki-configuration/fields.php:23
+msgid ""
+"Replace default audio "
+"block with the custom "
+"player"
+msgstr ""
+
+#: customizer/kirki-configuration/fields.php:34
+msgid "Background color"
+msgstr ""
+
+#: customizer/kirki-configuration/fields.php:41
+msgid "Text color"
+msgstr ""
+
+#: customizer/kirki-configuration/fields.php:48
+msgid ""
+"Accent background color"
+msgstr ""
+
+#: customizer/kirki-configuration/fields.php:55
+msgid "Text color on accent"
+msgstr ""
+
+#: customizer/kirki-configuration/fields.php:62
+msgid ""
+"Accent hover background "
+"color "
+msgstr ""
+
+#: customizer/kirki-configuration/fields.php:70
+msgid "Track background"
+msgstr ""
+
+#: customizer/kirki-configuration/fields.php:84
+msgid "Feature Audio Posts"
+msgstr ""
+
+#: customizer/kirki-configuration/fields.php:86
+msgid ""
+"Add one or more posts "
+"with audio format by ID, "
+"comma separated"
+msgstr ""
+
+#: customizer/kirki-configuration/fields.php:92
+msgid ""
+"Max audio posts preload "
+"amount"
+msgstr ""
+
+#: customizer/kirki-configuration/fields.php:96
+msgid ""
+"Amount of posts with "
+"\"audio\" format to be "
+"preloaded. MP3 Only."
+msgstr ""
+
+#: customizer/kirki-configuration/fields.php:109
+msgid ""
+"Custom playlist tracks"
+msgstr ""
+
+#: customizer/kirki-configuration/fields.php:114
+msgid "Track"
+msgstr ""
+
+#: customizer/kirki-configuration/fields.php:117
+msgid "Add new track"
+msgstr ""
+
+#: customizer/kirki-configuration/fields.php:122
+msgid "Title"
+msgstr ""
+
+#: customizer/kirki-configuration/fields.php:126
+msgid "Artist"
+msgstr ""
+
+#: customizer/kirki-configuration/fields.php:130
+msgid "Album name"
+msgstr ""
+
+#: customizer/kirki-configuration/fields.php:134
+msgid ""
+"Purchase or download link "
+"or WooCommerce ID"
+msgstr ""
+
+#: customizer/kirki-configuration/fields.php:138
+msgid "Price"
+msgstr ""
+
+#: customizer/kirki-configuration/fields.php:142
+msgid "Icon"
+msgstr ""
+
+#: customizer/kirki-configuration/fields.php:145
+msgid "download"
+msgstr ""
+
+#: customizer/kirki-configuration/fields.php:146
+msgid "cart"
+msgstr ""
+
+#: customizer/kirki-configuration/fields.php:151
+msgid "Album link"
+msgstr ""
+
+#: customizer/kirki-configuration/fields.php:155
+msgid "Track mp3"
+msgstr ""
+
+#: customizer/kirki-configuration/fields.php:160
+msgid "Artwork cover"
+msgstr ""
+
+#: customizer/kirki-configuration/sections.php:18
+msgid "Player settings"
+msgstr ""
+
+#: customizer/kirki-configuration/sections.php:23
+msgid "Player options"
+msgstr ""
+
+#: customizer/kirki-configuration/sections.php:24
+msgid ""
+"Manage design options"
+msgstr ""
+
+#: customizer/kirki-configuration/sections.php:30
+msgid "Player colors"
+msgstr ""
+
+#: customizer/kirki-configuration/sections.php:31
+msgid "Manage player colors"
+msgstr ""
+
+#: customizer/kirki-configuration/sections.php:36
+msgid "Audio posts settings"
+msgstr ""
+
+#: customizer/kirki-configuration/sections.php:37
+msgid ""
+"Audio posts to load in "
+"player"
+msgstr ""
+
+#: customizer/kirki-configuration/sections.php:42
+msgid "Album settings"
+msgstr ""
+
+#: customizer/kirki-configuration/sections.php:43
+msgid ""
+"Manage albums in player"
+msgstr ""
+
+#: customizer/kirki-configuration/sections.php:48
+msgid "Podcast settings"
+msgstr ""
+
+#: customizer/kirki-configuration/sections.php:49
+msgid ""
+"Manage podcasts in player"
+msgstr ""
+
+#: customizer/kirki-configuration/sections.php:54
+msgid "Custom playlist"
+msgstr ""
+
+#: customizer/kirki-configuration/sections.php:55
+msgid ""
+"Create a custom playlist "
+"or the player"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-background.php:48
+msgid "Background Color"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-background.php:54
+msgid "Background Image"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-background.php:59
+#: customizer/kirki/controls/php/class-kirki-control-image.php:62
+#: customizer/kirki/controls/php/class-kirki-control-repeater.php:398
+#: customizer/kirki/controls/php/class-kirki-control-repeater.php:403
+msgid "No File Selected"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-background.php:62
+#: customizer/kirki/controls/php/class-kirki-control-image.php:67
+#: customizer/kirki/controls/php/class-kirki-control-repeater.php:376
+#: customizer/kirki/controls/php/class-kirki-control-repeater.php:433
+msgid "Remove"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-background.php:63
+#: customizer/kirki/controls/php/class-kirki-control-image.php:75
+msgid "Select File"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-background.php:70
+msgid "Background Repeat"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-background.php:72
+msgid "No Repeat"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-background.php:73
+msgid "Repeat All"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-background.php:74
+msgid "Repeat Horizontally"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-background.php:75
+msgid "Repeat Vertically"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-background.php:81
+msgid "Background Position"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-background.php:83
+#: customizer/kirki/controls/php/class-kirki-control-dimensions.php:115
+msgid "Left Top"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-background.php:84
+#: customizer/kirki/controls/php/class-kirki-control-dimensions.php:116
+msgid "Left Center"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-background.php:85
+#: customizer/kirki/controls/php/class-kirki-control-dimensions.php:117
+msgid "Left Bottom"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-background.php:86
+#: customizer/kirki/controls/php/class-kirki-control-dimensions.php:118
+msgid "Right Top"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-background.php:87
+#: customizer/kirki/controls/php/class-kirki-control-dimensions.php:119
+msgid "Right Center"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-background.php:88
+#: customizer/kirki/controls/php/class-kirki-control-dimensions.php:120
+msgid "Right Bottom"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-background.php:89
+#: customizer/kirki/controls/php/class-kirki-control-dimensions.php:121
+msgid "Center Top"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-background.php:90
+#: customizer/kirki/controls/php/class-kirki-control-dimensions.php:122
+msgid "Center Center"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-background.php:91
+#: customizer/kirki/controls/php/class-kirki-control-dimensions.php:123
+msgid "Center Bottom"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-background.php:97
+msgid "Background Size"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-background.php:100
+msgid "Cover"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-background.php:103
+msgid "Contain"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-background.php:106
+msgid "Auto"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-background.php:113
+msgid ""
+"Background Attachment"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-background.php:116
+msgid "Scroll"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-background.php:119
+msgid "Fixed"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-code.php:53
+msgid ""
+"Update to WordPress 4.9 "
+"or greater for syntax "
+"highlighting."
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-date.php:51
+msgid ""
+"Update to WordPress 4.9 "
+"or greater for a datetime "
+"picker."
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-dimension.php:39
+#: customizer/kirki/controls/php/class-kirki-control-dimensions.php:140
+#: customizer/kirki/controls/php/class-kirki-control-number.php:41
+msgid "Invalid Value"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-dimensions.php:124
+#: customizer/kirki/controls/php/class-kirki-control-typography.php:123
+msgid "Font Size"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-dimensions.php:125
+msgid "Font Weight"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-dimensions.php:126
+#: customizer/kirki/controls/php/class-kirki-control-typography.php:131
+msgid "Line Height"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-dimensions.php:127
+msgid "Font Style"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-dimensions.php:128
+#: customizer/kirki/controls/php/class-kirki-control-typography.php:139
+msgid "Letter Spacing"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-dimensions.php:129
+#: customizer/kirki/controls/php/class-kirki-control-typography.php:147
+msgid "Word Spacing"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-dimensions.php:130
+#: customizer/kirki/field/class-kirki-field-spacing.php:77
+msgid "Top"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-dimensions.php:131
+#: customizer/kirki/field/class-kirki-field-spacing.php:78
+msgid "Bottom"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-dimensions.php:132
+#: customizer/kirki/controls/php/class-kirki-control-typography.php:166
+#: customizer/kirki/field/class-kirki-field-spacing.php:79
+msgid "Left"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-dimensions.php:133
+#: customizer/kirki/controls/php/class-kirki-control-typography.php:178
+#: customizer/kirki/field/class-kirki-field-spacing.php:80
+msgid "Right"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-dimensions.php:134
+#: customizer/kirki/controls/php/class-kirki-control-typography.php:172
+msgid "Center"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-dimensions.php:135
+msgid "Size"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-dimensions.php:136
+#: customizer/kirki/controls/php/class-kirki-control-dimensions.php:139
+msgid "Height"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-dimensions.php:137
+msgid "Spacing"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-dimensions.php:138
+msgid "Width"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-image.php:71
+msgid "Default"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-number.php:39
+msgid ""
+"Value lower than allowed "
+"minimum"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-number.php:40
+msgid ""
+"Value higher than allowed "
+"maximum"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-repeater.php:70
+msgid "row"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-repeater.php:79
+#, php-format
+msgid "Add new %s"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-repeater.php:114
+msgid "Select a Page"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-repeater.php:220
+#, php-format
+msgid "Limit: %s rows"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-repeater.php:349
+msgid "Hex Value"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-repeater.php:366
+#: customizer/kirki/controls/php/class-kirki-control-repeater.php:371
+msgid "No Image Selected"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-repeater.php:377
+#: customizer/kirki/controls/php/class-kirki-control-repeater.php:381
+msgid "Add Image"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-repeater.php:377
+#: customizer/kirki/controls/php/class-kirki-control-repeater.php:379
+msgid "Change Image"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-repeater.php:409
+#: customizer/kirki/controls/php/class-kirki-control-repeater.php:413
+msgid "Add File"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-repeater.php:409
+#: customizer/kirki/controls/php/class-kirki-control-repeater.php:411
+msgid "Change File"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-switch.php:52
+#: customizer/kirki/field/class-kirki-field-switch.php:42
+msgid "On"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-switch.php:56
+#: customizer/kirki/field/class-kirki-field-switch.php:43
+msgid "Off"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-typography.php:93
+msgid "Font Family"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-typography.php:94
+#: customizer/kirki/controls/php/class-kirki-control-typography.php:99
+msgid "Select Font Family"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-typography.php:98
+msgid "Backup Font"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-typography.php:104
+msgid "Variant"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-typography.php:110
+msgid "Subset(s)"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-typography.php:155
+msgid "Text Align"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-typography.php:160
+#: customizer/kirki/controls/php/class-kirki-control-typography.php:201
+msgid "Inherit"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-typography.php:184
+msgid "Justify"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-typography.php:194
+msgid "Text Transform"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-typography.php:196
+msgid "None"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-typography.php:197
+msgid "Capitalize"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-typography.php:198
+msgid "Uppercase"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-typography.php:199
+msgid "Lowercase"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-typography.php:200
+msgid "Initial"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-typography.php:209
+#: customizer/kirki/example.php:56
+#: customizer/kirki/example.php:473
+msgid "Color"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-typography.php:217
+msgid "Margin Top"
+msgstr ""
+
+#: customizer/kirki/controls/php/class-kirki-control-typography.php:225
+msgid "Margin Bottom"
+msgstr ""
+
+#: customizer/kirki/core/class-kirki-field.php:232
+#, php-format
+msgid ""
+"Typo found in field %s - "
+"setting instead of "
+"settings."
+msgstr ""
+
+#: customizer/kirki/core/class-kirki-field.php:241
+#: customizer/kirki/core/class-kirki-field.php:251
+#, php-format
+msgid ""
+"Config not defined for "
+"field %1$s - See %2$s for "
+"details on how to "
+"properly add fields."
+msgstr ""
+
+#: customizer/kirki/core/class-kirki-field.php:391
+#, php-format
+msgid ""
+"Typo found in field %s - "
+"\"theme_mods\" vs "
+"\"theme_mod\""
+msgstr ""
+
+#: customizer/kirki/core/class-kirki-field.php:409
+#, php-format
+msgid ""
+"\"partial_refresh\" "
+"invalid entry in field %s"
+msgstr ""
+
+#: customizer/kirki/core/class-kirki-field.php:538
+#: customizer/kirki/core/class-kirki-field.php:548
+#, php-format
+msgid ""
+"\"output\" invalid format "
+"in field %s. The \"output"
+"\" argument should be "
+"defined as an array of "
+"arrays."
+msgstr ""
+
+#: customizer/kirki/core/class-kirki-init.php:282
+msgid ""
+"We detected you're using "
+"Kirki_Init::"
+"get_variables(). Please "
+"use Kirki_Util::"
+"get_variables() instead."
+msgstr ""
+
+#: customizer/kirki/core/class-kirki-sanitize-values.php:35
+#, php-format
+msgid ""
+"Kirki_Sanitize_Values::%s "
+"does not exist"
+msgstr ""
+
+#: customizer/kirki/core/class-kirki.php:176
+msgid ""
+"Kirki fields should not "
+"be added on "
+"customize_register. "
+"Please add them directly, "
+"or on init."
+msgstr ""
+
+#: customizer/kirki/core/deprecated.php:31
+#, php-format
+msgid "%1$s or %2$s"
+msgstr ""
+
+#: customizer/kirki/example.php:40
+msgid "Kirki Demo Panel"
+msgstr ""
+
+#: customizer/kirki/example.php:41
+msgid ""
+"Contains sections for all "
+"kirki controls."
+msgstr ""
+
+#: customizer/kirki/example.php:53
+msgid "Background"
+msgstr ""
+
+#: customizer/kirki/example.php:54
+msgid "Code"
+msgstr ""
+
+#: customizer/kirki/example.php:55
+msgid "Checkbox"
+msgstr ""
+
+#: customizer/kirki/example.php:57
+msgid "Color Palette"
+msgstr ""
+
+#: customizer/kirki/example.php:58
+msgid "Custom"
+msgstr ""
+
+#: customizer/kirki/example.php:59
+msgid "Dashicons"
+msgstr ""
+
+#: customizer/kirki/example.php:60
+msgid "Date"
+msgstr ""
+
+#: customizer/kirki/example.php:61
+msgid "Dimension"
+msgstr ""
+
+#: customizer/kirki/example.php:62
+msgid "Dimensions"
+msgstr ""
+
+#: customizer/kirki/example.php:63
+msgid "Editor"
+msgstr ""
+
+#: customizer/kirki/example.php:64
+msgid "Font-Awesome"
+msgstr ""
+
+#: customizer/kirki/example.php:65
+msgid "Generic"
+msgstr ""
+
+#: customizer/kirki/example.php:66
+msgid "Image"
+msgstr ""
+
+#: customizer/kirki/example.php:67
+msgid "Multicheck"
+msgstr ""
+
+#: customizer/kirki/example.php:68
+msgid "Multicolor"
+msgstr ""
+
+#: customizer/kirki/example.php:69
+msgid "Number"
+msgstr ""
+
+#: customizer/kirki/example.php:70
+msgid "Palette"
+msgstr ""
+
+#: customizer/kirki/example.php:71
+msgid "Preset"
+msgstr ""
+
+#: customizer/kirki/example.php:72
+msgid "Radio"
+msgstr ""
+
+#: customizer/kirki/example.php:72
+msgid ""
+"A plain Radio control."
+msgstr ""
+
+#: customizer/kirki/example.php:73
+msgid "Radio Buttonset"
+msgstr ""
+
+#: customizer/kirki/example.php:73
+msgid ""
+"Radio-Buttonset controls "
+"are essentially radio "
+"controls with some fancy "
+"styling to make them look "
+"cooler."
+msgstr ""
+
+#: customizer/kirki/example.php:74
+msgid "Radio Image"
+msgstr ""
+
+#: customizer/kirki/example.php:74
+msgid ""
+"Radio-Image controls are "
+"essentially radio "
+"controls with some fancy "
+"styles to use images"
+msgstr ""
+
+#: customizer/kirki/example.php:75
+msgid "Repeater"
+msgstr ""
+
+#: customizer/kirki/example.php:76
+msgid "Select"
+msgstr ""
+
+#: customizer/kirki/example.php:77
+msgid "Slider"
+msgstr ""
+
+#: customizer/kirki/example.php:78
+msgid "Sortable"
+msgstr ""
+
+#: customizer/kirki/example.php:79
+msgid "Switch"
+msgstr ""
+
+#: customizer/kirki/example.php:80
+msgid "Toggle"
+msgstr ""
+
+#: customizer/kirki/example.php:81
+msgid "Typography"
+msgstr ""
+
+#: customizer/kirki/example.php:99
+msgid "Background Control"
+msgstr ""
+
+#: customizer/kirki/example.php:100
+msgid ""
+"Background conrols are "
+"pretty complex! (but "
+"useful if properly used)"
+msgstr ""
+
+#: customizer/kirki/example.php:120
+msgid "Code Control"
+msgstr ""
+
+#: customizer/kirki/example.php:121
+#: customizer/kirki/example.php:139
+#: customizer/kirki/example.php:379
+#: customizer/kirki/example.php:388
+#: customizer/kirki/example.php:632
+#: customizer/kirki/example.php:644
+msgid "Description"
+msgstr ""
+
+#: customizer/kirki/example.php:138
+msgid "Checkbox Control"
+msgstr ""
+
+#: customizer/kirki/example.php:152
+msgid ""
+"Color Control (hex-only)"
+msgstr ""
+
+#: customizer/kirki/example.php:153
+msgid ""
+"This is a color control - "
+"without alpha channel."
+msgstr ""
+
+#: customizer/kirki/example.php:161
+msgid ""
+"Color Control (with alpha "
+"channel)"
+msgstr ""
+
+#: customizer/kirki/example.php:162
+msgid ""
+"This is a color control - "
+"with alpha channel."
+msgstr ""
+
+#: customizer/kirki/example.php:173
+msgid ""
+"Color Control - hue only."
+msgstr ""
+
+#: customizer/kirki/example.php:174
+msgid ""
+"This is a color control - "
+"hue only."
+msgstr ""
+
+#: customizer/kirki/example.php:189
+msgid "Date Control"
+msgstr ""
+
+#: customizer/kirki/example.php:190
+msgid ""
+"This is a date control."
+msgstr ""
+
+#: customizer/kirki/example.php:201
+msgid "First Editor Control"
+msgstr ""
+
+#: customizer/kirki/example.php:202
+msgid ""
+"This is an editor control."
+msgstr ""
+
+#: customizer/kirki/example.php:210
+msgid ""
+"Second Editor Control"
+msgstr ""
+
+#: customizer/kirki/example.php:211
+msgid ""
+"This is a 2nd editor "
+"control just to check "
+"that we do not have "
+"issues with multiple "
+"instances."
+msgstr ""
+
+#: customizer/kirki/example.php:213
+msgid "Default Text"
+msgstr ""
+
+#: customizer/kirki/example.php:224
+#: customizer/kirki/example.php:237
+#: customizer/kirki/example.php:250
+#: customizer/kirki/example.php:263
+#: customizer/kirki/example.php:276
+msgid "Color-Palette"
+msgstr ""
+
+#: customizer/kirki/example.php:225
+msgid ""
+"This is a color-palette "
+"control"
+msgstr ""
+
+#: customizer/kirki/example.php:238
+msgid ""
+"Material Design Colors - "
+"all"
+msgstr ""
+
+#: customizer/kirki/example.php:251
+msgid ""
+"Material Design Colors - "
+"primary"
+msgstr ""
+
+#: customizer/kirki/example.php:264
+msgid ""
+"Material Design Colors - "
+"red"
+msgstr ""
+
+#: customizer/kirki/example.php:277
+msgid ""
+"Material Design Colors - "
+"A100"
+msgstr ""
+
+#: customizer/kirki/example.php:295
+msgid "Dashicons Control"
+msgstr ""
+
+#: customizer/kirki/example.php:296
+msgid ""
+"Using a custom array of "
+"dashicons"
+msgstr ""
+
+#: customizer/kirki/example.php:313
+msgid "All Dashicons"
+msgstr ""
+
+#: customizer/kirki/example.php:314
+msgid ""
+"Showing all dashicons"
+msgstr ""
+
+#: customizer/kirki/example.php:325
+#: customizer/kirki/example.php:337
+#: customizer/kirki/example.php:349
+msgid "Dimension Control"
+msgstr ""
+
+#: customizer/kirki/example.php:326
+#: customizer/kirki/example.php:338
+#: customizer/kirki/example.php:350
+#: customizer/kirki/example.php:367
+#: customizer/kirki/example.php:415
+#: customizer/kirki/example.php:424
+#: customizer/kirki/example.php:436
+msgid "Description Here."
+msgstr ""
+
+#: customizer/kirki/example.php:366
+msgid "Font Awesome Control"
+msgstr ""
+
+#: customizer/kirki/example.php:378
+msgid "Text Control"
+msgstr ""
+
+#: customizer/kirki/example.php:387
+msgid "Textarea Control"
+msgstr ""
+
+#: customizer/kirki/example.php:396
+msgid ""
+"Custom input Control."
+msgstr ""
+
+#: customizer/kirki/example.php:397
+msgid ""
+"The \"generic\" control "
+"allows you to add any "
+"input type you want. In "
+"this case we use type="
+"\"password\" and define "
+"custom styles."
+msgstr ""
+
+#: customizer/kirki/example.php:414
+msgid "Image Control (URL)"
+msgstr ""
+
+#: customizer/kirki/example.php:423
+msgid "Image Control (ID)"
+msgstr ""
+
+#: customizer/kirki/example.php:435
+msgid ""
+"Image Control (array)"
+msgstr ""
+
+#: customizer/kirki/example.php:450
+msgid "Multickeck Control"
+msgstr ""
+
+#: customizer/kirki/example.php:455
+#: customizer/kirki/example.php:528
+#: customizer/kirki/example.php:547
+#: customizer/kirki/example.php:581
+#: customizer/kirki/example.php:616
+msgid "Option 1"
+msgstr ""
+
+#: customizer/kirki/example.php:456
+#: customizer/kirki/example.php:529
+#: customizer/kirki/example.php:548
+#: customizer/kirki/example.php:582
+#: customizer/kirki/example.php:617
+msgid "Option 2"
+msgstr ""
+
+#: customizer/kirki/example.php:457
+#: customizer/kirki/example.php:530
+#: customizer/kirki/example.php:549
+#: customizer/kirki/example.php:583
+#: customizer/kirki/example.php:618
+msgid "Option 3"
+msgstr ""
+
+#: customizer/kirki/example.php:458
+#: customizer/kirki/example.php:531
+#: customizer/kirki/example.php:584
+#: customizer/kirki/example.php:619
+msgid "Option 4"
+msgstr ""
+
+#: customizer/kirki/example.php:459
+#: customizer/kirki/example.php:532
+#: customizer/kirki/example.php:585
+#: customizer/kirki/example.php:620
+msgid "Option 5"
+msgstr ""
+
+#: customizer/kirki/example.php:469
+#: customizer/kirki/example.php:490
+#: customizer/kirki/example.php:506
+msgid "Label"
+msgstr ""
+
+#: customizer/kirki/example.php:474
+msgid "Hover"
+msgstr ""
+
+#: customizer/kirki/example.php:475
+msgid "Active"
+msgstr ""
+
+#: customizer/kirki/example.php:523
+msgid "Radio Control"
+msgstr ""
+
+#: customizer/kirki/example.php:524
+#: customizer/kirki/example.php:543
+#: customizer/kirki/example.php:560
+#: customizer/kirki/example.php:577
+#: customizer/kirki/example.php:596
+msgid ""
+"The description here."
+msgstr ""
+
+#: customizer/kirki/example.php:542
+msgid ""
+"Radio-Buttonset Control"
+msgstr ""
+
+#: customizer/kirki/example.php:559
+msgid "Radio-Image Control"
+msgstr ""
+
+#: customizer/kirki/example.php:576
+msgid "Select Control"
+msgstr ""
+
+#: customizer/kirki/example.php:595
+msgid "Slider Control"
+msgstr ""
+
+#: customizer/kirki/example.php:612
+msgid ""
+"This is a sortable "
+"control."
+msgstr ""
+
+#: customizer/kirki/example.php:621
+msgid "Option 6"
+msgstr ""
+
+#: customizer/kirki/example.php:631
+msgid "Switch Control"
+msgstr ""
+
+#: customizer/kirki/example.php:643
+msgid "Toggle Control"
+msgstr ""
+
+#: customizer/kirki/example.php:655
+#: customizer/kirki/example.php:675
+#: customizer/kirki/example.php:686
+msgid ""
+"Typography Control Label"
+msgstr ""
+
+#: customizer/kirki/example.php:656
+msgid ""
+"The full set of options."
+msgstr ""
+
+#: customizer/kirki/example.php:676
+msgid ""
+"Just the font-family."
+msgstr ""
+
+#: customizer/kirki/example.php:687
+msgid ""
+"Only font-size, line-"
+"height, letter-spacing "
+"and color."
+msgstr ""
+
+#: customizer/kirki/field/class-kirki-field-color.php:47
+msgid ""
+"Do not use \"alpha\" as "
+"an argument in color "
+"controls. Use "
+"\"choices[alpha]\" "
+"instead."
+msgstr ""
+
+#: customizer/kirki/field/class-kirki-field-radio.php:37
+#, php-format
+msgid ""
+"Error in field %1$s. The "
+"\"mode\" argument has "
+"been deprecated since "
+"Kirki v0.8. Use the "
+"\"radio-%2$s\" type "
+"instead."
+msgstr ""
+
+#: customizer/kirki/modules/custom-sections/sections/class-kirki-sections-nested-section.php:59
+msgid "Customizing"
+msgstr ""
+
+#: customizer/kirki/modules/custom-sections/sections/class-kirki-sections-nested-section.php:62
+#, php-format
+msgid ""
+"Customizing &#9656; %s"
+msgstr ""
+
+#: customizer/kirki/modules/webfonts/class-kirki-fonts.php:193
+#: customizer/kirki/modules/webfonts/class-kirki-fonts.php:194
+msgid "Ultra-Light 100"
+msgstr ""
+
+#: customizer/kirki/modules/webfonts/class-kirki-fonts.php:195
+msgid ""
+"Ultra-Light 100 Italic"
+msgstr ""
+
+#: customizer/kirki/modules/webfonts/class-kirki-fonts.php:196
+msgid "Light 200"
+msgstr ""
+
+#: customizer/kirki/modules/webfonts/class-kirki-fonts.php:197
+msgid "Light 200 Italic"
+msgstr ""
+
+#: customizer/kirki/modules/webfonts/class-kirki-fonts.php:198
+msgid "Book 300"
+msgstr ""
+
+#: customizer/kirki/modules/webfonts/class-kirki-fonts.php:199
+msgid "Book 300 Italic"
+msgstr ""
+
+#: customizer/kirki/modules/webfonts/class-kirki-fonts.php:200
+#: customizer/kirki/modules/webfonts/class-kirki-fonts.php:201
+msgid "Normal 400"
+msgstr ""
+
+#: customizer/kirki/modules/webfonts/class-kirki-fonts.php:202
+msgid "Normal 400 Italic"
+msgstr ""
+
+#: customizer/kirki/modules/webfonts/class-kirki-fonts.php:203
+msgid "Medium 500"
+msgstr ""
+
+#: customizer/kirki/modules/webfonts/class-kirki-fonts.php:204
+msgid "Medium 500 Italic"
+msgstr ""
+
+#: customizer/kirki/modules/webfonts/class-kirki-fonts.php:205
+#: customizer/kirki/modules/webfonts/class-kirki-fonts.php:206
+msgid "Semi-Bold 600"
+msgstr ""
+
+#: customizer/kirki/modules/webfonts/class-kirki-fonts.php:207
+msgid "Semi-Bold 600 Italic"
+msgstr ""
+
+#: customizer/kirki/modules/webfonts/class-kirki-fonts.php:208
+msgid "Bold 700"
+msgstr ""
+
+#: customizer/kirki/modules/webfonts/class-kirki-fonts.php:209
+msgid "Bold 700 Italic"
+msgstr ""
+
+#: customizer/kirki/modules/webfonts/class-kirki-fonts.php:210
+#: customizer/kirki/modules/webfonts/class-kirki-fonts.php:211
+msgid "Extra-Bold 800"
+msgstr ""
+
+#: customizer/kirki/modules/webfonts/class-kirki-fonts.php:212
+msgid ""
+"Extra-Bold 800 Italic"
+msgstr ""
+
+#: customizer/kirki/modules/webfonts/class-kirki-fonts.php:213
+#: customizer/kirki/modules/webfonts/class-kirki-fonts.php:214
+msgid "Ultra-Bold 900"
+msgstr ""
+
+#: customizer/kirki/modules/webfonts/class-kirki-fonts.php:215
+msgid ""
+"Ultra-Bold 900 Italic"
+msgstr ""
+
+#: customizer/kirki/upgrade-notifications.php:30
+msgid ""
+"Important Upgrade Notice:"
+msgstr ""
+
+#: inc/parts/qtmplayer-interface__playlist.php:17
+msgid "Go to album"
+msgstr ""
+
+#: inc/qtmplayer-admin.php:33
+msgid ""
+"You do not have "
+"sufficient permissions to "
+"access this page."
+msgstr ""
+
+#: inc/qtmplayer-admin.php:50
+msgid "Main Color"
+msgstr ""
+
+#: inc/qtmplayer-admin.php:83
+msgid "Settings"
+msgstr ""

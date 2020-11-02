@@ -1,0 +1,25 @@
+/**!
+ * ==========================================================================
+ * COLORS
+ * ==========================================================================
+ */
+.qtmplayer {
+	&__controllayer, &__basic, &__advanced, &-playlist, &__vcontainer, &__playlistcontainer, &__notification, &-tracklist &-tracklist__content {
+		background: #333333;
+		color: #f9f9f9;
+	}
+	&-tracklist &-tracklist__content h5 {
+		color: #fff;
+	}
+	&-content-accent, &-btn, &__vfill {
+		background: #F90;
+		color: #fff;
+	}
+	&-content-accent-hover{
+		background: #F60;
+		color: #fff;
+	}
+	&-buffer, &__vtrack {
+		background-color: rgba(255,255,255,.5);
+	}
+}

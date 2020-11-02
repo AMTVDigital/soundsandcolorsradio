@@ -1,0 +1,83 @@
+
+.proradio-videogalleries__item {
+	position: relative;
+	padding-top: 53.6%;
+	overflow: hidden;
+
+	a {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: #000;
+		color: #fff;
+		top: 0;
+		left: 0;
+
+		img {
+			opacity: .6;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			object-fit: cover;
+			z-index: 1;
+		}
+
+	}
+	&__t {
+		z-index: 2;
+		color: #fff;
+		width: 100%;
+		text-align: center;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		margin: 0;
+		line-height: 1em;
+		font-size: 16px;
+		> * {
+			color: #fff;
+		}
+
+	}
+	.trm {
+		font-size: 11px;
+		padding: 1px 2px;
+		text-transform: uppercase;
+		font-family:"Arial", Sans Serif;
+		border: 1px solid;
+		margin: 0 2px;
+	}
+}
+
+/**================================================================
+ * Desktop Styles
+ ================================================================*/
+@media #{$large-and-up} {
+	.proradio-videogalleries__item {
+
+		&__t {
+			transform: translateY(-20%);
+			opacity: 0;
+			transition: transform 0.25s, opacity 0.3s;
+		}
+		a {
+			img {
+				opacity: 1;
+				transform: scale(1);
+				transition: transform 0.25s, opacity 0.3s;
+			}
+			&:hover {
+				img {
+					transform: scale(1.1);
+					opacity: .6;
+				}
+				.proradio-videogalleries__item__t {
+					opacity: 1;
+					transform: translateY(-50%);
+				}
+			}
+		}
+	}
+}

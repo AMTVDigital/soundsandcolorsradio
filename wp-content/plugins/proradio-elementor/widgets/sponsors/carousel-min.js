@@ -1,0 +1,2 @@
+!function(o){var e=function(o,e){if(e("#proradio-body").hasClass("elementor-editor-active")&&("object"!=typeof e.ProRadioMainObj&&console.log("Missing main theme script"),e("#proradio-body").hasClass("elementor-editor-active")))try{e.ProRadioMainObj.fn.owlCarousel()}catch(o){console.log(o)}};o(window).on("elementor/frontend/init",(function(){elementorFrontend.hooks.addAction("frontend/element_ready/proradio-elementor-sponsors.default",e)}))}(jQuery);
+//# sourceMappingURL=carousel-min.js.map

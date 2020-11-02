@@ -1,0 +1,145 @@
+// Media Query Ranges
+$small-screen-up: 601px;
+$medium-screen-up: 993px;
+$large-screen-up: 1200px;
+$small-screen: 600px;
+$medium-screen: 992px;
+$large-screen: 1199px;
+$xl-screen-up: 1440px; 
+
+
+$small-and-up: "only screen and (min-width : #{$small-screen-up})";
+$medium-and-up: "only screen and (min-width : #{$medium-screen-up})";
+$large-and-up: "only screen and (min-width : #{$large-screen-up})";
+$xl-and-up: "only screen and (min-width : #{$xl-screen-up})";
+$xl-and-down: "only screen and (max-width : #{$large-screen})";
+$small-and-down: "only screen and (max-width : #{$small-screen})";
+$medium-and-down: "only screen and (max-width : #{$medium-screen})";
+$large-and-down:  "only screen and (max-width : #{$large-screen})";
+$medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})";
+$tablets-only: "only screen and (min-width : #{$medium-screen-up}) and (max-width : #{$large-screen})";
+
+
+
+
+.proradio-chartvote {
+	display: table-cell;
+	width: 50px;
+    padding: 0;
+	text-align: center;
+	line-height: 20px;
+	height: 100%;
+	background: white;
+		border-radius: 0 4px 4px 0;
+	overflow: hidden;
+	background: rgba(100,100,100,0.05);
+	&-number {
+		width: 100%;
+		clear: both;
+		text-align: center;
+		padding: 4px 0;
+		vertical-align: middle;
+		line-height: 13px;
+		background: #fff;
+		color: #333;
+		font-size: 12px;
+		display: block;
+		background: #fff;
+		box-shadow: inset 0px 3px 8px 0px rgba(0,0,0,0.1);
+		border-radius: 4px;
+		width: 94%;
+		margin: 0 3%;
+	}
+	.proradio-chartvote-link {
+		display: block;
+		width: 100%;
+		clear: both;
+		text-align: center;
+		padding: 0;
+		line-height: 24px;
+		height: 24px;
+		vertical-align: middle;
+		color: #7bc71e;
+		> i {
+			display: inline-block;
+			width: 100%;
+			height: 24px;
+			margin: 0;
+			&:before {
+				content: "";
+				display: inline-flex;
+			    width: 14px;
+			    height: 14px;
+			    border: 3px solid;
+			    border-width: 3px 3px 0 0;
+			    transform: rotate(-45deg) translateY(-5px) translateX(5px);
+			    margin: 0 auto;
+			}
+		}
+		&.qt-down {
+			color: red;
+			 transform: rotate(180deg) ;
+		}
+		
+	}
+	&.disabled {
+		.proradio-chartvote-link {
+			color: #dedede;
+			cursor: not-allowed; 
+		}
+		.proradio-chartvote-number {
+			background: #ddd;
+			color: white;
+			font-weight: bold;
+		}
+	}
+	
+}
+@media #{$small-and-up} {
+	.proradio-chartvote .proradio-chartvote-link > i {
+		&:before {
+			transform: rotate(-45deg) translateY(-9px) translateX(9px);
+		}
+	}
+}
+@media #{$large-and-up} {
+	.proradio-chartvote {
+		&-number  {
+			font-size: 14px;
+			line-height: 22px;
+			height: 20px;
+			padding: 0;
+			margin-top: 0;
+		}
+		.proradio-chartvote-link {
+			line-height: 36px;
+			height: 40px;
+			i {
+				height: 40px;
+				&:before {
+					transform: rotate(-45deg) translateY(-4px) translateX(4px);
+				}
+			}
+			&:not(.disabled){
+				&:hover {
+					background-color: #7bc71e;
+					color: #fff;
+				}
+			}
+			&.qt-down:not(.disabled){
+				&:hover {
+					background-color: red;
+					color: #fff;
+				}
+			}
+		}
+		// &.disabled {
+		// 	.proradio-chartvote-link {
+		// 		&:hover {
+		// 			background: transparent;
+		// 			color: #dedede;
+		// 		}
+		// 	}
+		// }
+	}
+}

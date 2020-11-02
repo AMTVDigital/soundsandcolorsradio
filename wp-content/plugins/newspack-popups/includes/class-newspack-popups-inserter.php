@@ -25,7 +25,7 @@ final class Newspack_Popups_Inserter {
 	 *
 	 * @var boolean
 	 */
-	protected static $the_content_has_rendered = false;
+	public static $the_content_has_rendered = false;
 
 	/**
 	 * Retrieve the appropriate popups for the current post.
@@ -42,10 +42,18 @@ final class Newspack_Popups_Inserter {
 			return [ Newspack_Popups_Model::retrieve_preview_popup( Newspack_Popups::previewed_popup_id() ) ];
 		}
 
-		// 1. Get all inline popups in there first.
+		// 1. Get all inline popups.
 		$popups_to_maybe_display = Newspack_Popups_Model::retrieve_inline_popups();
 
-		// 2. Get the overlay popup.
+		// 2. Get the overlay popup/s. There can be only one displayed, unless in test mode.
+
+		// Any overlay test popups, if the user is logged in.
+		if ( is_user_logged_in() ) {
+			$popups_to_maybe_display = array_merge(
+				$popups_to_maybe_display,
+				Newspack_Popups_Model::retrieve_overlay_test_popups()
+			);
+		}
 
 		// Check if there's an overlay popup with matching category.
 		$category_overlay_popup = Newspack_Popups_Model::retrieve_category_overlay_popup();
@@ -269,6 +277,9 @@ final class Newspack_Popups_Inserter {
 	 * Enqueue the assets needed to display the popups.
 	 */
 	public static function enqueue_popup_assets() {
+		if ( defined( 'IS_TEST_ENV' ) && IS_TEST_ENV ) {
+			return;
+		}
 		$is_amp = function_exists( 'is_amp_endpoint' ) && is_amp_endpoint();
 		if ( ! $is_amp ) {
 			wp_register_script(
@@ -304,7 +315,9 @@ final class Newspack_Popups_Inserter {
 		} elseif ( isset( $atts['id'] ) ) {
 			$found_popup = Newspack_Popups_Model::retrieve_popup_by_id( $atts['id'] );
 		}
-		return Newspack_Popups_Model::generate_popup( $found_popup );
+		// Wrapping the inline popup in an aside element prevents the markup from being mangled
+		// if the shortcode is the first block.
+		return '<aside>' . Newspack_Popups_Model::generate_popup( $found_popup ) . '</aside>';
 	}
 
 	/**
@@ -398,9 +411,6 @@ final class Newspack_Popups_Inserter {
 	 * Register and enqueue all required AMP scripts, if needed.
 	 */
 	public static function register_amp_scripts() {
-		if ( ! Newspack_Popups_Segmentation::is_tracking() ) {
-			return;
-		}
 		if ( ! is_admin() && ! wp_script_is( 'amp-runtime', 'registered' ) ) {
 		// phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
 			wp_register_script(
@@ -466,10 +476,28 @@ final class Newspack_Popups_Inserter {
 	public static function assess_categories_filter( $popup ) {
 		$post_categories  = get_the_category();
 		$popup_categories = get_the_category( $popup['id'] );
-		if ( $popup_categories && count( $popup_categories ) ) {
+		if ( $post_categories && count( $post_categories ) && $popup_categories && count( $popup_categories ) ) {
 			return array_intersect(
 				array_column( $post_categories, 'term_id' ),
 				array_column( $popup_categories, 'term_id' )
+			);
+		}
+		return true;
+	}
+
+	/**
+	 * If Pop-up has tags, it should only be shown on posts/pages with those.
+	 *
+	 * @param object $popup The popup to assess.
+	 * @return bool Should popup be shown based on tags it has.
+	 */
+	public static function assess_tags_filter( $popup ) {
+		$post_tags  = get_the_tags();
+		$popup_tags = get_the_tags( $popup['id'] );
+		if ( $post_tags && count( $post_tags ) && $popup_tags && count( $popup_tags ) ) {
+			return array_intersect(
+				array_column( $post_tags, 'term_id' ),
+				array_column( $popup_tags, 'term_id' )
 			);
 		}
 		return true;
@@ -486,9 +514,14 @@ final class Newspack_Popups_Inserter {
 		if ( is_user_logged_in() && 'test' !== $popup['options']['frequency'] ) {
 			return false;
 		}
+		// Hide overlay campaigns in non-interactive mode, for non-logged-in users.
+		if ( ! is_user_logged_in() && Newspack_Popups_Settings::is_non_interactive() && ! Newspack_Popups_Model::is_inline( $popup ) ) {
+			return false;
+		}
 		return self::assess_is_post( $popup ) &&
 			self::assess_test_mode( $popup ) &&
-			self::assess_categories_filter( $popup );
+			self::assess_categories_filter( $popup ) &&
+			self::assess_tags_filter( $popup );
 	}
 }
 $newspack_popups_inserter = new Newspack_Popups_Inserter();
