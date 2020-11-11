@@ -100,21 +100,22 @@ get_header();
 							 * Taxonomy output
 							 */
 							$tags = proradio_postcategories( 20, 'podcastfilter', false );
-							if( $tags ){
-								?>
-								<hr class="proradio-spacer-s">
-								<p class="proradio-tags">
-								<?php echo wp_kses_post( $tags ); ?>
-								</p>
-							<?php foreach($related_show as $related_show):?>
-								<p class="proradio-tags">
-								<a href="<?php echo get_page_link($related_show->ID);?>">	
-									<?php echo $related_show->post_title;?>
-								</p>	
-							<?php endforeach;?>
+							       if( $related_show ): ?>
+
+             <?php foreach( $related_show as $related_show ): ?>
+             <p class="proradio-meta proradio-small proradio-p-catz">
+									
+		
+                   <a href="<?php echo get_permalink( $related_show->ID ); ?>">
+                     <?php echo get_the_title( $related_show->ID ); ?>
+                   </a>
+                </p>
+             <?php endforeach; ?>
+
+      <?php endif; ?>
 								
 								<?php 
-							}
+		
 							
 
 							/**
