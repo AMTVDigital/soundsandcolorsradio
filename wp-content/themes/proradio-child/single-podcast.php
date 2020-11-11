@@ -5,6 +5,8 @@
  * @version 1.0.0
  */
 
+$related_show = get_field('related_show');
+
 get_header(); 
 ?>
 <div id="proradio-pagecontent" class="proradio-pagecontent proradio-single proradio-single--podcast">
@@ -104,8 +106,16 @@ get_header();
 								<p class="proradio-tags">
 								<?php echo wp_kses_post( $tags ); ?>
 								</p>
+							<?php foreach($related_show as $related_show):?>
+								<p class="proradio-tags">
+								<a href="<?php echo get_page_link($related_show->ID);?>">	
+									<?php echo $related_show->post_title;?>
+								</p>	
+							<?php endforeach;?>
+								
 								<?php 
 							}
+							
 
 							/**
 							 * Post footer with share
