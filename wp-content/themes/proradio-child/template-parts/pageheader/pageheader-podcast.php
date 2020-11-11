@@ -5,6 +5,7 @@
  * @version 1.0.0
  */
 
+$related_show = get_field('related_show');
 $format = get_post_format( $post->ID );
 if(!$format) {
 	$format = 'std';
@@ -14,7 +15,9 @@ $has_html = false;
 if($title != strip_tags($title)) {
 	$has_html = true;
 }
+
 ?>
+
 <div class="proradio-pageheader proradio-pageheader--animate proradio-primary">
 	<div class="proradio-pageheader__contents proradio-negative">
 		<div class="proradio-container">
@@ -60,13 +63,22 @@ if($title != strip_tags($title)) {
 			} 
 
 			?>
-			<p class="proradio-meta proradio-small proradio-p-catz">
-								<?php foreach($related_show as $related_show):?>
-								<a href="<?php echo get_page_link($related_show->ID);?>">	
-									<?php echo $related_show->post_title;?>
+
+        <?php if( $related_show ): ?>
+
+             <?php foreach( $related_show as $related_show ): ?>
+             <p class="proradio-meta proradio-small proradio-p-catz">
 									
-							<?php endforeach;?>
-			</p>
+		
+                   <a href="<?php echo get_permalink( $related_show->ID ); ?>">
+                     <?php echo get_the_title( $related_show->ID ); ?>
+                   </a>
+                </p>
+             <?php endforeach; ?>
+
+      <?php endif; ?>
+
+
 
 			<h1 class="proradio-pagecaption <?php if(!$has_html){ ?>proradio-glitchtxt<?php } ?>"  data-proradio-text="<?php echo esc_attr( $title ); ?>"><?php the_title();  ?></h1>
 			<p class="proradio-meta proradio-small">
