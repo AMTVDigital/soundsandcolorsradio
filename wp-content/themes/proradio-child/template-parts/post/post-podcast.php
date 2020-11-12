@@ -7,6 +7,7 @@
  * @version 1.0.0
 */
 
+$related_show = get_field('related_show');
 $classes = array( 'proradio-post proradio-post__card','proradio-darkbg proradio-negative' );
 $print_date = date_i18n( get_option( 'date_format' ), strtotime(get_post_meta( $post->ID,  '_podcast_date',true )) );
 ?>
@@ -21,7 +22,20 @@ $print_date = date_i18n( get_option( 'date_format' ), strtotime(get_post_meta( $
 		?>
 		<div class="proradio-post__card__cap">
 			<p class="proradio-cats">
-				<?php proradio_postcategories( 1, 'podcastfilter' ); ?>
+				        <?php if( $related_show ): ?>
+
+             <?php foreach( $related_show as $related_show ): ?>
+             <p class="proradio-meta proradio-small proradio-p-catz">
+									
+		
+                   <a href="<?php echo get_permalink( $related_show->ID ); ?>">
+                     <?php echo get_the_title( $related_show->ID ); ?>
+                   </a>
+                </p>
+             <?php endforeach; ?>
+
+      <?php endif; ?>
+
 			</p>
 			<h3 class="proradio-post__title proradio-h4 proradio-cutme-t-2"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 			<p class="proradio-meta proradio-small">
