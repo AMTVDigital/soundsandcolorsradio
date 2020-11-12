@@ -4,7 +4,7 @@
  * @subpackage proradio
  * @version 1.0.0
  */
-
+$related_to_show = get_field( "related_to_show" );
 get_header(); 
 ?>
 <div id="proradio-pagecontent" class="proradio-pagecontent proradio-single proradio-single--podcast">
@@ -87,13 +87,13 @@ get_header();
 					</div>
 					<div class="proradio-entrycontent">
 						<div class="proradio-the_content">
-
 							<?php 
 							/**
 							 * Editor content
 							 */
 							the_content();
-							
+		
+				
 							/**
 							 * Taxonomy output
 							 */
@@ -101,9 +101,12 @@ get_header();
 							if( $tags ){
 								?>
 								<hr class="proradio-spacer-s">
+									
 								<p class="proradio-tags">
 								<?php echo wp_kses_post( $tags ); ?>
+									
 								</p>
+								<?php echo $related_to_show->post_title; ?>
 								<?php 
 							}
 
