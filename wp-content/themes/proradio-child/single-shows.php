@@ -37,16 +37,16 @@ get_header();
 						<?php  
 						// Content
 						the_content();
-						// News
-						get_template_part( 'template-parts/single/show/part-single-show-news' ); 
-						// Team
-						get_template_part( 'template-parts/single/show/part-single-show-members' ); 
 						// Podcast
 						get_template_part( 'template-parts/single/show/part-single-show-podcasts' ); 
-						// Chart
-						get_template_part( 'template-parts/single/show/part-single-show-chart' ); 
+						// News
+						get_template_part( 'template-parts/single/show/part-single-show-news' ); 
 						// Events
-						get_template_part( 'template-parts/single/show/part-single-show-events' ); 
+						get_template_part( 'template-parts/single/show/part-single-show-events' );
+						// Team
+						get_template_part( 'template-parts/single/show/part-single-show-members' ); 
+						// Chart
+						get_template_part( 'template-parts/single/show/part-single-show-chart' );  
 						// Show footer
 						get_template_part( 'template-parts/single/show/part-content-footer--show' ); 
 						?>
