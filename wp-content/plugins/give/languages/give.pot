@@ -557,7 +557,7 @@ msgstr ""
 msgid "Error"
 msgstr ""
 
-#: includes/class-give-scripts.php:291, includes/admin/shortcodes/abstract-shortcode-generator.php:91, src/Views/IframeView.php:234
+#: includes/class-give-scripts.php:291, includes/admin/shortcodes/abstract-shortcode-generator.php:91, src/Views/IframeView.php:235
 msgid "Close"
 msgstr ""
 
@@ -5605,7 +5605,7 @@ msgstr ""
 msgid "Donation Failed"
 msgstr ""
 
-#: includes/install.php:472, src/Form/Template.php:192
+#: includes/install.php:472, src/Form/Template.php:203
 msgid "We're sorry, your donation failed to process. Please try again or contact site support."
 msgstr ""
 
@@ -5669,55 +5669,55 @@ msgstr ""
 msgid "We were unable to find any donations associated with the email address provided. Please try again using another email."
 msgstr ""
 
-#: includes/misc-functions.php:295
+#: includes/misc-functions.php:297
 msgid "Donation Form ID: %d"
 msgstr ""
 
-#: includes/misc-functions.php:295
+#: includes/misc-functions.php:297
 msgid "Untitled donation form"
 msgstr ""
 
-#: includes/misc-functions.php:414
+#: includes/misc-functions.php:416
 msgid "%1$s is <strong>deprecated</strong> since GiveWP version %2$s with no alternative available."
 msgstr ""
 
-#: includes/misc-functions.php:410
+#: includes/misc-functions.php:412
 msgid "%1$s is <strong>deprecated</strong> since GiveWP version %2$s! Use %3$s instead."
 msgstr ""
 
-#: includes/misc-functions.php:512, includes/post-types.php:56
+#: includes/misc-functions.php:514, includes/post-types.php:56
 msgid "Donation Forms"
 msgstr ""
 
-#: includes/misc-functions.php:1533, includes/admin/tools/import/class-give-import-core-settings.php:472
+#: includes/misc-functions.php:1522, includes/admin/tools/import/class-give-import-core-settings.php:472
 msgid "Please upload or provide a valid JSON file."
 msgstr ""
 
-#: includes/misc-functions.php:1565
+#: includes/misc-functions.php:1554
 msgid "For security reasons, please confirm your email address (%s) to view your complete donation history."
 msgstr ""
 
-#: includes/misc-functions.php:1571, includes/admin/emails/class-email-access-email.php:45
+#: includes/misc-functions.php:1560, includes/admin/emails/class-email-access-email.php:45
 msgid "Confirm Email"
 msgstr ""
 
-#: includes/misc-functions.php:1573
+#: includes/misc-functions.php:1562
 msgid "Email Sent!"
 msgstr ""
 
-#: includes/misc-functions.php:1612
+#: includes/misc-functions.php:1601
 msgid "%1$s was called <strong>incorrectly</strong>. %2$s"
 msgstr ""
 
-#: includes/misc-functions.php:2183, includes/misc-functions.php:2223
+#: includes/misc-functions.php:2172, includes/misc-functions.php:2212
 msgid "View the receipt in your browser &raquo;"
 msgstr ""
 
-#: includes/misc-functions.php:2321
+#: includes/misc-functions.php:2310
 msgid "You must be logged in to view this donation receipt."
 msgstr ""
 
-#: includes/misc-functions.php:2300
+#: includes/misc-functions.php:2289
 msgid "You are trying to access invalid donation receipt. Please try again."
 msgstr ""
 
@@ -6159,7 +6159,7 @@ msgstr ""
 msgid "Hey! We've raised {total} of the {total_goal} we are trying to raise for this campaign!"
 msgstr ""
 
-#: includes/shortcodes.php:595, includes/forms/template.php:689, includes/forms/template.php:719, includes/forms/template.php:1937, includes/forms/widget.php:172, includes/gateways/stripe/includes/give-stripe-scripts.php:54, includes/gateways/stripe/includes/payment-methods/class-give-stripe-checkout.php:556, src/Form/Template.php:218, src/Form/Template.php:228, src/Onboarding/DefaultFormFactory.php:39, src/Onboarding/DefaultFormFactory.php:43, src/Onboarding/DefaultFormFactory.php:119, src/Form/Template/Options.php:56, src/Form/Template/Options.php:58, src/Form/Template/Options.php:131, src/Views/Form/Templates/Sequoia/Actions.php:214, src/Views/Form/Templates/Sequoia/Actions.php:259, src/Views/Form/Templates/Sequoia/optionConfig.php:68, src/Views/Form/Templates/Sequoia/optionConfig.php:70, src/Views/Form/Templates/Sequoia/Sequoia.php:67
+#: includes/shortcodes.php:595, includes/forms/template.php:689, includes/forms/template.php:719, includes/forms/template.php:1937, includes/forms/widget.php:172, includes/gateways/stripe/includes/give-stripe-scripts.php:54, includes/gateways/stripe/includes/payment-methods/class-give-stripe-checkout.php:556, src/Form/Template.php:230, src/Form/Template.php:240, src/Onboarding/DefaultFormFactory.php:39, src/Onboarding/DefaultFormFactory.php:43, src/Onboarding/DefaultFormFactory.php:119, src/Form/Template/Options.php:56, src/Form/Template/Options.php:58, src/Form/Template/Options.php:131, src/Views/Form/Templates/Sequoia/Actions.php:214, src/Views/Form/Templates/Sequoia/Actions.php:259, src/Views/Form/Templates/Sequoia/optionConfig.php:68, src/Views/Form/Templates/Sequoia/optionConfig.php:70, src/Views/Form/Templates/Sequoia/Sequoia.php:67
 msgid "Donate Now"
 msgstr ""
 
@@ -7608,7 +7608,7 @@ msgstr ""
 msgid "Donation Total:"
 msgstr ""
 
-#: includes/forms/template.php:2206, includes/gateways/stripe/includes/class-give-stripe-gateway.php:140, includes/gateways/stripe/includes/class-give-stripe-gateway.php:129, includes/gateways/stripe/includes/class-give-stripe-gateway.php:118
+#: includes/forms/template.php:2206, includes/gateways/stripe/includes/class-give-stripe-gateway.php:142, includes/gateways/stripe/includes/class-give-stripe-gateway.php:131, includes/gateways/stripe/includes/class-give-stripe-gateway.php:120
 msgid "Notice:"
 msgstr ""
 
@@ -10709,11 +10709,11 @@ msgstr ""
 msgid "Database Update"
 msgstr ""
 
-#: includes/admin/upgrades/class-give-updates.php:622, includes/admin/upgrades/class-give-updates.php:815, includes/admin/upgrades/views/upgrades.php:86
+#: includes/admin/upgrades/class-give-updates.php:622, includes/admin/upgrades/class-give-updates.php:815
 msgid "An unexpected issue occurred during the database update which caused it to stop automatically. Please contact support for assistance."
 msgstr ""
 
-#: includes/admin/upgrades/class-give-updates.php:623
+#: includes/admin/upgrades/class-give-updates.php:623, includes/admin/upgrades/views/upgrades.php:92
 msgid "Read More"
 msgstr ""
 
@@ -10741,7 +10741,7 @@ msgstr ""
 msgid "Updates Completed."
 msgstr ""
 
-#: includes/admin/upgrades/class-give-updates.php:809, includes/admin/upgrades/views/upgrades.php:88
+#: includes/admin/upgrades/class-give-updates.php:809, includes/admin/upgrades/views/upgrades.php:96
 msgid "The updates have been paused."
 msgstr ""
 
@@ -12480,29 +12480,37 @@ msgstr ""
 msgid "Update now"
 msgstr ""
 
-#: includes/admin/upgrades/views/upgrades.php:100
+#: includes/admin/upgrades/views/upgrades.php:90
+msgid "An unexpected issue occurred during the database update which caused it to stop automatically."
+msgstr ""
+
+#: includes/admin/upgrades/views/upgrades.php:91
+msgid "Please contact support for assistance."
+msgstr ""
+
+#: includes/admin/upgrades/views/upgrades.php:108
 msgid "Pause Upgrades"
 msgstr ""
 
-#: includes/admin/upgrades/views/upgrades.php:95
+#: includes/admin/upgrades/views/upgrades.php:103
 msgid "Restart Upgrades"
 msgstr ""
 
-#: includes/admin/upgrades/views/upgrades.php:110
+#: includes/admin/upgrades/views/upgrades.php:118
 msgid "Update %1$s of %2$s"
 msgstr ""
 
-#: includes/admin/upgrades/views/upgrades.php:160
+#: includes/admin/upgrades/views/upgrades.php:163
 msgid "Add-on Updates"
 msgstr ""
 
-#: includes/admin/upgrades/views/upgrades.php:166
+#: includes/admin/upgrades/views/upgrades.php:169
 msgid "There is %1$d GiveWP addon that needs to be updated. <a href=\"%2$s\">Update now</a>"
 msgid_plural "There are %1$d GiveWP addons that need to be updated. <a href=\"%2$s\">Update now</a>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/gateways/stripe/includes/class-give-stripe-checkout-session.php:60, includes/gateways/stripe/includes/class-give-stripe-checkout-session.php:100, includes/gateways/stripe/includes/class-give-stripe-customer.php:373, includes/gateways/stripe/includes/class-give-stripe-customer.php:469, includes/gateways/stripe/includes/class-give-stripe-customer.php:487, includes/gateways/stripe/includes/class-give-stripe-customer.php:568, includes/gateways/stripe/includes/class-give-stripe-gateway.php:177, includes/gateways/stripe/includes/class-give-stripe-gateway.php:312, includes/gateways/stripe/includes/class-give-stripe-gateway.php:386, includes/gateways/stripe/includes/class-give-stripe-gateway.php:465, includes/gateways/stripe/includes/class-give-stripe-logger.php:77, includes/gateways/stripe/includes/class-give-stripe-webhooks.php:170, includes/gateways/stripe/includes/give-stripe-helpers.php:568, includes/gateways/stripe/includes/give-stripe-helpers.php:664, includes/gateways/stripe/includes/give-stripe-helpers.php:829, includes/gateways/stripe/includes/admin/admin-actions.php:258
+#: includes/gateways/stripe/includes/class-give-stripe-checkout-session.php:60, includes/gateways/stripe/includes/class-give-stripe-checkout-session.php:100, includes/gateways/stripe/includes/class-give-stripe-customer.php:373, includes/gateways/stripe/includes/class-give-stripe-customer.php:469, includes/gateways/stripe/includes/class-give-stripe-customer.php:487, includes/gateways/stripe/includes/class-give-stripe-customer.php:568, includes/gateways/stripe/includes/class-give-stripe-gateway.php:179, includes/gateways/stripe/includes/class-give-stripe-gateway.php:314, includes/gateways/stripe/includes/class-give-stripe-gateway.php:388, includes/gateways/stripe/includes/class-give-stripe-gateway.php:467, includes/gateways/stripe/includes/class-give-stripe-logger.php:77, includes/gateways/stripe/includes/class-give-stripe-webhooks.php:170, includes/gateways/stripe/includes/give-stripe-helpers.php:570, includes/gateways/stripe/includes/give-stripe-helpers.php:666, includes/gateways/stripe/includes/give-stripe-helpers.php:831, includes/gateways/stripe/includes/admin/admin-actions.php:258
 msgid "Stripe Error"
 msgstr ""
 
@@ -12550,81 +12558,81 @@ msgstr ""
 msgid "The Stripe Gateway returned an error while creating the customer. Details: %s"
 msgstr ""
 
-#: includes/gateways/stripe/includes/class-give-stripe-customer.php:486, includes/gateways/stripe/includes/class-give-stripe-customer.php:567, includes/gateways/stripe/includes/class-give-stripe-gateway.php:184, includes/gateways/stripe/includes/class-give-stripe-gateway.php:239, includes/gateways/stripe/includes/class-give-stripe-gateway.php:279, includes/gateways/stripe/includes/class-give-stripe-gateway.php:319, includes/gateways/stripe/includes/class-give-stripe-gateway.php:385, includes/gateways/stripe/includes/give-stripe-helpers.php:671
+#: includes/gateways/stripe/includes/class-give-stripe-customer.php:486, includes/gateways/stripe/includes/class-give-stripe-customer.php:567, includes/gateways/stripe/includes/class-give-stripe-gateway.php:186, includes/gateways/stripe/includes/class-give-stripe-gateway.php:241, includes/gateways/stripe/includes/class-give-stripe-gateway.php:281, includes/gateways/stripe/includes/class-give-stripe-gateway.php:321, includes/gateways/stripe/includes/class-give-stripe-gateway.php:387, includes/gateways/stripe/includes/give-stripe-helpers.php:673
 msgid "An error occurred while processing the donation. Please try again."
 msgstr ""
 
-#: includes/gateways/stripe/includes/class-give-stripe-customer.php:487, includes/gateways/stripe/includes/class-give-stripe-customer.php:568, includes/gateways/stripe/includes/class-give-stripe-gateway.php:386
+#: includes/gateways/stripe/includes/class-give-stripe-customer.php:487, includes/gateways/stripe/includes/class-give-stripe-customer.php:568, includes/gateways/stripe/includes/class-give-stripe-gateway.php:388
 msgid "An error occurred retrieving or creating the "
 msgstr ""
 
 #. translators: %s Exception Message Body
-#: includes/gateways/stripe/includes/class-give-stripe-gateway.php:180
+#: includes/gateways/stripe/includes/class-give-stripe-gateway.php:182
 msgid "Unable to set Stripe API Version. Details: %s"
 msgstr ""
 
-#: includes/gateways/stripe/includes/class-give-stripe-gateway.php:232
+#: includes/gateways/stripe/includes/class-give-stripe-gateway.php:234
 msgid "Stripe Token Error"
 msgstr ""
 
 #. translators: %s Exception Message Body
-#: includes/gateways/stripe/includes/class-give-stripe-gateway.php:235
+#: includes/gateways/stripe/includes/class-give-stripe-gateway.php:237
 msgid "Unable to retrieve token. Details: %s"
 msgstr ""
 
-#: includes/gateways/stripe/includes/class-give-stripe-gateway.php:272
+#: includes/gateways/stripe/includes/class-give-stripe-gateway.php:274
 msgid "Stripe Source Error"
 msgstr ""
 
 #. translators: %s Exception Message Body
-#: includes/gateways/stripe/includes/class-give-stripe-gateway.php:275
+#: includes/gateways/stripe/includes/class-give-stripe-gateway.php:277
 msgid "Unable to retrieve source. Details: %s"
 msgstr ""
 
 #. translators: %s Exception Message Body
-#: includes/gateways/stripe/includes/class-give-stripe-gateway.php:315
+#: includes/gateways/stripe/includes/class-give-stripe-gateway.php:317
 msgid "Unable to create source. Details: %s"
 msgstr ""
 
-#: includes/gateways/stripe/includes/class-give-stripe-gateway.php:367
+#: includes/gateways/stripe/includes/class-give-stripe-gateway.php:369
 msgid "Stripe Card Error"
 msgstr ""
 
 #. translators: %s Exception Error Message
-#: includes/gateways/stripe/includes/class-give-stripe-gateway.php:370
+#: includes/gateways/stripe/includes/class-give-stripe-gateway.php:372
 msgid "The Stripe Gateway returned an error while processing a donation. Details: %s"
 msgstr ""
 
-#: includes/gateways/stripe/includes/class-give-stripe-gateway.php:438
+#: includes/gateways/stripe/includes/class-give-stripe-gateway.php:440
 msgid "The Stripe payment gateway returned an error while processing the donation."
 msgstr ""
 
-#: includes/gateways/stripe/includes/class-give-stripe-gateway.php:461, includes/gateways/stripe/includes/class-give-stripe-logger.php:73
+#: includes/gateways/stripe/includes/class-give-stripe-gateway.php:463, includes/gateways/stripe/includes/class-give-stripe-logger.php:73
 msgid "The Stripe API request was invalid, please try again."
 msgstr ""
 
-#: includes/gateways/stripe/includes/class-give-stripe-gateway.php:445, includes/gateways/stripe/includes/class-give-stripe-logger.php:61, includes/gateways/stripe/includes/admin/admin-actions.php:254
+#: includes/gateways/stripe/includes/class-give-stripe-gateway.php:447, includes/gateways/stripe/includes/class-give-stripe-logger.php:61, includes/gateways/stripe/includes/admin/admin-actions.php:254
 msgid "Message: %s"
 msgstr ""
 
-#: includes/gateways/stripe/includes/class-give-stripe-gateway.php:454, includes/gateways/stripe/includes/class-give-stripe-logger.php:67, includes/gateways/stripe/includes/admin/admin-actions.php:255
+#: includes/gateways/stripe/includes/class-give-stripe-gateway.php:456, includes/gateways/stripe/includes/class-give-stripe-logger.php:67, includes/gateways/stripe/includes/admin/admin-actions.php:255
 msgid "Code: %s"
 msgstr ""
 
-#: includes/gateways/stripe/includes/class-give-stripe-gateway.php:528
+#: includes/gateways/stripe/includes/class-give-stripe-gateway.php:524
 msgid "Your donation could not be recorded, please contact the site administrator."
 msgstr ""
 
-#: includes/gateways/stripe/includes/class-give-stripe-gateway.php:596
+#: includes/gateways/stripe/includes/class-give-stripe-gateway.php:592
 msgid "Stripe Charge Error"
 msgstr ""
 
 #. translators: %s Exception Error Message
-#: includes/gateways/stripe/includes/class-give-stripe-gateway.php:599
+#: includes/gateways/stripe/includes/class-give-stripe-gateway.php:595
 msgid "Unable to create a successful charge. Details: %s"
 msgstr ""
 
-#: includes/gateways/stripe/includes/class-give-stripe-gateway.php:603
+#: includes/gateways/stripe/includes/class-give-stripe-gateway.php:599
 msgid "Error processing donation with Stripe. Please try again."
 msgstr ""
 
@@ -12790,50 +12798,50 @@ msgstr ""
 msgid "Charge refunded in Stripe."
 msgstr ""
 
-#: includes/gateways/stripe/includes/give-stripe-helpers.php:491
+#: includes/gateways/stripe/includes/give-stripe-helpers.php:493
 msgid "-- N/A --"
 msgstr ""
 
 #. translators: %s Exception Error Message
-#: includes/gateways/stripe/includes/give-stripe-helpers.php:571
+#: includes/gateways/stripe/includes/give-stripe-helpers.php:573
 msgid "Unable to set application information to Stripe. Details: %s"
 msgstr ""
 
-#: includes/gateways/stripe/includes/give-stripe-helpers.php:576
+#: includes/gateways/stripe/includes/give-stripe-helpers.php:578
 msgid "Unable to set application information to Stripe. Please try again."
 msgstr ""
 
 #. translators: %s Exception Message Body
-#: includes/gateways/stripe/includes/give-stripe-helpers.php:667
+#: includes/gateways/stripe/includes/give-stripe-helpers.php:669
 msgid "Unable to set Stripe API Key. Details: %s"
 msgstr ""
 
-#: includes/gateways/stripe/includes/give-stripe-helpers.php:976, includes/gateways/stripe/includes/payment-methods/class-give-stripe-card.php:295
+#: includes/gateways/stripe/includes/give-stripe-helpers.php:978, includes/gateways/stripe/includes/payment-methods/class-give-stripe-card.php:295
 msgid "Stripe Customer Creation Failed"
 msgstr ""
 
 #. translators: %s Donation Data
-#: includes/gateways/stripe/includes/give-stripe-helpers.php:979
+#: includes/gateways/stripe/includes/give-stripe-helpers.php:981
 msgid "Customer creation failed while processing the donation. Details: %s"
 msgstr ""
 
-#: includes/gateways/stripe/includes/give-stripe-helpers.php:983, includes/gateways/stripe/includes/payment-methods/class-give-stripe-card.php:302, includes/gateways/stripe/includes/payment-methods/class-give-stripe-checkout.php:213
+#: includes/gateways/stripe/includes/give-stripe-helpers.php:985, includes/gateways/stripe/includes/payment-methods/class-give-stripe-card.php:302, includes/gateways/stripe/includes/payment-methods/class-give-stripe-checkout.php:213
 msgid "The Stripe Gateway returned an error while processing the donation."
 msgstr ""
 
-#: includes/gateways/stripe/includes/give-stripe-helpers.php:1188
+#: includes/gateways/stripe/includes/give-stripe-helpers.php:1191
 msgid "By providing your IBAN and confirming this payment, you are authorizing %1$s and Stripe, our payment service provider, to send instructions to your bank to debit your account and your bank to debit your account in accordance with those instructions. You are entitled to a refund from your bank under the terms and conditions of your agreement with your bank. A refund must be claimed within 8 weeks starting from the date on which your account was debited."
 msgstr ""
 
-#: includes/gateways/stripe/includes/give-stripe-helpers.php:1195
+#: includes/gateways/stripe/includes/give-stripe-helpers.php:1198
 msgid "By providing your bank account details and confirming this payment, you agree to this Direct Debit Request and the <a href=\"%1$s\" target=\"_blank\">Direct Debit Request service agreement</a>, and authorize Stripe Payments Australia Pty Ltd ACN 160 180 343 Direct Debit User ID number 507156 (“Stripe”) to debit your account through the Bulk Electronic Clearing System (BECS) on behalf of %2$s (the “Merchant”) for any amounts separately communicated to you by the Merchant. You certify that you are either an account holder or an authorized signatory on the account listed above."
 msgstr ""
 
-#: includes/gateways/stripe/includes/give-stripe-helpers.php:1532
+#: includes/gateways/stripe/includes/give-stripe-helpers.php:1535
 msgid "Give - Stripe Error"
 msgstr ""
 
-#: includes/gateways/stripe/includes/give-stripe-helpers.php:1535
+#: includes/gateways/stripe/includes/give-stripe-helpers.php:1538
 msgid "Unable to retrieve account details. Please contact support for assistance. Details:"
 msgstr ""
 
@@ -13554,7 +13562,7 @@ msgstr ""
 msgid "Field with %1$s Id does not exist in group."
 msgstr ""
 
-#: src/Framework/Migrations/MigrationsRunner.php:98
+#: src/Framework/Migrations/MigrationsRunner.php:96, src/Framework/Migrations/Actions/ManuallyRunMigration.php:34
 msgid "There was a problem running the migrations. Please reach out to GiveWP support for assistance:"
 msgstr ""
 
@@ -13594,19 +13602,19 @@ msgstr ""
 msgid "Grey"
 msgstr ""
 
-#: src/MultiFormGoals/ProgressBar/Model.php:261
+#: src/MultiFormGoals/ProgressBar/Model.php:274
 msgid "day to go"
 msgid_plural "days to go"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MultiFormGoals/ProgressBar/Model.php:264
+#: src/MultiFormGoals/ProgressBar/Model.php:277
 msgid "hour to go"
 msgid_plural "hours to go"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/MultiFormGoals/ProgressBar/Model.php:267
+#: src/MultiFormGoals/ProgressBar/Model.php:280
 msgid "minute to go"
 msgid_plural "minutes to go"
 msgstr[0] ""

@@ -179,7 +179,7 @@ class Permalink_Manager_Helper_Functions extends Permalink_Manager_Class {
 	static function get_disabled_post_types($include_user_excluded = true) {
 		global $wp_post_types, $permalink_manager_options;
 
-		$disabled_post_types = array('revision', 'algolia_task', 'fl_builder', 'fl-builder', 'fl-builder-template', 'fl-theme-layout', 'wc_product_tab', 'wc_voucher', 'wc_voucher_template', 'sliders', 'thirstylink', 'elementor_library', 'cms_block');
+		$disabled_post_types = array('revision', 'algolia_task', 'fl_builder', 'fl-builder', 'fl-builder-template', 'fl-theme-layout', 'fusion_tb_layout', 'fusion_tb_section', 'fusion_template', 'fusion_element', 'wc_product_tab', 'wc_voucher', 'wc_voucher_template', 'sliders', 'thirstylink', 'elementor_library', 'cms_block');
 
 		// 1. Disable post types that are not publicly_queryable
 		foreach($wp_post_types as $post_type) {
@@ -478,7 +478,7 @@ class Permalink_Manager_Helper_Functions extends Permalink_Manager_Class {
 
 		// Remove special characters
 		if($sanitize_slugs !== false) {
-			$clean = preg_replace("/[\s_|+-]+/", "-", $clean);
+			$clean = preg_replace("/[\s|+-]+/", "-", $clean);
 			$clean = preg_replace("/[,]+/", "", $clean);
 			$clean = preg_replace('/([\.]+)(?![a-z]{3,4}$)/i', '', $clean);
 			$clean = preg_replace('/([-\s+]\/[-\s+])/', '-', $clean);
@@ -636,34 +636,28 @@ class Permalink_Manager_Helper_Functions extends Permalink_Manager_Class {
 		if(!empty($duplicated_ids)) {
 			$all_duplicates = $duplicated_ids;
 		} else if(in_array($uri, $permalink_manager_uris)) {
-			$all_duplicates = array_keys($permalink_manager_uris, $uri);
+			$all_duplicates = (array) array_keys($permalink_manager_uris, $uri);
 		}
 
  		if(!empty($all_duplicates)) {
 			// Get the language code of current element
 			$this_uri_lang = Permalink_Manager_Language_Plugins::get_language_code($element_id);
 
-			if($this_uri_lang) {
-				foreach($all_duplicates as $key => $duplicated_id) {
-					// Ignore custom redirects
-					if(strpos($key, 'redirect-') !== false) {
-						unset($all_duplicates[$key]);
-						continue;
-					}
-
-					$duplicated_uri_lang = Permalink_Manager_Language_Plugins::get_language_code($duplicated_id);
-
-					// Ignore the other elements in other languages to prevent the false alert
-					if($duplicated_uri_lang !== $this_uri_lang) {
-						unset($all_duplicates[$key]);
-					}
+			foreach($all_duplicates as $key => $duplicated_id) {
+				// Ignore custom redirects
+				if(strpos($key, 'redirect-') !== false) {
+					unset($all_duplicates[$key]);
+					continue;
 				}
-			}
 
-			// Ignore the URI for requested element to prevent the false alert
-			if(in_array($element_id, $all_duplicates)) {
-				$this_element_key = array_search($element_id, $all_duplicates);
-				unset($all_duplicates[$this_element_key]);
+				if($this_uri_lang) {
+					$duplicated_uri_lang = Permalink_Manager_Language_Plugins::get_language_code($duplicated_id);
+				}
+
+				// Ignore the URI for requested element and other elements in other languages to prevent the false alert
+				if((!empty($duplicated_uri_lang) && $duplicated_uri_lang !== $this_uri_lang) || $element_id == $duplicated_id) {
+					unset($all_duplicates[$key]);
+				}
 			}
 
 			return (count($all_duplicates) > 0) ? true : false;
