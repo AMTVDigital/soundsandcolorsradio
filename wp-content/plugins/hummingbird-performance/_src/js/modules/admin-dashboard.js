@@ -1,4 +1,6 @@
-/* global mixpanel */
+/* global WPHB_Admin */
+/* global wphbDashboardStrings */
+/* global wphbPerformanceStrings */
 
 import Fetcher from '../utils/fetcher';
 
@@ -55,9 +57,7 @@ import Fetcher from '../utils/fetcher';
 			this.skipSetup( false );
 
 			// Run performance test
-			window.WPHB_Admin.getModule( 'performance' ).performanceTest(
-				this.strings.finishedTestURLsLink
-			);
+			window.WPHB_Admin.getModule( 'performance' ).scanner.start();
 		},
 
 		hideUpgradeSummary: () => {

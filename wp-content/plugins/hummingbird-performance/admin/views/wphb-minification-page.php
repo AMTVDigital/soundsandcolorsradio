@@ -5,8 +5,6 @@
  * @package Hummingbird
  */
 
-use Hummingbird\Core\Settings;
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -51,10 +49,10 @@ endif;
 
 $this->modal( 'minification-advanced' );
 $this->modal( 'automatic-ao-how-does-it-work' );
-if ( 'advanced' === $this->mode ) {
-	$this->modal( 'manual-ao-how-does-it-work' );
-	$this->modal( 'minification-tour' );
+$this->modal( 'manual-ao-how-does-it-work' );
 
+if ( 'advanced' === $this->mode ) {
+	$this->modal( 'minification-tour' );
 	if ( get_option( 'wphb-minification-show-config_modal' ) ) {
 		$this->modal( 'minification-basic' );
 	}
@@ -70,10 +68,9 @@ if ( ! \Hummingbird\Core\Utils::is_member() ) {
 
 <script>
 	jQuery(document).ready( function() {
-		var module = window.WPHB_Admin.getModule( 'minification' );
-
+		window.WPHB_Admin.getModule( 'minification' );
 		<?php if ( isset( $_GET['run'] ) ) : ?>
-			module.$checkFilesButton.trigger( 'click' );
+			jQuery( document ).trigger( 'check-files' );
 		<?php endif; ?>
 	});
 </script>

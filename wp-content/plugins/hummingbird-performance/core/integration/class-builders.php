@@ -52,6 +52,7 @@ class Builders {
 		$excluded_requests = array(
 			'cs_preview_state', // Cornerstone builder request key.
 			'elementor-preview', // Elementor's request key.
+			'ct_builder', // Oxygen builder.
 		);
 
 		$exclude = ! empty( array_intersect( $excluded_requests, array_keys( $_REQUEST ) ) );

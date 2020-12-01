@@ -44,8 +44,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<li>
 			<span class="sui-list-label"><?php esc_html_e( 'Outages', 'wphb' ); ?></span>
 			<span class="sui-list-detail">
-				<?php if ( is_object( $uptime_stats ) && intval( $uptime_stats->outages ) > 0 ) : ?>
-					<?php echo intval( $uptime_stats->outages ); ?>
+				<?php if ( is_object( $uptime_stats ) && (int) $uptime_stats->outages > 0 ) : ?>
+					<?php echo (int) $uptime_stats->outages; ?>
 				<?php else : ?>
 					<?php esc_html_e( 'None', 'wphb' ); ?>
 				<?php endif; ?>

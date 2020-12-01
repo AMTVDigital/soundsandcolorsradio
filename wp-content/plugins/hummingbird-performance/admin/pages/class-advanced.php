@@ -10,6 +10,8 @@ namespace Hummingbird\Admin\Pages;
 
 use Hummingbird\Admin\Page;
 use Hummingbird\Core\Modules\Advanced as Advanced_Module;
+use Hummingbird\Core\Modules\Caching\Preload;
+use Hummingbird\Core\Modules\Minify\Minify_Group;
 use Hummingbird\Core\Settings;
 use Hummingbird\Core\Utils;
 
@@ -36,6 +38,7 @@ class Advanced extends Page {
 			'db'     => __( 'Database Cleanup', 'wphb' ),
 			'lazy'   => __( 'Lazy Load', 'wphb' ),
 			'system' => __( 'System Information', 'wphb' ),
+			'health' => __( 'Site Health', 'wphb' ),
 		);
 	}
 
@@ -89,6 +92,20 @@ class Advanced extends Page {
 			null,
 			null,
 			'system'
+		);
+
+		/**
+		 * Site health meta box.
+		 *
+		 * @since 2.7.0
+		 */
+		$this->add_meta_box(
+			'advanced/site-health',
+			__( 'Site Health', 'wphb' ),
+			array( $this, 'site_health_metabox' ),
+			null,
+			null,
+			'health'
 		);
 
 		if ( is_multisite() && ! is_network_admin() ) {
@@ -230,6 +247,41 @@ class Advanced extends Page {
 				'is_smush_installed'              => $this->is_smush_installed(),
 				'is_smush_pro'                    => $this->is_smush_pro,
 				'smush_lazy_load'                 => $this->is_lazy_load_enabled(),
+			)
+		);
+	}
+
+	/**
+	 * *************************
+	 * Site health page meta boxes.
+	 *
+	 * @since 2.7.0
+	 ***************************/
+
+	/**
+	 * Site health meta box.
+	 *
+	 * @since 2.7.0
+	 */
+	public function site_health_metabox() {
+		$advanced_module = Utils::get_module( 'advanced' );
+
+		$db = $advanced_module->get_db_size();
+
+		$minify_groups  = Minify_Group::get_minify_groups();
+		$orphaned_metas = $advanced_module->get_orphaned_ao() - 18 * count( $minify_groups );
+
+		$preloader = new Preload();
+
+		$this->view(
+			'advanced/site-health-meta-box',
+			array(
+				'data_size'      => $db['data_size'],
+				'index_size'     => $db['index_size'],
+				'minify_groups'  => $minify_groups,
+				'orphaned_metas' => $orphaned_metas,
+				'preloading'     => Settings::get_setting( 'preload', 'page_cache' ) || get_transient( 'wphb-preloading' ),
+				'queue_size'     => $preloader->get_queue_size(),
 			)
 		);
 	}

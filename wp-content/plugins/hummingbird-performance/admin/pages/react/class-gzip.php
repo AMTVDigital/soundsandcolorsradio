@@ -82,6 +82,8 @@ class Gzip extends Page {
 					'HBFetchNonce' => wp_create_nonce( 'wphb-fetch' ),
 				),
 				'module'   => array(
+					'is_wpmu_hosting'   => isset( $_SERVER['WPMUDEV_HOSTED'] ),
+					'is_white_labeled'  => apply_filters( 'wpmudev_branding_hide_branding', false ),
 					'htaccess_error'    => isset( $_GET['htaccess-error'] ), // Input data ok.
 					'htaccess_writable' => Module_Server::is_htaccess_writable(),
 					'htaccess_written'  => Module_Server::is_htaccess_written( 'gzip' ),

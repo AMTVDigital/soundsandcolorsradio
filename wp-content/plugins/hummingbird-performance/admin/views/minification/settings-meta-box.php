@@ -168,7 +168,7 @@ $is_site_cdn_enabled = $cdn_status && $is_member;
 		<?php
 		$this->admin_notices->show_inline(
 			sprintf( /* translators: %s: upsell modal href link */
-				__( "With our pro version of Hummingbird you can super-compress your files and then host them on our blazing fast CDN. Get CDN as part of a WPMU DEV membership with 24/7 support and lots of handy site management tools.  <a href='%s' target='_blank'>Try Pro for FREE today!</a>", 'wphb' ),
+				__( "With our pro version of Hummingbird you can super-compress your files and then host them on our blazing-fast CDN. Get CDN as part of a WPMU DEV membership with 24/7 support and lots of handy site management tools.  <a href='%s' target='_blank'>Try Pro for FREE today!</a>", 'wphb' ),
 				\Hummingbird\Core\Utils::get_link( 'plugin', 'hummingbird_assetoptimization_settings_upsell_link' )
 			),
 			'sui-upsell-notice'

@@ -22,7 +22,7 @@ if ( empty( $method ) ) {
 	$method = 'click';
 }
 
-$page_comments = intval( get_option( 'page_comments' ) );
+$page_comments = (int) get_option( 'page_comments' );
 if ( 0 === $page_comments ) {
 	/**
 	 * Override page_comments decision set from discussion settings page.

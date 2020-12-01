@@ -112,10 +112,19 @@
 /**
  * Browser caching meta box
  */
+.sui-wrap .box-caching-status .sui-upsell-notice span {
+    display: block;
+    margin-top: 10px;
+}
 .sui-wrap:not(.sui-color-accessible) .box-dashboard-browser-caching-module .sui-upsell-notice p,
 .sui-wrap:not(.sui-color-accessible) .box-caching-status .sui-upsell-notice p {
     border-left: 2px solid #17a8e3 !important;
     &:before { color: #17a8e3 !important; }
+    a {
+        color: #888 !important;
+        &:hover { color: #fff !important }
+    }
+    a:not(.sui-button) { color: #17a8e3 !important; }
 }
 
 .sui-wrap .box-caching-status {
@@ -156,10 +165,6 @@
         }
 
         margin-top: 30px;
-        padding-bottom: 30px;
-        .sui-button {
-            float: right;
-        }
     }
 
     .wphb-block-content-blue {

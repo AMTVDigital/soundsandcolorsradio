@@ -81,6 +81,7 @@
         }
     }
 }
+
 /* Lazy Load Tab */
 .wpmud #wphb-box-advanced-lazy {
 
@@ -172,5 +173,44 @@
             }
         }
     }
+}
 
+/* Health page tab */
+.wpmud .sui-wrap .box-advanced-site-health {
+    .wphb-database-stats {
+        display: flex;
+        & > div:first-child {
+            flex-basis: 220px
+        }
+        h4 { margin-bottom: 0 }
+    }
+
+    .sui-table {
+        table-layout: auto;
+        margin-top: 15px;
+        thead tr th:first-child { width: 60% }
+        tbody:last-child>tr:last-child>td {
+            border-bottom: 1px solid #E6E6E6;
+        }
+
+        .sui-table-item-title > span.sui-tooltip {
+            margin-left: 5px;
+            .sui-icon-info { vertical-align: sub }
+        }
+    }
+
+    #wphb-health-icon-cache-purge:hover {
+        background-color: #FFE5E9;
+        .sui-icon-trash:before { color: #FF6D6D }
+    }
+
+    .sui-box-body>.sui-tabs-flushed>.sui-tabs-content>.sui-tab-content {
+        padding-left: 0;
+        padding-right: 0;
+
+        & > * {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    }
 }

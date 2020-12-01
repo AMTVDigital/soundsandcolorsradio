@@ -40,15 +40,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<ul class="sui-list">
 		<li>
 			<span class="sui-list-label"><?php esc_html_e( 'Total files', 'wphb' ); ?></span>
-			<span class="sui-list-detail"><?php echo intval( $enqueued_files ); ?></span>
+			<span class="sui-list-detail"><?php echo (int) $enqueued_files; ?></span>
 		</li>
 		<li>
 			<span class="sui-list-label"><?php esc_html_e( 'Filesize reductions', 'wphb' ); ?></span>
 			<span class="sui-list-detail">
-				<?php if ( 'basic' === $this->mode && 0 === intval( $compressed_size ) ) : ?>
+				<?php if ( 'basic' === $this->mode && 0 === (int) $compressed_size ) : ?>
 					<?php esc_html_e( 'Files are compressed', 'wphb' ); ?> <i class="sui-icon-check-tick sui-lg" aria-hidden="true"></i>
 				<?php else : ?>
-					<?php echo intval( $compressed_size ); ?>kb
+					<?php echo (int) $compressed_size; ?>kb
 				<?php endif; ?>
 			</span>
 		</li>
@@ -66,7 +66,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<span class="sui-toggle-slider"></span>
 					</label>
 				<?php elseif ( ! is_multisite() && ! $is_member ) : ?>
-					<a href="<?php echo esc_url( \Hummingbird\Core\Utils::get_link( 'plugin', 'hummingbird_topsummary_cdnbutton' ) ); ?>" target="_blank" class="sui-button sui-button-purple sui-tooltip sui-tooltip-top-right" data-tooltip="<?php esc_html_e( 'Host your files on WPMU DEV’s blazing fast CDN', 'wphb' ); ?>">
+					<a href="<?php echo esc_url( \Hummingbird\Core\Utils::get_link( 'plugin', 'hummingbird_topsummary_cdnbutton' ) ); ?>" target="_blank" class="sui-button sui-button-purple sui-tooltip sui-tooltip-top-right" data-tooltip="<?php esc_html_e( 'Host your files on WPMU DEV’s blazing-fast CDN', 'wphb' ); ?>">
 						<?php esc_html_e( 'Try CDN Free', 'wphb' ); ?>
 					</a>
 				<?php elseif ( $use_cdn && $is_member ) : ?>

@@ -140,6 +140,20 @@ class GzipSummary extends React.Component {
 		} else if ( 0 === failedGzip.length ) {
 			classes = 'sui-notice-success';
 			text = __( 'Gzip compression is currently active. Good job!' );
+
+			// Gzip enabled on host site.
+			if ( false === this.props.data.htaccess_written ) {
+				text = __(
+					'GZip compression is already running smoothly on your site. Your hosting has automatically pre-configured GZip compression for you and no further actions are required.'
+				);
+			}
+
+			// Replace notice on WPMU hosting.
+			if ( false === this.props.data.is_white_labeled && true === this.props.data.is_wpmu_hosting ) {
+				text = __(
+					'GZip compression is already running smoothly on your site. Since your site is hosted with WPMU DEV, GZip compression has been automatically configured and no further actions are required.'
+				);
+			}
 		}
 
 		// Build the items array.

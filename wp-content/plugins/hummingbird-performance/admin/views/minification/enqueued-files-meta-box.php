@@ -83,9 +83,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</div>
 
 	<div class="wphb-minification-files-select">
-		<label for="minification-bulk-file" class="screen-reader-text"><?php esc_html_e( 'Select all CSS files', 'wphb' ); ?></label>
+		<label for="minification-bulk-file-css" class="screen-reader-text"><?php esc_html_e( 'Select all CSS files', 'wphb' ); ?></label>
 		<label class="sui-checkbox">
-			<input type="checkbox" id="minification-bulk-file" name="minification-bulk-files" class="wphb-minification-bulk-file-selector" data-type="CSS">
+			<input type="checkbox" id="minification-bulk-file-css" name="minification-bulk-files" class="wphb-minification-bulk-file-selector" data-type="CSS">
 			<span aria-hidden="true"></span>
 		</label>
 		<h3><?php esc_html_e( 'CSS', 'wphb' ); ?></h3>
@@ -96,9 +96,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</div>
 
 	<div class="wphb-minification-files-select">
-		<label for="minification-bulk-file" class="screen-reader-text"><?php esc_html_e( 'Select all JavaScript files', 'wphb' ); ?></label>
+		<label for="minification-bulk-file-js" class="screen-reader-text"><?php esc_html_e( 'Select all JavaScript files', 'wphb' ); ?></label>
 		<label class="sui-checkbox">
-			<input type="checkbox" id="minification-bulk-file" name="minification-bulk-files" class="wphb-minification-bulk-file-selector" data-type="JS">
+			<input type="checkbox" id="minification-bulk-file-js" name="minification-bulk-files" class="wphb-minification-bulk-file-selector" data-type="JS">
 			<span aria-hidden="true"></span>
 		</label>
 		<h3><?php esc_html_e( 'JavaScript', 'wphb' ); ?></h3>
@@ -110,9 +110,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<?php if ( '' !== $others_rows ) : ?>
 		<div class="wphb-minification-files-select">
-			<label for="minification-bulk-file" class="screen-reader-text"><?php esc_html_e( 'Select all Other files', 'wphb' ); ?></label>
+			<label for="minification-bulk-file-other" class="screen-reader-text"><?php esc_html_e( 'Select all Other files', 'wphb' ); ?></label>
 			<label class="sui-checkbox">
-				<input type="checkbox" id="minification-bulk-file" name="minification-bulk-files" class="wphb-minification-bulk-file-selector" data-type="OTHER">
+				<input type="checkbox" id="minification-bulk-file-other" name="minification-bulk-files" class="wphb-minification-bulk-file-selector" data-type="OTHER">
 				<span aria-hidden="true"></span>
 			</label>
 			<h3><?php esc_html_e( 'Other', 'wphb' ); ?></h3>

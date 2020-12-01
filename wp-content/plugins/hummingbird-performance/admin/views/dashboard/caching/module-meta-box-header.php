@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h3  class="sui-box-title"><?php echo esc_html( $title ); ?></h3>
 <?php if ( $issues && ! $cf_active ) : ?>
 	<div class="sui-actions-left">
-		<div class="sui-tag sui-tag-warning"><?php echo intval( $issues ); ?></div>
+		<div class="sui-tag sui-tag-warning"><?php echo (int) $issues; ?></div>
 	</div>
 <?php elseif ( 691200 !== $cf_current && $cf_active ) : ?>
 	<div class="sui-tag sui-tag-warning">5</div>

@@ -39,8 +39,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <?php if ( Utils::get_module( 'minify' )->scanner->is_scanning() ) : ?>
 	<script>
-		window.addEventListener("load", function(){
-			jQuery('#check-files').click();
-		});
+		jQuery(document).ready( function() {
+			window.WPHB_Admin.getModule( 'minification' );
+			jQuery( document ).trigger( 'check-files' );
+		} );
 	</script>
 <?php endif; ?>

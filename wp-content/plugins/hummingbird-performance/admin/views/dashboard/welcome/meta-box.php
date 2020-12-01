@@ -74,7 +74,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<?php elseif ( $cf_active && 691200 > $cf_current ) : ?>
 					<span class="sui-tag sui-tag-warning">5</span>
 				<?php else : ?>
-					<span class="sui-tag sui-tag-warning"><?php echo intval( $caching_issues ); ?></span>
+					<span class="sui-tag sui-tag-warning"><?php echo (int) $caching_issues; ?></span>
 				<?php endif; ?>
 			</span>
 		</li>
@@ -82,7 +82,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<span class="sui-list-label"><?php esc_html_e( 'GZIP Compression', 'wphb' ); ?></span>
 			<span class="sui-list-detail">
 				<?php if ( $gzip_issues ) : ?>
-					<span class="sui-tag sui-tag-warning"><?php echo intval( $gzip_issues ); ?></span>
+					<span class="sui-tag sui-tag-warning"><?php echo (int) $gzip_issues; ?></span>
 				<?php else : ?>
 					<i class="sui-icon-check-tick sui-lg sui-success" aria-hidden="true"></i>
 				<?php endif; ?>

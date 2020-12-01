@@ -14,12 +14,12 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => '2.9.2',
-    'version' => '2.9.2.0',
+    'pretty_version' => '2.9.4',
+    'version' => '2.9.4.0',
     'aliases' => 
     array (
     ),
-    'reference' => '33473beaad61464757eb049a7300de54333fa107',
+    'reference' => '85d0a6ff1f9aaab1c5233f11c78e687339639090',
     'name' => 'impress-org/give',
   ),
   'versions' => 
@@ -35,12 +35,12 @@ private static $installed = array (
     ),
     'impress-org/give' => 
     array (
-      'pretty_version' => '2.9.2',
-      'version' => '2.9.2.0',
+      'pretty_version' => '2.9.4',
+      'version' => '2.9.4.0',
       'aliases' => 
       array (
       ),
-      'reference' => '33473beaad61464757eb049a7300de54333fa107',
+      'reference' => '85d0a6ff1f9aaab1c5233f11c78e687339639090',
     ),
     'paypal/paypal-checkout-sdk' => 
     array (

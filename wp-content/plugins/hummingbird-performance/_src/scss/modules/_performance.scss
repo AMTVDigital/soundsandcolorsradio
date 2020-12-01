@@ -83,6 +83,38 @@
         }
     }
 
+    /**
+     * Performance audits.
+     */
+    .box-performance-audits-opportunities {
+        #server-response-time {
+            .sui-settings-box {
+                margin-top: 20px;
+                margin-bottom: 20px;
+
+                .sui-image {
+                    float: left;
+                    margin-bottom: 20px;
+                }
+            }
+
+            .wphb-ttfb-measurements {
+                display: flex;
+                margin-top: 20px;
+                margin-bottom: 20px;
+
+                .sui-form-field { margin-bottom: 0; }
+            }
+
+            .sui-form-control[disabled] {
+                font-size: 12px;
+                text-align: center;
+                color: #333333;
+                background-color: #FAFAFA;
+            }
+        }
+    }
+
     .sui-actions-right .sui-tooltip {
         margin-right: 10px;
     }

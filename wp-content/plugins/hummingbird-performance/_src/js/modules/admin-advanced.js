@@ -5,6 +5,7 @@
  * Internal dependencies
  */
 import Fetcher from '../utils/fetcher';
+import { OrphanedScanner, BATCH_SIZE } from '../scanners/OrphanedScanner';
 
 ( function ( $ ) {
 	'use strict';
@@ -165,7 +166,72 @@ import Fetcher from '../utils/fetcher';
 			/**
 			 * Initialize color picker on lazy load
 			 */
-			this.createPickers();
+			if ( true === window.location.search.includes( 'view=lazy' ) ) {
+				this.createPickers();
+			}
+
+			/**
+			 * Purge cache on site health page.
+			 *
+			 * @since 2.7.0
+			 */
+			const purgeBtn = document.getElementById( 'btn-cache-purge' );
+			if ( purgeBtn ) {
+				purgeBtn.addEventListener( 'click', () => this.purgeDb() );
+			}
+			const purgeIcon = document.getElementById( 'icon-cache-purge' );
+			if ( purgeIcon ) {
+				purgeIcon.addEventListener( 'click', () => this.purgeDb() );
+			}
+
+			/**
+			 * Purge asset optimization on site health page.
+			 *
+			 * @since 2.7.0
+			 */
+			const purgeAOIcon = document.getElementById( 'icon-minify-purge' );
+			if ( purgeAOIcon ) {
+				purgeAOIcon.addEventListener( 'click', () =>
+					this.purgeDb( 'minify' )
+				);
+			}
+
+			/**
+			 * Show modal.
+			 *
+			 * @since 2.7.0
+			 */
+			const modalTrigger = document.getElementById(
+				'icon-ao-orphan-purge'
+			);
+			if ( modalTrigger ) {
+				modalTrigger.addEventListener( 'click', () =>
+					window.SUI.openModal(
+						'site-health-orphaned-modal',
+						'icon-minify-purge',
+						'site-health-orphaned-clear'
+					)
+				);
+			}
+
+			/**
+			 * Purge orphaned data from modal.
+			 *
+			 * @since 2.7.0
+			 */
+			const purgeModalBtn = document.getElementById(
+				'site-health-orphaned-clear'
+			);
+			if ( purgeModalBtn ) {
+				purgeModalBtn.addEventListener( 'click', () => {
+					const count = document.getElementById( 'count-ao-orphaned' )
+						.innerHTML;
+					const steps = Math.ceil( parseInt( count ) / BATCH_SIZE );
+
+					const scanner = new OrphanedScanner( steps, 0 );
+					scanner.start();
+				} );
+			}
 
 			return this;
 		},
@@ -334,6 +400,38 @@ import Fetcher from '../utils/fetcher';
 						} );
 				} );
 			}
+		},
+
+		/**
+		 * Purge page cache preloader database entries or asset optimization custom post type groups and orphaned data.
+		 *
+		 * @since 2.7.0
+		 *
+		 * @param {string} type  What to purge. Accepts: cache, minify.
+		 */
+		purgeDb( type = 'cache' ) {
+			const button = document.getElementById( 'btn-' + type + '-purge' );
+			const icon = document.getElementById( 'icon-' + type + '-purge' );
+
+			if ( button ) {
+				button.classList.toggle( 'sui-button-onload-text' );
+			}
+			icon.classList.toggle( 'sui-button-onload' );
+
+			Fetcher.common.call( 'wphb_advanced_purge_' + type ).then( () => {
+				document.getElementById( 'count-' + type ).innerHTML = '0';
+
+				if ( button ) {
+					button.classList.toggle( 'sui-button-onload-text' );
+				}
+				icon.classList.toggle( 'sui-button-onload' );
+
+				const str =
+					'successAdvPurge' +
+					type.charAt( 0 ).toUpperCase() +
+					type.slice( 1 );
+				WPHB_Admin.notices.show( wphb.strings[ str ] );
+			} );
 		},
 	};
 } )( jQuery );

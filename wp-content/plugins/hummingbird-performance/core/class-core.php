@@ -172,6 +172,10 @@ class Core {
 			$menu['wphb-clear-cache'] = array( 'title' => __( 'Clear page cache', 'wphb' ) );
 		}
 
+		if ( $pc_module->is_active() && is_multisite() && is_network_admin() ) {
+			$menu['wphb-clear-cache-network-wide'] = array( 'title' => __( 'Clear page cache on all subsites', 'wphb' ) );
+		}
+
 		if ( ! is_admin() ) {
 			$avoid_minify = filter_input( INPUT_GET, 'avoid-minify', FILTER_VALIDATE_BOOLEAN );
 			if ( Utils::get_module( 'minify' )->is_active() ) {

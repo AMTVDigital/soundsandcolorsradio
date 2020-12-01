@@ -1,6 +1,6 @@
 === Hummingbird – Optimize Speed, Enable Cache, Minify CSS & Defer Critical JS ===
 Plugin Name: Hummingbird – Optimize Speed, Enable Cache, Minify CSS & Defer Critical JS
-Version: 2.6.2
+Version: 2.7.0
 Author: WPMU DEV
 Author URI: https://premium.wpmudev.org/
 Contributors: WPMUDEV
@@ -8,7 +8,7 @@ Tags: defer css javascript, cache, minify css, minify javascript, speed up wordp
 Requires at least: 4.6
 Tested up to: 5.5
 Requires PHP: 5.6
-Stable tag: 2.6.2
+Stable tag: 2.7.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
@@ -46,7 +46,7 @@ You’ll get faster loading pages, higher search rankings (SERP) and PageSpeed s
 - Asset Optimization – Position, minify and combine Javascript and CSS files for top performance.
 - Better Rankings – Improve scores on Google PageSpeed Insights (SEO ranking factor), YSlow, Pingdom, and GTmetrix.
 - Increase Your Conversion Rate - Don’t keep visitors waiting: faster sites convert better.
-- GZIP Compression – Blazing fast HTML, JavaScript, and stylesheet (CSS) transfer.
+- GZIP Compression – Blazing-fast HTML, JavaScript, and stylesheet (CSS) transfer.
 
 = Hummingbird Features to Speed Up WordPress =
 
@@ -171,6 +171,21 @@ Asset Optimization is a great way to speed up your site but moving, combining, u
 4. Use suggestions to make improvements and speed up your site.
 
 == Changelog ==
+
+= 2.7.0 ( 2020-11-12 ) =
+
+- New: Site Health module
+- New: Clear page cache for all subsites from network admin
+- Enhance: Asset Optimization on WPMU DEV hosting staging
+- Enhance: Asset Optimization "How does it work?" section
+- Enhance: Gzip configuration UI/UX
+- Enhance: White labelling support
+- Enhance: Nginx instructions for browser caching and gzip compression
+- Fix: Rare instance of fatal PHP error in Page Caching module in multisite
+- Fix: Database cleanup removing drafts that are not from WordPress posts/pages
+- Fix: Cloudflare configuration wizard
+- Fix: Upgrade page buttons hover state
+- Fix: Elements with non-unique IDs in Asset Optimization module
 
 = 2.6.2 ( 2020-10-01 ) =
 

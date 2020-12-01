@@ -192,6 +192,19 @@ abstract class Background_Process extends Async_Request {
 	 * @return bool
 	 */
 	protected function is_queue_empty() {
+		$count = $this->get_queue_size();
+
+		return ( $count > 0 ) ? false : true;
+	}
+
+	/**
+	 * Get number of items in queue.
+	 *
+	 * @since 2.7.0
+	 *
+	 * @return int
+	 */
+	public function get_queue_size() {
 		global $wpdb;
 
 		$table  = $wpdb->options;
@@ -204,9 +217,7 @@ abstract class Background_Process extends Async_Request {
 
 		$key = $wpdb->esc_like( $this->identifier . '_batch_' ) . '%';
 
-		$count = $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM {$table} WHERE {$column} LIKE %s", $key ) );
-
-		return ( $count > 0 ) ? false : true;
+		return $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM {$table} WHERE {$column} LIKE %s", $key ) );
 	}
 
 	/**
@@ -364,12 +375,12 @@ abstract class Background_Process extends Async_Request {
 			$memory_limit = '128M';
 		}
 
-		if ( ! $memory_limit || -1 === intval( $memory_limit ) ) {
+		if ( ! $memory_limit || -1 === (int) $memory_limit ) {
 			// Unlimited, set to 32GB.
 			$memory_limit = '32000M';
 		}
 
-		return intval( $memory_limit ) * 1024 * 1024;
+		return (int) $memory_limit * 1024 * 1024;
 	}
 
 	/**
@@ -482,6 +493,32 @@ abstract class Background_Process extends Async_Request {
 
 			wp_clear_scheduled_hook( $this->cron_hook_identifier );
 		}
+	}
+
+	/**
+	 * Remove all batch rows.
+	 *
+	 * @since 2.7.0
+	 */
+	public function clear_all_queue() {
+		global $wpdb;
+
+		$table  = $wpdb->options;
+		$column = 'option_name';
+
+		if ( is_multisite() ) {
+			$table  = $wpdb->sitemeta;
+			$column = 'meta_key';
+		}
+
+		$key = $wpdb->esc_like( $this->identifier . '_batch_' ) . '%';
+
+		$wpdb->get_var(
+			$wpdb->prepare(
+				"DELETE FROM {$table} WHERE {$column} LIKE %s",
+				$key
+			)
+		); // Db call ok; no cache ok.
 	}
 
 	/**

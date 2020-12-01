@@ -285,15 +285,15 @@ export default class ServerInstructions extends React.Component {
 				<ol className="wphb-listing wphb-listing-ordered">
 					<li>
 						{ __(
-							'Copy the generated code into your nginx.conf usually located at /etc/nginx/nginx.conf or /usr/local/nginx/conf/nginx.conf'
+							"Edit your nginx.conf. Usually it's located at /etc/nginx/nginx.conf or /usr/local/nginx/nginx.conf"
 						) }
 					</li>
 					<li>
 						{ __(
-							'Add the code above to the http or inside server section in the file.'
+							'Copy the generated code found below and paste it inside your http or server block.'
 						) }
 					</li>
-					<li>{ __( 'Reload NGINX.' ) }</li>
+					<li>{ __( 'Reload/restart NGINX.' ) }</li>
 				</ol>
 
 				<p className="sui-description">

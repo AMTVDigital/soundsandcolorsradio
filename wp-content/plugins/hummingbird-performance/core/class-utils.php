@@ -158,7 +158,7 @@ class Utils {
 			'scanRunning'          => __( 'Running speed test...', 'wphb' ),
 			'scanAnalyzing'        => __( 'Analyzing data and preparing report...', 'wphb' ),
 			'scanWaiting'          => __( 'Test is taking a little longer than expected, hang in there…', 'wphb' ),
-			'scanComplete'         => __( 'Test complete! Reloading…', 'wphb' ),
+			'scanComplete'         => __( 'Test complete! Reloading...', 'wphb' ),
 		);
 		wp_localize_script( 'wphb-admin', 'wphbPerformanceStrings', $i10n );
 
@@ -203,6 +203,11 @@ class Utils {
 				'awaitingConfirmation'  => __( 'Awaiting confirmation', 'wphb' ),
 				'resendEmail'           => __( 'Resend email', 'wphb' ),
 				'dismissLabel'          => __( 'Dismiss', 'wphb' ),
+				'successAdvPurgeCache'  => __( 'Preload cache purged successfully.', 'wphb' ),
+				'successAdvPurgeMinify' => __( 'All database data and Custom Post Type information related to Asset Optimization has been cleared successfully.', 'wphb' ),
+			),
+			'links'      => array(
+				'audits' => self::get_admin_menu_url( 'performance' ) . '&view=audits',
 			),
 		);
 
@@ -740,7 +745,7 @@ class Utils {
 	 */
 	public static function still_having_trouble_link() {
 		esc_html_e( 'Still having trouble? ', 'wphb' );
-		if ( self::is_member() ) :
+		if ( self::is_member() && ! apply_filters( 'wpmudev_branding_hide_branding', false ) ) :
 			?>
 			<a target="_blank" href="<?php echo esc_url( self::get_link( 'chat' ) ); ?>">
 				<?php esc_html_e( 'Start a live chat.', 'wphb' ); ?>

@@ -42,6 +42,18 @@ class AJAX {
 		add_action( 'wp_ajax_wphb_global_clear_cache', array( $this, 'clear_global_cache' ) );
 
 		/**
+		 * Multisite global cache clear.
+		 *
+		 * @since 2.7.0
+		 */
+		if ( is_multisite() ) {
+			// Get the total number of sites in a network.
+			add_action( 'wp_ajax_wphb_get_network_sites', array( $this, 'get_network_sites' ) );
+			// Clear cache on network subsites.
+			add_action( 'wp_ajax_wphb_clear_network_cache', array( $this, 'clear_network_cache' ) );
+		}
+
+		/**
 		 * DASHBOARD AJAX ACTIONS
 		 */
 
@@ -169,6 +181,12 @@ class AJAX {
 		add_action( 'wp_ajax_wphb_advanced_db_delete_data', array( $this, 'advanced_db_delete_data' ) );
 		// Save settings in advanced tools module.
 		add_action( 'wp_ajax_wphb_advanced_save_settings', array( $this, 'advanced_save_settings' ) );
+		// Purge cache preloader.
+		add_action( 'wp_ajax_wphb_advanced_purge_cache', array( $this, 'advanced_purge_cache' ) );
+		// Purge asset optimization groups.
+		add_action( 'wp_ajax_wphb_advanced_purge_minify', array( $this, 'advanced_purge_minify' ) );
+		// Purge asset optimization orphaned data.
+		add_action( 'wp_ajax_wphb_advanced_purge_orphaned', array( $this, 'advanced_purge_orphaned' ) );
 
 		/**
 		 * LOGGER MODULE AJAX ACTIONS
@@ -232,6 +250,74 @@ class AJAX {
 		// Remove notice.
 		delete_option( 'wphb-notice-cache-cleaned-show' );
 
+		wp_send_json_success();
+	}
+
+	/**
+	 * Get the number of subsites in a network.
+	 *
+	 * @since 2.7.0
+	 */
+	public function get_network_sites() {
+		check_ajax_referer( 'wphb-fetch', 'nonce' );
+
+		global $wpdb;
+
+		$count = wp_cache_get( 'wphb_network_subsites' );
+
+		if ( false === $count ) {
+			$count = $wpdb->get_var( "SELECT COUNT( blog_id ) FROM {$wpdb->blogs}" ); // Db call ok.
+		}
+
+		wp_cache_set( 'wphb_network_subsites', $count );
+
+		wp_send_json_success( $count );
+	}
+
+	/**
+	 * Clear a batch of network subsite caches.
+	 *
+	 * @since 2.7.0
+	 */
+	public function clear_network_cache() {
+		check_ajax_referer( 'wphb-fetch', 'nonce' );
+
+		// Note: we can not use Utils::get_admin_capability() because is_network_admin() does not work in ajax request.
+		if ( ! current_user_can( 'manage_network' ) ) {
+			die();
+		}
+
+		$sites  = filter_input( INPUT_POST, 'sites', FILTER_SANITIZE_NUMBER_INT );
+		$offset = filter_input( INPUT_POST, 'offset', FILTER_SANITIZE_NUMBER_INT );
+
+		$args = array(
+			'number' => (int) $sites,
+			'offset' => (int) $offset,
+		);
+
+		$sites = get_sites( $args );
+
+		// This is quick hack to force the page cache module to not clear only main site cache.
+		$http_host_backup = '';
+		if ( isset( $_SERVER['HTTP_HOST'] ) ) {
+			$http_host_backup     = wp_unslash( $_SERVER['HTTP_HOST'] );
+			$_SERVER['HTTP_HOST'] = '';
+		}
+
+		foreach ( $sites as $site ) {
+			switch_to_blog( $site->blog_id );
+			Utils::get_module( 'page_cache' )->clear_cache( $site->domain . $site->path );
+		}
+
+		// Revert the HTTP_HOST value back.
+		if ( ! empty( $http_host_backup ) ) {
+			$_SERVER['HTTP_HOST'] = $http_host_backup;
+		}
+
+		// Reset cached pages count.
+		Settings::update_setting( 'pages_cached', 0, 'page_cache' );
+
+		restore_current_blog();
 		wp_send_json_success();
 	}
 
@@ -1726,6 +1812,65 @@ class AJAX {
 
 		$adv_module->update_options( $options );
 		wp_send_json_success( array( 'success' => true ) );
+	}
+
+	/**
+	 * Purge page cache preloader.
+	 *
+	 * @since 2.7.0
+	 */
+	public function advanced_purge_cache() {
+		check_ajax_referer( 'wphb-fetch', 'nonce' );
+
+		if ( ! current_user_can( 'edit_posts' ) ) {
+			die();
+		}
+
+		$preloader = new Preload();
+		$preloader->force_clear();
+
+		wp_send_json_success();
+	}
+
+	/**
+	 * Purge asset optimization groups.
+	 *
+	 * @since 2.7.0
+	 */
+	public function advanced_purge_minify() {
+		check_ajax_referer( 'wphb-fetch', 'nonce' );
+
+		if ( ! current_user_can( 'edit_posts' ) ) {
+			die();
+		}
+
+		Utils::get_module( 'minify' )->clear_files();
+
+		wp_send_json_success();
+	}
+
+	/**
+	 * Purge asset optimization orphaned data.
+	 *
+	 * @since 2.7.0
+	 */
+	public function advanced_purge_orphaned() {
+		check_ajax_referer( 'wphb-fetch', 'nonce' );
+
+		if ( ! current_user_can( 'edit_posts' ) ) {
+			die();
+		}
+
+		$rows = filter_input( INPUT_POST, 'rows', FILTER_SANITIZE_NUMBER_INT );
+
+		Utils::get_module( 'advanced' )->purge_orphaned_step( (int) $rows );
+
+		$load = sys_getloadavg();
+		wp_send_json_success(
+			array(
+				'highCPU' => $load[0] > 0.5,
+			)
+		);
 	}
 
 	/**

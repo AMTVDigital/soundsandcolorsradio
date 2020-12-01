@@ -122,7 +122,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<?php
 						$this->admin_notices->show_inline(
 							sprintf( /* translators: %1$s: upsell modal href link, %2$s: closing a tag */
-								esc_html__( 'With our pro version of Hummingbird you can super-compress your files and then host them on our blazing fast CDN. Get CDN as part of a WPMU DEV membership with 24/7 support and lots of handy site management tools. %1$sTry Pro for FREE today!%2$s', 'wphb' ),
+								esc_html__( 'With our pro version of Hummingbird you can super-compress your files and then host them on our blazing-fast CDN. Get CDN as part of a WPMU DEV membership with 24/7 support and lots of handy site management tools. %1$sTry Pro for FREE today!%2$s', 'wphb' ),
 								'<a href="' . esc_html( \Hummingbird\Core\Utils::get_link( 'plugin', 'hummingbird_test_multisite_cdn_upsell_link' ) ) . '" target="_blank">',
 								'</a>'
 							),

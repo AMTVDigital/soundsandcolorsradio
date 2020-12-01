@@ -257,7 +257,7 @@ abstract class Page {
 		}
 
 		// Enqueue Color picker.
-		if ( sanitize_title( __( 'Hummingbird Pro', 'wphb' ) ) . '_page_wphb-advanced' === $hook || 'lazy' === $this->get_current_tab() ) {
+		if ( 'lazy' === $this->get_current_tab() ) {
 			wp_enqueue_script( 'wp-color-picker-alpha', WPHB_DIR_URL . 'admin/assets/dist/wp-color-picker-alpha.min.js', array( 'wp-color-picker' ), WPHB_VERSION, true );
 
 			$l10n = array(
@@ -503,6 +503,10 @@ abstract class Page {
 	 */
 	protected function render_modals() {
 		$show = false;
+
+		if ( is_multisite() && ( is_network_admin() || is_super_admin() ) ) {
+			$this->modal( 'clear-cache-network-wide' );
+		}
 
 		if ( WP_Hummingbird::get_instance()->admin->show_quick_setup ) {
 			$show  = true;

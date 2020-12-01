@@ -182,7 +182,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			$message .= esc_html__( 'CloudFlare is a Content Delivery Network (CDN) that sends traffic through its global network to automatically optimize the delivery of your site so your visitors can browse your site at top speeds. There is a free plan and we recommend using it.', 'wphb' );
 		}
 
-		$buttons  = apply_filters( 'wpmudev_branding_hide_branding', false ) ? '' : '<br>';
+		$buttons  = apply_filters( 'wpmudev_branding_hide_branding', false ) ? '' : '<span>';
 		$buttons .= sprintf( /* translators: %1$s - opening tags, %2$s - closing tags */
 			esc_html__( '%1$sConnect%2$s', 'wphb' ),
 			'<a href="#" class="sui-button sui-button-ghost sui-button-icon-left connect-cloudflare-link"><i class="sui-icon-plus-circle" aria-hidden="true"></i>',
@@ -196,6 +196,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'</a>'
 			);
 		}
+		$buttons .= apply_filters( 'wpmudev_branding_hide_branding', false ) ? '' : '</span>';
 
 		$this->admin_notices->show_inline(
 			$message,

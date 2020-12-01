@@ -31,6 +31,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php endif; ?>
 </div>
 
+<?php $this->modal( 'site-health-orphaned' ); ?>
+
 <script>
 	jQuery(document).ready( function() {
 		if ( window.WPHB_Admin ) {

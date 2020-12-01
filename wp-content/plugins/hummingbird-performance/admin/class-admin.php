@@ -314,7 +314,7 @@ class Admin {
 		?>
 		<script>
 			jQuery( document ).ready( function() {
-				window.WPHB_Admin.getModule( 'minification' ).scanner.scan();
+				window.WPHB_Admin.getModule( 'minification' ).scanner.start();
 				window.WPHB_Admin.getModule( 'minification' ).minificationStarted = true;
 			});
 		</script>

@@ -358,13 +358,13 @@ class Hub {
 
 		if ( 'performance' === $module || 'reports' === $module ) {
 			$options['reports']['enabled']   = true;
-			$options['reports']['frequency'] = intval( $params->frequency );
+			$options['reports']['frequency'] = (int) $params->frequency;
 			$options['reports']['day']       = sanitize_text_field( $params->day );
 			$options['reports']['time']      = implode( ':', $email_time );
 			$options['reports']['last_sent'] = '';
 		} elseif ( 'notifications' === $module ) {
 			$options[ $module ]['enabled']   = true;
-			$options[ $module ]['threshold'] = isset( $params->threshold ) ? intval( $params->threshold ) : 0;
+			$options[ $module ]['threshold'] = isset( $params->threshold ) ? (int) $params->threshold : 0;
 		}
 
 		$reports->update_options( $options );

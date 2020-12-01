@@ -719,7 +719,7 @@ class Caching extends Page {
 				'labels'             => $labels,
 				'human_results'      => array_map( array( 'Hummingbird\\Core\\Utils', 'human_read_time_diff' ), $this->report ),
 				'expires'            => $this->expires,
-				'different_expiry'   => ( 1 >= count( array_unique( array_values( $this->expires ) ) ) ) ? true : false,
+				'different_expiry'   => 1 >= count( array_unique( array_values( $this->expires ) ) ),
 				'server_type'        => $server_type,
 				'snippets'           => $snippets,
 				'htaccess_written'   => $this->htaccess_written,
@@ -902,11 +902,13 @@ class Caching extends Page {
 	 * Display settings meta box.
 	 */
 	public function settings_metabox() {
+		$page_cache = Settings::get_settings( 'page_cache' );
 		$this->view(
 			'caching/settings/meta-box',
 			array(
-				'control'   => Settings::get_setting( 'control', 'page_cache' ),
-				'detection' => Settings::get_setting( 'detection', 'page_cache' ),
+				'enabled'	=> $page_cache['enabled'],
+				'control'	=> $page_cache['control'],
+				'detection'	=> $page_cache['detection']
 			)
 		);
 	}

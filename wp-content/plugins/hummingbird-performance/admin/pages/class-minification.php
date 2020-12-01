@@ -200,7 +200,7 @@ class Minification extends Page {
 			return;
 		}
 		?>
-		<a class="sui-button sui-button-ghost" data-modal-open="wphb-tour-minification-modal" data-modal-open-focus="dialog-close-div" data-modal-mask="true" id="bulk-update">
+		<a class="sui-button sui-button-ghost" data-modal-open="wphb-tour-minification-modal" data-modal-open-focus="dialog-close-div" data-modal-mask="true">
 			<i class="sui-icon-web-globe-world" aria-hidden="true"></i>
 			<?php esc_html_e( 'Take a Tour', 'wphb' ); ?>
 		</a>

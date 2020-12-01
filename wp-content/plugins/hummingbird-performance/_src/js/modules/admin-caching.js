@@ -6,6 +6,7 @@
  * Internal dependencies
  */
 import Fetcher from '../utils/fetcher';
+import CacheScanner from '../scanners/CacheScanner';
 
 ( function ( $ ) {
 	'use strict';
@@ -26,6 +27,9 @@ import Fetcher from '../utils/fetcher';
 				cachingHeader = $( '.box-caching-status .sui-box-header' ),
 				expiryForm = $( 'form[id="expiry-settings"]' ),
 				settingsForm = $( 'form[id="other-caching-settings"]' );
+
+			// We assume there's at least one site, but this.scanner.init() will properly set the total sites.
+			this.scanner = new CacheScanner( 1, 0 );
 
 			// Define selected server.
 			self.serverSelector = $( '#wphb-server-type' );
@@ -617,6 +621,16 @@ import Fetcher from '../utils/fetcher';
 				};
 			}
 			return expiryTimes;
+		},
+
+		/**
+		 * Clear network wide page cache.
+		 *
+		 * @since 2.7.0
+		 */
+		clearNetworkCache() {
+			window.SUI.slideModal( 'ccnw-slide-two', 'slide-next', 'next' );
+			this.scanner.start();
 		},
 	};
 } )( jQuery );

@@ -46,7 +46,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</p>
 			</div>
 
-			<div class="sui-box-body sui-content-center">
+			<div class="sui-box-body sui-content-center wphb-performance-scan-modal">
 				<div class="sui-progress-block">
 					<div class="sui-progress">
 						<span class="sui-progress-icon" aria-hidden="true">

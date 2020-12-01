@@ -84,7 +84,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 								printf(
 									/* translators: %s - number of ms */
 									esc_html__( 'Potential savings of %s ms', 'wphb' ),
-									esc_html( $rule_result->details->overallSavingsMs )
+									(int) $rule_result->details->overallSavingsMs
 								);
 							} elseif ( ! empty( $rule_result->description ) || ! empty( $rule_result->tip ) ) {
 								echo isset( $rule_result->displayValue ) ? esc_html( $rule_result->displayValue ) : '';

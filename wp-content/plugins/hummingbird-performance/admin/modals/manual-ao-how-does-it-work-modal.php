@@ -31,49 +31,70 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<i class="sui-icon-arrows-in sui-md" aria-hidden="true"></i>
 					<span class="sui-screen-reader-text"><?php esc_html_e( 'Collapse', 'wphb' ); ?></span>
 				</span>
+
+				<span class="sui-side-tabs sui-button-float--right" style="margin: -5px 40px 0 0">
+					<div class="sui-tabs-menu">
+						<label id="hdw-auto-trigger-label" for="hdw-auto-trigger" class="sui-tab-item">
+							<input type="radio" id="hdw-auto-trigger">
+							<?php esc_html_e( 'Automatic', 'wphb' ); ?>
+						</label>
+
+						<label id="hdw-manual-trigger-label" for="hdw-manual-trigger" class="sui-tab-item active">
+							<input type="radio" id="hdw-manual-trigger" checked="checked">
+							<?php esc_html_e( 'Manual', 'wphb' ); ?>
+						</label>
+					</div>
+				</span>
+
 				<span class="sui-button-icon sui-button-float--right" id="manual-ao-hdiw-modal-close-btn" data-modal-close="" >
 					<i class="sui-icon-close sui-md" aria-hidden="true"></i>
 					<span class="sui-screen-reader-text"><?php esc_html_e( 'Close this dialog window', 'wphb' ); ?></span>
 				</span>
 			</div>
 
-			<div class="sui-box-body sui-spacing-bottom--0">
-				<script src="//fast.wistia.com/embed/medias/q9hba9mu96.jsonp" async></script>
-				<script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
-				<script>
-					window._wq = window._wq || [];
-					_wq.push( { id: 'q9hba9mu96', onReady: function(video) {
-						var vp = false;
-						video.bind( "play", function() {
-							if( !vp ) {
-								var mod = document.getElementById( 'manual-ao-hdiw-modal' );
-								var el 	= document.getElementById( 'manual-ao-hdiw-modal-header-wrap' );
-								el.classList.add( 'video-playing' );
-								if( mod.classList.contains( 'sui-modal-sm' ) ) {
-									el.classList.add( 'sui-box-sticky' );
+			<?php if ( ! apply_filters( 'wpmudev_branding_hide_branding', false ) ) : ?>
+				<div class="sui-box-body sui-spacing-bottom--0">
+					<script src="//fast.wistia.com/embed/medias/q9hba9mu96.jsonp" async></script>
+					<script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
+					<script>
+						window._wq = window._wq || [];
+						_wq.push( { id: 'q9hba9mu96', onReady: function(video) {
+							var vp = false;
+							video.bind( "play", function() {
+								if( !vp ) {
+									var mod = document.getElementById( 'manual-ao-hdiw-modal' );
+									var el 	= document.getElementById( 'manual-ao-hdiw-modal-header-wrap' );
+									el.classList.add( 'video-playing' );
+									if( mod.classList.contains( 'sui-modal-sm' ) ) {
+										el.classList.add( 'sui-box-sticky' );
+									}
 								}
-							}
-							vp = true;
-						} );
-					} } );
-				</script>
-				<div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
-					<div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
-						<div class="wistia_embed wistia_async_q9hba9mu96 seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div>
+								vp = true;
+							} );
+						} } );
+					</script>
+					<div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
+						<div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
+							<div class="wistia_embed wistia_async_q9hba9mu96 seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div>
+						</div>
 					</div>
+					<div id="manual-ao-hdiw-modal-video-desc" class="sui-description"><?php esc_html_e( 'Check this short video about how to configure asset optimization.', 'wphb' ); ?></div>
 				</div>
-				<div id="manual-ao-hdiw-modal-video-desc" class="sui-description"><?php esc_html_e( 'Check this short video about how to configure asset optimization.', 'wphb' ); ?></div>
-			</div>
+			<?php endif; ?>
 		</div>
 		<div class="sui-box" id="manual-ao-hdiw-modal-body-wrap">
 			<div class="sui-box-body">
 				<h3 id="manual-ao-hdiw-modal-title"><?php esc_html_e( 'How Does it Work?', 'wphb' ); ?></h3>
 				<p class="sui-description" id="manual-ao-hdiw-modal-desc">
 					<?php
-					printf(
-						__( 'This is a quick guide to help you configure Hummingbird\'s Asset Optimization. For more detailed information, please check out our in-depth <a href="%s" target="_blank" >documentation</a>.', 'wphb' ),
-						'https://premium.wpmudev.org/docs/wpmu-dev-plugins/hummingbird/#asset-optimization'
-					);
+					esc_html_e( "This is a quick guide to help you configure Hummingbird's Asset Optimization.", 'wphb' );
+					if ( ! apply_filters( 'wpmudev_branding_hide_branding', false ) ) {
+						printf( /* translators: %1$s - space, %2$s - link */
+							__( '%1$sFor more detailed information, please check out our in-depth <a href="%2$s" target="_blank" >documentation</a>.', 'wphb' ),
+							'&nbsp;',
+							'https://premium.wpmudev.org/docs/wpmu-dev-plugins/hummingbird/#asset-optimization'
+						);
+					}
 					?>
 				</p>
 				<p class="sui-description">
@@ -205,36 +226,38 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</div><!-- /.sui-accordion-item -->
 			</div><!-- /.sui-accordion -->
 
-			<div class="sui-box-body">
-				<h4><?php esc_html_e( 'Related Articles', 'wphb' ); ?></h4>
+			<?php if ( ! apply_filters( 'wpmudev_branding_hide_branding', false ) ) : ?>
+				<div class="sui-box-body">
+					<h4><?php esc_html_e( 'Related Articles', 'wphb' ); ?></h4>
 
-				<p class="sui-description">
-					<a href="https://premium.wpmudev.org/docs/wpmu-dev-setting-configurations/wpmu-dev-performance-optimization-guide/" target="_blank">
-						<?php esc_html_e( 'WPMU DEV Performance Optimization Guide', 'wphb' ); ?>
-					</a><br>
-					<a href="https://premium.wpmudev.org/docs/wpmu-dev-plugins/hummingbird/#performance-test" target="_blank">
-						<?php esc_html_e( 'How to Measure Page Speed', 'wphb' ); ?>
-					</a><br>
-					<a href="https://premium.wpmudev.org/docs/wpmu-dev-plugins/hummingbird/#caching" target="_blank">
-						<?php esc_html_e( 'Everything You Need To Know About Caching', 'wphb' ); ?>
-					</a>
-				</p>
+					<p class="sui-description">
+						<a href="https://premium.wpmudev.org/docs/wpmu-dev-setting-configurations/wpmu-dev-performance-optimization-guide/" target="_blank">
+							<?php esc_html_e( 'WPMU DEV Performance Optimization Guide', 'wphb' ); ?>
+						</a><br>
+						<a href="https://premium.wpmudev.org/docs/wpmu-dev-plugins/hummingbird/#performance-test" target="_blank">
+							<?php esc_html_e( 'How to Measure Page Speed', 'wphb' ); ?>
+						</a><br>
+						<a href="https://premium.wpmudev.org/docs/wpmu-dev-plugins/hummingbird/#caching" target="_blank">
+							<?php esc_html_e( 'Everything You Need To Know About Caching', 'wphb' ); ?>
+						</a>
+					</p>
 
-				<p class="sui-description" style="margin-top: 50px">
-					<?php
-					printf(
-						__( 'Didn\'t find the answer you were looking for? Check out our detailed <a href="%s" target="_blank" >documentation</a> or contact our support team for further assistance.', 'wphb' ),
-						'https://premium.wpmudev.org/docs/wpmu-dev-plugins/hummingbird/#asset-optimization'
-					);
-					?>
-				</p>
+					<p class="sui-description" style="margin-top: 50px">
+						<?php
+						printf(
+							__( 'Didn\'t find the answer you were looking for? Check out our detailed <a href="%s" target="_blank" >documentation</a> or contact our support team for further assistance.', 'wphb' ),
+							'https://premium.wpmudev.org/docs/wpmu-dev-plugins/hummingbird/#asset-optimization'
+						);
+						?>
+					</p>
 
-				<p>
-					<a role="button" class="sui-button sui-margin-bottom" target="_blank" href="<?php echo esc_url( \Hummingbird\Core\Utils::get_link( 'support' ) ); ?>">
-						<?php esc_html_e( 'CONTACT SUPPORT', 'wphb' ); ?>
-					</a>
-				</p>
-			</div><!-- /.sui-box-body -->
+					<p>
+						<a role="button" class="sui-button sui-margin-bottom" target="_blank" href="<?php echo esc_url( \Hummingbird\Core\Utils::get_link( 'support' ) ); ?>">
+							<?php esc_html_e( 'CONTACT SUPPORT', 'wphb' ); ?>
+						</a>
+					</p>
+				</div><!-- /.sui-box-body -->
+			<?php endif; ?>
 		</div><!-- /.sui-box -->
 	</div>
 </div>

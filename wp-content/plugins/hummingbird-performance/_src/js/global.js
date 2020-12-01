@@ -9,6 +9,9 @@
 		menuButton: document.querySelector(
 			'#wp-admin-bar-wphb-clear-cache > a'
 		),
+		menuButtonNetworkWide: document.querySelector(
+			'#wp-admin-bar-wphb-clear-cache-network-wide > a'
+		),
 		noticeButton: document.getElementById(
 			'wp-admin-notice-wphb-clear-cache'
 		),
@@ -26,6 +29,22 @@
 				);
 			}
 
+			if ( this.menuButtonNetworkWide ) {
+				this.menuButtonNetworkWide.addEventListener( 'click', () => {
+					if ( 'undefined' === typeof window.WPHB_Admin ) {
+						window.location.href =
+							'/wp-admin/network/admin.php?page=wphb-caching&update=open-ccnw';
+						return;
+					}
+
+					window.SUI.openModal(
+						'ccnw-modal',
+						'wpbody',
+						'ccnw-clear-now'
+					);
+				} );
+			}
+
 			if ( this.noticeButton ) {
 				this.noticeButton.addEventListener( 'click', () =>
 					this.post( WPHBGlobal.ajaxurl, 'wphb_global_clear_cache' )
@@ -39,10 +58,6 @@
 			xhr.onload = function () {
 				if ( xhr.status === 200 ) {
 					location.reload();
-				} else {
-					console.log(
-						'Request failed.  Returned status of ' + xhr.status
-					);
 				}
 			};
 			xhr.send();

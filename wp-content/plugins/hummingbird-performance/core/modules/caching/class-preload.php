@@ -130,4 +130,14 @@ class Preload extends Background_Process {
 		$this->cancel_process();
 	}
 
+	/**
+	 * Clear out all database rows, associated with preloading.
+	 *
+	 * @since 2.7.0
+	 */
+	public function force_clear() {
+		delete_transient( 'wphb-preloading' );
+		$this->clear_all_queue();
+	}
+
 }

@@ -280,9 +280,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<p><?php esc_html_e( 'Follow the steps below to add browser caching to your NGINX server.', 'wphb' ); ?></p>
 
 				<ol class="wphb-listing wphb-listing-ordered">
-					<li><?php esc_html_e( 'Copy the generated code into your nginx.conf usually located at /etc/nginx/nginx.conf or /usr/local/nginx/conf/nginx.conf', 'wphb' ); ?></li>
-					<li><?php esc_html_e( 'Add the code above to the http or inside server section in the file.', 'wphb' ); ?></li>
-					<li><?php esc_html_e( 'Restart NGINX.', 'wphb' ); ?></li>
+					<li><?php esc_html_e( "Edit your nginx.conf. Usually it's located at /etc/nginx/nginx.conf or /usr/local/nginx/nginx.conf", 'wphb' ); ?></li>
+					<li><?php esc_html_e( 'Copy the generated code found below and paste it inside your server block.', 'wphb' ); ?></li>
+					<li><?php esc_html_e( 'Reload/restart NGINX.', 'wphb' ); ?></li>
 					<li><a href="<?php echo esc_url( $recheck_expiry_url ); ?>"><?php esc_html_e( 'Re-check expiry status.', 'wphb' ); ?></a></li>
 				</ol>
 				<pre class="sui-code-snippet" id="wphb-nginx"><?php echo htmlentities2( $snippets['nginx'] ); ?></pre>
@@ -375,7 +375,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<script type="text/template" id="cloudflare-step-zone">
 				<div class="cloudflare-step">
-					<form action="" class="sui-border-frame" method="post" id="cloudflare-zone">
+					<form action="" method="post" id="cloudflare-zone">
 						<# if ( ! data.zones.length ) { #>
 							<p><?php esc_html_e( 'It appears you have no active zones available. Double check your domain has been added to Cloudflare and try again.', 'wphb' ); ?></p>
 							<p class="cloudflare-submit">
@@ -393,21 +393,25 @@ if ( ! defined( 'ABSPATH' ) ) {
 								<# } #>
 							<# } #>
 							<# if ( zone ) { #>
-								<label for="cloudflare-zone" class="sui-label"><?php esc_html_e( 'Select the domain that matches this website', 'wphb' ); ?></label>
-								<select name="cloudflare-zone" id="cloudflare-zone">
-									<option value=""><?php esc_html_e( 'Select domain', 'wphb' ); ?></option>
-									<# for ( i in data.zones ) { #>
-										<option value="{{ data.zones[i].value }}">{{{ data.zones[i].label }}}</option>
-									<# } #>
-								</select>
-								<div class="cloudflare-submit">
-									<input type="submit" class="sui-button sui-button-blue" value="<?php esc_attr_e( 'Enable Cloudflare', 'wphb' ); ?>">
+								<div class="sui-border-frame" style="margin-top: 30px">
+									<label for="cloudflare-zone" class="sui-label">
+										<?php esc_html_e( 'Select the zone that matches your domain name', 'wphb' ); ?>
+									</label>
+									<select name="cloudflare-zone" id="cloudflare-zone">
+										<option value=""><?php esc_html_e( 'Select zone', 'wphb' ); ?></option>
+										<# for ( i in data.zones ) { #>
+											<option value="{{ data.zones[i].value }}">{{{ data.zones[i].label }}}</option>
+										<# } #>
+									</select>
+									<div class="cloudflare-submit">
+										<input type="submit" class="sui-button sui-button-blue" value="<?php esc_attr_e( 'Enable Cloudflare', 'wphb' ); ?>">
+									</div>
 								</div>
 							<# } else { #>
 								<?php
 								$this->admin_notices->show_inline(
 									esc_html__( 'CloudFlare is connected, but it appears you don’t have any active zones for this domain. Double check your domain has been added to Cloudflare and tap re-check when ready.', 'wphb' ),
-									'warning',
+									'warning sui-margin-top',
 									sprintf( /* translators: %1$s - opening a tag, %2$s - </a> */
 										esc_html__( '%1$sRe-check%2$s', 'wphb' ),
 										'<button class="sui-button sui-button-icon-left" id="cf-recheck-zones"><span class="sui-loading-text"><i class="sui-icon-update" aria-hidden="true"></i>',
@@ -415,10 +419,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 									)
 								);
 								?>
-								<a href="<?php echo esc_url( $cf_disable_url ); ?>" class="sui-button sui-button-ghost "><?php esc_attr_e( 'Deactivate', 'wphb' ); ?></a>
 							<# } #>
 						<# } #>
 					</form>
+
+					<a href="<?php echo esc_url( $cf_disable_url ); ?>" class="sui-button sui-button-ghost sui-margin-top">
+						<i class="sui-icon-power-on-off" aria-hidden="true"></i>
+						<?php esc_attr_e( 'Deactivate', 'wphb' ); ?>
+					</a>
 				</div>
 			</script>
 

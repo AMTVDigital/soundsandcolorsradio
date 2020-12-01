@@ -567,7 +567,7 @@ class Page_Cache extends Module {
 
 		// Prepare some variables.
 		$http_host = htmlentities( stripslashes( $_SERVER['HTTP_HOST'] ) ); // Input var ok.
-		$port      = isset( $_SERVER['SERVER_PORT'] ) ? intval( $_SERVER['SERVER_PORT'] ) : 0; // Input var ok.
+		$port      = isset( $_SERVER['SERVER_PORT'] ) ? (int) $_SERVER['SERVER_PORT'] : 0; // Input var ok.
 
 		/**
 		 * Generate cache hash.
@@ -659,7 +659,7 @@ class Page_Cache extends Module {
 
 		// Now do the same, but test the URI as part of the full URL.
 		$http_host = isset( $_SERVER['HTTP_HOST'] ) ? htmlentities( stripslashes( $_SERVER['HTTP_HOST'] ) ) : '';
-		$http_prot = isset( $_SERVER['SERVER_PORT'] ) && 443 === intval( $_SERVER['SERVER_PORT'] ) ? 'https://' : 'http://';
+		$http_prot = isset( $_SERVER['SERVER_PORT'] ) && 443 === (int) $_SERVER['SERVER_PORT'] ? 'https://' : 'http://';
 		if ( preg_match( "/{$uri_pattern}/i", $http_prot . $http_host . $uri ) ) {
 			return true;
 		}
@@ -865,6 +865,10 @@ class Page_Cache extends Module {
 	 */
 	private function write_file( $file, $content ) {
 		global $wphb_fs;
+
+		if ( ! $wphb_fs ) {
+			$wphb_fs = Filesystem::instance();
+		}
 
 		$wphb_fs->write( $file, $content );
 		$this->add_index( dirname( $file ) );

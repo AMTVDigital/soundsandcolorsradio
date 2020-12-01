@@ -14,6 +14,7 @@ namespace Hummingbird\Core\Modules;
 use Hummingbird\Core\Module;
 use Hummingbird\Core\Settings;
 use Hummingbird\Core\Traits\Module as ModuleContract;
+use Hummingbird\Core\Utils;
 use stdClass;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -261,7 +262,7 @@ class Advanced extends Module {
 					$count = $wpdb->get_var( "SELECT COUNT(*) FROM {$wpdb->posts} WHERE post_type = 'revision' AND post_status = 'inherit'" ); // Db call ok.
 					break;
 				case 'drafts':
-					$count = $wpdb->get_var( "SELECT COUNT(*) FROM {$wpdb->posts} WHERE post_status = 'draft' OR post_status = 'auto-draft'" ); // Db call ok.
+					$count = $wpdb->get_var( "SELECT COUNT(*) FROM {$wpdb->posts} WHERE ( post_status = 'draft' OR post_status = 'auto-draft' ) AND ( post_type = 'page' OR post_type = 'post' )" ); // Db call ok.
 					break;
 				case 'trash':
 					$count = $wpdb->get_var( "SELECT COUNT(*) FROM {$wpdb->posts} WHERE post_status = 'trash'" ); // Db call ok.
@@ -287,7 +288,7 @@ class Advanced extends Module {
 					FROM (
 					  (SELECT
 					    COUNT(CASE WHEN post_type = 'revision' AND post_status = 'inherit' THEN 1 ELSE NULL END) AS revisions,
-					    COUNT(CASE WHEN post_status = 'draft' OR post_status = 'auto-draft' THEN 1 ELSE NULL END) AS drafts,
+					    COUNT(CASE WHEN ( post_status = 'draft' OR post_status = 'auto-draft' ) AND ( post_type = 'page' OR post_type = 'post' ) THEN 1 ELSE NULL END) AS drafts,
 					    COUNT(CASE WHEN post_status = 'trash' THEN 1 ELSE NULL END) AS trash
 					  FROM {$wpdb->posts}) as posts,
 					  (SELECT
@@ -324,7 +325,7 @@ class Advanced extends Module {
 
 		$sql = array(
 			'revisions'          => "SELECT ID FROM {$wpdb->posts} WHERE post_type = 'revision' AND post_status = 'inherit'",
-			'drafts'             => "SELECT ID FROM {$wpdb->posts} WHERE post_status = 'draft' OR post_status = 'auto-draft'",
+			'drafts'             => "SELECT ID FROM {$wpdb->posts} WHERE ( post_status = 'draft' OR post_status = 'auto-draft' ) AND ( post_type = 'page' OR post_type = 'post' )",
 			'trash'              => "SELECT ID FROM {$wpdb->posts} WHERE post_status = 'trash'",
 			'spam'               => "SELECT comment_ID FROM {$wpdb->comments} WHERE comment_approved = 'spam'",
 			'trash_comment'      => "SELECT comment_ID FROM {$wpdb->comments} WHERE comment_approved = 'trash'",
@@ -710,6 +711,149 @@ class Advanced extends Module {
 	}
 
 	/**
+	 * Get database data and index sizes.
+	 *
+	 * @since 2.7.0
+	 *
+	 * @return array
+	 */
+	public function get_db_size() {
+		global $wpdb;
+
+		if ( ! defined( 'DB_NAME' ) ) {
+			return array(
+				'data_size'  => 0,
+				'index_size' => 0,
+			);
+		}
+
+		$table_info = $wpdb->get_row(
+			$wpdb->prepare(
+				"SELECT SUM( DATA_LENGTH ) as data, SUM( INDEX_LENGTH ) as 'index'
+					   FROM information_schema.TABLES
+					   WHERE TABLE_SCHEMA = %s AND TABLE_NAME LIKE %s;",
+				DB_NAME,
+				$wpdb->get_blog_prefix( get_current_blog_id() ) . '%'
+			)
+		); // DB call ok; no-cache ok.
+
+		return array(
+			'data_size'  => Utils::format_bytes( $table_info->data ),
+			'index_size' => Utils::format_bytes( $table_info->index ),
+		);
+	}
+
+	/**
+	 * Get orphaned mata rows from `wp_postmeta` that, most likely, belong to Asset Optimization, but
+	 * do not have a registered `wphb_minify_group` in the `wp_postmeta` table.
+	 *
+	 * @since 2.7.0
+	 *
+	 * @return int
+	 */
+	public function get_orphaned_ao() {
+		$count = wp_cache_get( 'wphb_ao_meta_fields' );
+
+		if ( false === $count ) {
+			global $wpdb;
+
+			$table  = $wpdb->get_blog_prefix( get_current_blog_id() ) . 'postmeta';
+			$search = implode( "', '", Minify::get_postmeta_fields() );
+
+			$results = $wpdb->get_row(
+			"SELECT COUNT( post_id ) as posts FROM {$table} WHERE meta_key IN ('{$search}');"
+			); // Db call ok.
+
+			$count = $results->posts;
+			unset( $results );
+		}
+
+		wp_cache_set( 'wphb_ao_meta_fields', $count );
+
+		return $count;
+	}
+
+	/**
+	 * Pluck all orphaned meta fields that belong to Hummingbird.
+	 *
+	 * Difference from above method, it will only include actual orphaned data, while with the method
+	 * above, we need to subtract the number of valid assets.
+	 *
+	 * @since 2.7.0
+	 *
+	 * @return int.
+	 */
+	public function get_orphaned_ao_complex() {
+		$count = wp_cache_get( 'wphb_ao_orphaned_data' );
+
+		if ( false === $count ) {
+			global $wpdb;
+
+			$search_fields   = implode( "', '", Minify::get_postmeta_fields() );
+			$database_prefix = $wpdb->get_blog_prefix( get_current_blog_id() );
+			$posts_table     = $database_prefix . 'posts';
+			$post_meta_table = $database_prefix . 'postmeta';
+
+			$count = $wpdb->get_var(
+				"SELECT COUNT( post_id ) FROM {$post_meta_table} A
+                LEFT JOIN {$posts_table} B
+				ON A.post_id = B.ID
+				WHERE A.meta_key IN ('{$search_fields}')
+				AND B.ID IS NULL"
+			); // Db call ok.
+		}
+
+		wp_cache_set( 'wphb_ao_orphaned_data', $count );
+
+		return $count;
+	}
+
+	/**
+	 * Clear out a set number of orphaned asset optimization data.
+	 *
+	 * @since 2.7.0
+	 *
+	 * @param int $rows  Number of rows to clear.
+	 */
+	public function purge_orphaned_step( $rows ) {
+		global $wpdb;
+
+		$search_fields   = implode( "', '", Minify::get_postmeta_fields() );
+		$database_prefix = $wpdb->get_blog_prefix( get_current_blog_id() );
+		$posts_table     = $database_prefix . 'posts';
+		$post_meta_table = $database_prefix . 'postmeta';
+
+		$items = $wpdb->get_col(
+			$wpdb->prepare(
+				"SELECT meta_id FROM {$post_meta_table} A
+                LEFT JOIN {$posts_table} B
+				ON A.post_id = B.ID
+				WHERE A.meta_key IN ('{$search_fields}')
+				AND B.ID IS NULL LIMIT %d",
+				$rows
+			)
+		); // Db call ok.
+
+		$ids = implode( ',', array_map( 'intval', $items ) );
+		$wpdb->query( "DELETE FROM {$post_meta_table} WHERE meta_id IN($ids)" );
+
+		// Remove count cache.
+		wp_cache_delete( 'wphb_ao_meta_fields' );
+
+		/** This might be a better alternative - just try to force purge everything.
+		$sql = "DELETE A FROM {$post_meta_table} AS A
+				LEFT JOIN {$posts_table} AS B ON A.post_id = B.ID
+				WHERE A.meta_key IN ('{$search_fields}')
+				AND B.ID IS NULL;";
+		*/
+	}
+
+	/**
+	 * *************************
+	 * Comment lazy loading.
+	 ***************************/
+
+	/**
 	 * Enqueue lazy load scripts on single page/post.
 	 *
 	 * @since 2.5.0
@@ -984,7 +1128,7 @@ class Advanced extends Module {
 	 *
 	 * @since 2.5.0
 	 *
-	 * @param string $order
+	 * @param string $order  Order type.
 	 *
 	 * @return string
 	 */

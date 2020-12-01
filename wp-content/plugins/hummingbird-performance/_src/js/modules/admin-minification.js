@@ -11,7 +11,7 @@ import Fetcher from '../utils/fetcher';
 import { __, getLink } from '../utils/helpers';
 import Row from '../minification/Row';
 import RowsCollection from '../minification/RowsCollection';
-import Scanner from '../minification/Scanner';
+import MinifyScanner from '../scanners/MinifyScanner';
 
 ( function ( $ ) {
 	'use strict';
@@ -26,11 +26,10 @@ import Scanner from '../minification/Scanner';
 			const self = this;
 
 			// Init files scanner.
-			this.scanner = new Scanner(
+			this.scanner = new MinifyScanner(
 				wphb.minification.get.totalSteps,
 				wphb.minification.get.currentScanStep
 			);
-			this.scanner.onFinishStep = this.updateProgressBar;
 
 			// Check files button.
 			$( '#check-files' ).click( function ( e ) {
@@ -39,25 +38,15 @@ import Scanner from '../minification/Scanner';
 			} );
 
 			$( document ).on( 'check-files', function () {
-				window.SUI.openModal(
-					'check-files-modal',
-					'wpbody-content',
-					undefined,
-					false
-				);
-
+				window.SUI.openModal( 'check-files-modal', 'wpbody-content' );
 				$( this ).attr( 'disabled', true );
-				self.updateProgressBar( self.scanner.getProgress() );
-				self.scanner.scan();
+				self.scanner.start();
 			} );
 
 			// Cancel scan button.
 			$( 'body' ).on( 'click', '#cancel-minification-check', ( e ) => {
 				e.preventDefault();
-				this.updateProgressBar( 0, true );
-				this.scanner.cancel().then( () => {
-					window.location.href = getLink( 'minification' );
-				} );
+				this.scanner.cancel();
 			} );
 
 			// Track changes done to minification files.
@@ -150,11 +139,17 @@ import Scanner from '../minification/Scanner';
 					"label[for='" + $( this ).attr( 'id' ) + "']"
 				);
 				if ( label.hasClass( 'fileIncluded' ) ) {
-					label.find( 'i' ).removeClass( 'sui-icon-eye-hide' ).addClass( 'sui-icon-eye' );
+					label
+						.find( 'i' )
+						.removeClass( 'sui-icon-eye-hide' )
+						.addClass( 'sui-icon-eye' );
 					label.attr( 'data-tooltip', wphb.strings.includeFile );
 					label.removeClass( 'fileIncluded' );
 				} else {
-					label.find( 'i' ).removeClass( 'sui-icon-eye' ).addClass( 'sui-icon-eye-hide' );
+					label
+						.find( 'i' )
+						.removeClass( 'sui-icon-eye' )
+						.addClass( 'sui-icon-eye-hide' );
 					label.attr( 'data-tooltip', wphb.strings.excludeFile );
 					label.addClass( 'fileIncluded' );
 				}
@@ -442,6 +437,9 @@ import Scanner from '../minification/Scanner';
 					document
 						.getElementById( 'manual-ao-hdiw-modal-header-wrap' )
 						.classList.remove( 'sui-box-sticky' );
+					document
+						.getElementById( 'automatic-ao-hdiw-modal' )
+						.classList.remove( 'sui-modal-sm' );
 				};
 			}
 
@@ -453,10 +451,15 @@ import Scanner from '../minification/Scanner';
 					document
 						.getElementById( 'manual-ao-hdiw-modal' )
 						.classList.add( 'sui-modal-sm' );
-					const el = document.getElementById( 'manual-ao-hdiw-modal-header-wrap' );
-					if( el.classList.contains( 'video-playing' ) ) {
+					const el = document.getElementById(
+						'manual-ao-hdiw-modal-header-wrap'
+					);
+					if ( el.classList.contains( 'video-playing' ) ) {
 						el.classList.add( 'sui-box-sticky' );
 					}
+					document
+						.getElementById( 'automatic-ao-hdiw-modal' )
+						.classList.add( 'sui-modal-sm' );
 				};
 			}
 
@@ -469,6 +472,9 @@ import Scanner from '../minification/Scanner';
 					document
 						.getElementById( 'automatic-ao-hdiw-modal' )
 						.classList.remove( 'sui-modal-sm' );
+					document
+						.getElementById( 'manual-ao-hdiw-modal' )
+						.classList.remove( 'sui-modal-sm' );
 				};
 			}
 
@@ -480,7 +486,34 @@ import Scanner from '../minification/Scanner';
 					document
 						.getElementById( 'automatic-ao-hdiw-modal' )
 						.classList.add( 'sui-modal-sm' );
+					document
+						.getElementById( 'manual-ao-hdiw-modal' )
+						.classList.add( 'sui-modal-sm' );
 				};
+			}
+
+			const autoTrigger = document.getElementById(
+				'hdw-auto-trigger-label'
+			);
+			if ( autoTrigger ) {
+				autoTrigger.addEventListener( 'click', () => {
+					window.SUI.replaceModal(
+						'automatic-ao-hdiw-modal-content',
+						'wphb-box-minification-summary-meta-box'
+					);
+				} );
+			}
+
+			const manualTrigger = document.getElementById(
+				'hdw-manual-trigger-label'
+			);
+			if ( manualTrigger ) {
+				manualTrigger.addEventListener( 'click', () => {
+					window.SUI.replaceModal(
+						'manual-ao-hdiw-modal-content',
+						'wphb-box-minification-summary-meta-box'
+					);
+				} );
 			}
 
 			/**
@@ -617,29 +650,6 @@ import Scanner from '../minification/Scanner';
 			return this;
 		},
 
-		updateProgressBar( progress, cancel = false ) {
-			if ( progress > 100 ) {
-				progress = 100;
-			}
-			// Update progress bar
-			$( '.sui-progress-block .sui-progress-text span' ).text(
-				progress + '%'
-			);
-			$( '.sui-progress-block .sui-progress-bar span' ).width(
-				progress + '%'
-			);
-			if ( progress >= 90 ) {
-				$( '.sui-progress-state .sui-progress-state-text' ).text(
-					'Finalizing...'
-				);
-			}
-			if ( cancel ) {
-				$( '.sui-progress-state .sui-progress-state-text' ).text(
-					'Cancelling...'
-				);
-			}
-		},
-
 		/**
 		 * Switch from advanced to basic view.
 		 * Called from switch view modal.
@@ -755,7 +765,11 @@ import Scanner from '../minification/Scanner';
 					e.classList.remove( 'sui-button-onload-text' );
 					e.removeAttribute( 'disabled' );
 
-					WPHB_Admin.notices.show( wphb.strings[ type + 'Saved' ], 'success', false );
+					WPHB_Admin.notices.show(
+						wphb.strings[ type + 'Saved' ],
+						'success',
+						false
+					);
 
 					// Allow opening a "how-to" modal from the notice.
 					const noticeLink = document.getElementById(

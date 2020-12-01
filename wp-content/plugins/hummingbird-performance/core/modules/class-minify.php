@@ -1402,4 +1402,34 @@ class Minify extends Module {
 		return Utils::get_api()->minify->is_http2();
 	}
 
+	/**
+	 * Return a list of fields used on the wp_postmeta table.
+	 *
+	 * @since 2.7.0
+	 *
+	 * @return array
+	 */
+	public static function get_postmeta_fields() {
+		return array(
+			'_handles',
+			'_handle_urls',
+			'_handle_versions',
+			'_extra',
+			'_args',
+			'_type',
+			'_dont_minify',
+			'_dont_combine',
+			'_dont_enqueue',
+			'_defer',
+			'_inline',
+			'_handle_dependencies',
+			'_handle_original_sizes',
+			'_handle_compressed_sizes',
+			'_hash',
+			'_file_id',
+			'_url',
+			'_expires',
+		);
+	}
+
 }

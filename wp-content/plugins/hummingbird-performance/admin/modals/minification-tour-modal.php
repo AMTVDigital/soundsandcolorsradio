@@ -12,8 +12,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <div class="sui-modal sui-modal-sm">
-	<div role="dialog" class="sui-modal-content" id="wphb-tour-minification-modal" aria-live="polite" aria-modal="true" aria-labelledby="switchAdvanced" aria-describedby="dialogDescription">
-		<div id="slide-two" class="sui-box sui-modal-slide sui-loaded sui-active" data-modal-size="sm">
+	<div role="dialog" class="sui-modal-content" id="wphb-tour-minification-modal" aria-live="polite" aria-modal="true" aria-labelledby="wphb-tour-minification-modal-label">
+		<div id="tour-slide-one" class="sui-box sui-modal-slide sui-loaded sui-active" data-modal-size="sm">
 			<div class="sui-box-header sui-flatten sui-content-center sui-spacing-top--60 sui-spacing-sides--60">
 				<button class="sui-button-icon sui-button-float--right" data-modal-close="">
 					<i class="sui-icon-close sui-md" aria-hidden="true"></i>
@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						srcset="<?php echo esc_url( WPHB_DIR_URL . 'admin/assets/image/tour/tour-compression.png' ); ?> 1x, <?php echo esc_url( WPHB_DIR_URL . 'admin/assets/image/tour/tour-compression@2x.png' ); ?> 2x">
 				</figure>
 
-				<p class="sui-description">
+				<p class="sui-description" id="wphb-tour-minification-modal-label">
 					<?php esc_html_e( 'Here are the available options for the Asset Optimization Manual mode.', 'wphb' ); ?>
 				</p>
 				<p class="sui-description">
@@ -34,15 +34,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 
 			<div class="sui-box-body sui-flatten sui-content-center">
-				<button class="sui-button" id="slide-next" data-modal-slide="slide-three" data-modal-slide-focus="slide-next" data-modal-slide-intro="next">
+				<button class="sui-button" id="slide-next" data-modal-slide="tour-slide-two" data-modal-slide-focus="slide-next" data-modal-slide-intro="next">
 					<?php esc_html_e( 'Next', 'wphb' ); ?>
 				</button>
 			</div>
 		</div>
 
-		<div id="slide-three" class="sui-box sui-modal-slide" data-modal-size="sm">
+		<div id="tour-slide-two" class="sui-box sui-modal-slide" data-modal-size="sm">
 			<div class="sui-box-header sui-flatten sui-content-center sui-spacing-top--60 sui-spacing-sides--60">
-				<button class="sui-button-icon sui-button-float--left" data-modal-slide="slide-two" data-modal-slide-focus="slide-next" data-modal-slide-intro="back">
+				<button class="sui-button-icon sui-button-float--left" data-modal-slide="tour-slide-one" data-modal-slide-focus="slide-next" data-modal-slide-intro="back">
 					<i class="sui-icon-chevron-left" aria-hidden="true"></i>
 					<span class="sui-screen-reader-text"><?php esc_attr_e( 'Go to previous slide', 'wphb' ); ?></span>
 				</button>
@@ -58,20 +58,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</figure>
 
 				<p class="sui-description">
-					<?php esc_html_e( 'Hummingbird can combine smaller files together to reduce the number of requests made when a page is loaded. Fewer requests means less waiting, and faster page speeds!', 'wphb' ); ?>
+					<?php esc_html_e( 'Combine smaller files together to reduce the number of requests made when a page is loaded. Fewer requests means less waiting, and faster page speeds!', 'wphb' ); ?>
 				</p>
 			</div>
 
 			<div class="sui-box-body sui-flatten sui-content-center">
-				<button class="sui-button" id="slide-next" data-modal-slide="slide-four" data-modal-slide-focus="slide-next" data-modal-slide-intro="next">
+				<button class="sui-button" id="slide-next" data-modal-slide="tour-slide-three" data-modal-slide-focus="slide-next" data-modal-slide-intro="next">
 					<?php esc_html_e( 'Next', 'wphb' ); ?>
 				</button>
 			</div>
 		</div>
 
-		<div id="slide-four" class="sui-box sui-modal-slide" data-modal-size="sm">
+		<div id="tour-slide-three" class="sui-box sui-modal-slide" data-modal-size="sm">
 			<div class="sui-box-header sui-flatten sui-content-center sui-spacing-top--60 sui-spacing-sides--60">
-				<button class="sui-button-icon sui-button-float--left" data-modal-slide="slide-three" data-modal-slide-focus="slide-next" data-modal-slide-intro="back">
+				<button class="sui-button-icon sui-button-float--left" data-modal-slide="tour-slide-two" data-modal-slide-focus="slide-next" data-modal-slide-intro="back">
 					<i class="sui-icon-chevron-left" aria-hidden="true"></i>
 					<span class="sui-screen-reader-text"><?php esc_attr_e( 'Go to previous slide', 'wphb' ); ?></span>
 				</button>
@@ -92,15 +92,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 
 			<div class="sui-box-body sui-flatten sui-content-center">
-				<button class="sui-button" id="slide-next" data-modal-slide="slide-five" data-modal-slide-focus="slide-next" data-modal-slide-intro="next">
+				<button class="sui-button" id="slide-next" data-modal-slide="tour-slide-four" data-modal-slide-focus="slide-next" data-modal-slide-intro="next">
 					<?php esc_html_e( 'Next', 'wphb' ); ?>
 				</button>
 			</div>
 		</div>
 
-		<div id="slide-five" class="sui-box sui-modal-slide" data-modal-size="sm">
+		<div id="tour-slide-four" class="sui-box sui-modal-slide" data-modal-size="sm">
 			<div class="sui-box-header sui-flatten sui-content-center sui-spacing-top--60 sui-spacing-sides--60">
-				<button class="sui-button-icon sui-button-float--left" data-modal-slide="slide-four" data-modal-slide-focus="slide-next" data-modal-slide-intro="back">
+				<button class="sui-button-icon sui-button-float--left" data-modal-slide="tour-slide-three" data-modal-slide-focus="slide-next" data-modal-slide-intro="back">
 					<i class="sui-icon-chevron-left" aria-hidden="true"></i>
 					<span class="sui-screen-reader-text"><?php esc_attr_e( 'Go to previous slide', 'wphb' ); ?></span>
 				</button>
@@ -121,15 +121,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 
 			<div class="sui-box-body sui-flatten sui-content-center">
-				<button class="sui-button" id="slide-next" data-modal-slide="slide-six" data-modal-slide-focus="slide-next" data-modal-slide-intro="next">
+				<button class="sui-button" id="slide-next" data-modal-slide="tour-slide-five" data-modal-slide-focus="slide-next" data-modal-slide-intro="next">
 					<?php esc_html_e( 'Next', 'wphb' ); ?>
 				</button>
 			</div>
 		</div>
 
-		<div id="slide-six" class="sui-box sui-modal-slide" data-modal-size="sm">
+		<div id="tour-slide-five" class="sui-box sui-modal-slide" data-modal-size="sm">
 			<div class="sui-box-header sui-flatten sui-content-center sui-spacing-top--60 sui-spacing-sides--60">
-				<button class="sui-button-icon sui-button-float--left" data-modal-slide="slide-five" data-modal-slide-focus="slide-next" data-modal-slide-intro="back">
+				<button class="sui-button-icon sui-button-float--left" data-modal-slide="tour-slide-four" data-modal-slide-focus="slide-next" data-modal-slide-intro="back">
 					<i class="sui-icon-chevron-left" aria-hidden="true"></i>
 					<span class="sui-screen-reader-text"><?php esc_attr_e( 'Go to previous slide', 'wphb' ); ?></span>
 				</button>
@@ -150,15 +150,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 
 			<div class="sui-box-body sui-flatten sui-content-center">
-				<button class="sui-button" id="slide-next" data-modal-slide="slide-seven" data-modal-slide-focus="slide-next" data-modal-slide-intro="next">
+				<button class="sui-button" id="slide-next" data-modal-slide="tour-slide-six" data-modal-slide-focus="slide-next" data-modal-slide-intro="next">
 					<?php esc_html_e( 'Next', 'wphb' ); ?>
 				</button>
 			</div>
 		</div>
 
-		<div id="slide-seven" class="sui-box sui-modal-slide" data-modal-size="sm">
+		<div id="tour-slide-six" class="sui-box sui-modal-slide" data-modal-size="sm">
 			<div class="sui-box-header sui-flatten sui-content-center sui-spacing-top--60 sui-spacing-sides--60">
-				<button class="sui-button-icon sui-button-float--left" data-modal-slide="slide-six" data-modal-slide-focus="slide-next" data-modal-slide-intro="back">
+				<button class="sui-button-icon sui-button-float--left" data-modal-slide="tour-slide-five" data-modal-slide-focus="slide-next" data-modal-slide-intro="back">
 					<i class="sui-icon-chevron-left" aria-hidden="true"></i>
 					<span class="sui-screen-reader-text"><?php esc_attr_e( 'Go to previous slide', 'wphb' ); ?></span>
 				</button>
@@ -179,15 +179,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 
 			<div class="sui-box-body sui-flatten sui-content-center">
-				<button class="sui-button" id="slide-next" data-modal-slide="slide-eight" data-modal-slide-focus="slide-next" data-modal-slide-intro="next">
+				<button class="sui-button" id="slide-next" data-modal-slide="tour-slide-seven" data-modal-slide-focus="slide-next" data-modal-slide-intro="next">
 					<?php esc_html_e( 'Next', 'wphb' ); ?>
 				</button>
 			</div>
 		</div>
 
-		<div id="slide-eight" class="sui-box sui-modal-slide" data-modal-size="sm">
+		<div id="tour-slide-seven" class="sui-box sui-modal-slide" data-modal-size="sm">
 			<div class="sui-box-header sui-flatten sui-content-center sui-spacing-top--60 sui-spacing-sides--60">
-				<button class="sui-button-icon sui-button-float--left" data-modal-slide="slide-seven" data-modal-slide-focus="slide-next" data-modal-slide-intro="back">
+				<button class="sui-button-icon sui-button-float--left" data-modal-slide="tour-slide-six" data-modal-slide-focus="slide-next" data-modal-slide-intro="back">
 					<i class="sui-icon-chevron-left" aria-hidden="true"></i>
 					<span class="sui-screen-reader-text"><?php esc_attr_e( 'Go to previous slide', 'wphb' ); ?></span>
 				</button>
@@ -208,15 +208,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 
 			<div class="sui-box-body sui-flatten sui-content-center">
-				<button class="sui-button" id="slide-next" data-modal-slide="slide-nine" data-modal-slide-focus="slide-next" data-modal-slide-intro="next">
+				<button class="sui-button" id="slide-next" data-modal-slide="tour-slide-eight" data-modal-slide-focus="slide-next" data-modal-slide-intro="next">
 					<?php esc_html_e( 'Next', 'wphb' ); ?>
 				</button>
 			</div>
 		</div>
 
-		<div id="slide-nine" class="sui-box sui-modal-slide" data-modal-size="sm">
+		<div id="tour-slide-eight" class="sui-box sui-modal-slide" data-modal-size="sm">
 			<div class="sui-box-header sui-flatten sui-content-center sui-spacing-top--60 sui-spacing-sides--60">
-				<button class="sui-button-icon sui-button-float--left" data-modal-slide="slide-eight" data-modal-slide-focus="slide-next" data-modal-slide-intro="back">
+				<button class="sui-button-icon sui-button-float--left" data-modal-slide="tour-slide-seven" data-modal-slide-focus="slide-next" data-modal-slide-intro="back">
 					<i class="sui-icon-chevron-left" aria-hidden="true"></i>
 					<span class="sui-screen-reader-text"><?php esc_attr_e( 'Go to previous slide', 'wphb' ); ?></span>
 				</button>
@@ -244,8 +244,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</button>
 			</div>
 
-			<img width="120" class="sui-image" alt="" src="<?php echo esc_url( WPHB_DIR_URL . 'admin/assets/image/graphic-caching-top.png' ); ?>"
-				srcset="<?php echo esc_url( WPHB_DIR_URL . 'admin/assets/image/graphic-caching-top.png' ); ?> 1x, <?php echo esc_url( WPHB_DIR_URL . 'admin/assets/image/graphic-caching-top@2x.png' ); ?> 2x" style="margin: 0 auto;">
+			<?php if ( ! apply_filters( 'wpmudev_branding_hide_branding', false ) ) : ?>
+				<img width="120" class="sui-image" alt="" src="<?php echo esc_url( WPHB_DIR_URL . 'admin/assets/image/graphic-caching-top.png' ); ?>"
+					srcset="<?php echo esc_url( WPHB_DIR_URL . 'admin/assets/image/graphic-caching-top.png' ); ?> 1x, <?php echo esc_url( WPHB_DIR_URL . 'admin/assets/image/graphic-caching-top@2x.png' ); ?> 2x" style="margin: 0 auto;">
+			<?php endif; ?>
 		</div>
 	</div>
 </div>

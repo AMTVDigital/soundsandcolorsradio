@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</h3>
 			</div>
 
-			<div class="sui-box-body">
+			<div class="sui-box-body wphb-performance-scan-modal">
 				<p id="dialogDescription">
 					<?php esc_html_e( 'Hummingbird is running a test to measure your website performance, please wait.', 'wphb' ); ?>
 				</p>

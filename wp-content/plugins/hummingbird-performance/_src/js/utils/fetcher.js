@@ -175,6 +175,22 @@ function Fetcher() {
 					'POST'
 				);
 			},
+
+			/**
+			 * Clear out page cache for a batch of subsites in a network.
+			 *
+			 * @since 2.7.0
+			 *
+			 * @param {number} sites
+			 * @param {number} offset
+			 */
+			clearCacheBatch( sites, offset ) {
+				return request(
+					actionPrefix + 'clear_network_cache',
+					{ sites, offset },
+					'POST'
+				);
+			},
 		},
 
 		/**
@@ -409,6 +425,21 @@ function Fetcher() {
 					( response ) => {
 						return response;
 					}
+				);
+			},
+
+			/**
+			 * Clear out a batch of orphaned asset optimization data.
+			 *
+			 * @since 2.7.0
+			 *
+			 * @param {number} rows
+			 */
+			clearOrphanedBatch( rows ) {
+				return request(
+					actionPrefix + 'advanced_purge_orphaned',
+					{ rows },
+					'POST'
 				);
 			},
 		},
