@@ -7,11 +7,9 @@
 get_header(); 
 ?>
 			<div id="proradio-pagecontent" class="proradio-pagecontent proradio-primary-light proradio-notfound404">
-
 				<?php  
 				get_template_part( 'template-parts/pageheader/pageheader-404' ); 
 				?>
-				
 			</div>
 			<div id="proradio-footer" class="proradio-footer">
 				<?php 

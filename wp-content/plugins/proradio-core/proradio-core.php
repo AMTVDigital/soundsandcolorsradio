@@ -7,7 +7,7 @@
  * Description: Adds custom type and custom fields capabilities
  * Text Domain: proradio-core
  * Domain Path: /languages
- * Version: PR.4.0.4
+ * Version: PR.4.0.5
 */
 
 

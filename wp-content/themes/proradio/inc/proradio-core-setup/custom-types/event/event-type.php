@@ -75,7 +75,7 @@ if(!function_exists('event_register_type')){
 			'query_var' 				=> true,
 			'labels' 					=> $labels,
 			'update_count_callback' 	=> '_update_post_term_count',
-			'rewrite' 					=> array( 'slug' => 'eventtype' )
+			'rewrite' 					=> array( 'slug' => sanitize_title_with_dashes( get_theme_mod('slug_eventtype', 'eventtype') ) ),
 		);
 	    if(function_exists('proradio_core_custom_taxonomy')){
 			proradio_core_custom_taxonomy('eventtype','event',$args	);

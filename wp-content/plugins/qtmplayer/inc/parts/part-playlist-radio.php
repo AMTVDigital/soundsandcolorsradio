@@ -71,7 +71,6 @@ if ( $wp_query->have_posts() ) : while ( $wp_query->have_posts() ) : $wp_query->
 			$cover = wp_get_attachment_image_src( $minilogo_id, 'medium' );
 		}
 		$track_data = array(
-			
 			'img_id' 				=> $minilogo_id,
 			'title'					=> $post->post_title,
 			'artist_name'			=> $subtitle,
@@ -94,6 +93,8 @@ if ( $wp_query->have_posts() ) : while ( $wp_query->have_posts() ) : $wp_query->
 			'airtime' 				=> get_post_meta( $id, 'qtairtime',true ),
 			'radionomy' 			=> get_post_meta( $id, 'qtradionomy',true ),
 			'live365' 				=> get_post_meta( $id, 'qtlive365',true ),
+			'radioking' 			=> get_post_meta( $id, 'qtradioking',true ),
+			'azuracast' 			=> get_post_meta( $id, 'qtazuracast',true ),
 			'textfeed' 				=> get_post_meta( $id, 'qttextfeed',true ),
 			'channel' 				=> get_post_meta( $id, 'qtradiofeedChannel',true ),
 			'useproxy' 				=> get_post_meta( $id, 'proradio-useproxy', true ),

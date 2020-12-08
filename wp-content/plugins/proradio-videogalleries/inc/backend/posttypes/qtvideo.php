@@ -34,7 +34,7 @@ if(!function_exists('proradio_videogalleries_register_type')){
 			'capability_type' => 'page',
 			'has_archive' => true,
 			'publicly_queryable' => true,
-			'rewrite' => true,
+			'rewrite' => array( 'slug' => sanitize_title_with_dashes( get_theme_mod('qtvideo_slug', 'qtvideo') ) ),
 			'menu_position' => 48,
 			'query_var' => true,
 			'exclude_from_search' => false,
@@ -70,7 +70,7 @@ if(!function_exists('proradio_videogalleries_register_type')){
 			'show_ui' => true,
 			'update_count_callback' => '_update_post_term_count',
 			'query_var' => true,
-			'rewrite' => array( 'slug' => 'filter' ),
+			'rewrite' => array( 'slug' => sanitize_title_with_dashes( get_theme_mod('vdl_filters_slug', 'filter') ) ),
 		);
 		register_taxonomy( 'vdl_filters', 'qtvideo', $args );
 	}

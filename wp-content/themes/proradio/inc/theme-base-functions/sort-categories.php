@@ -11,6 +11,7 @@
  * https://stackoverflow.com/questions/43100515/get-categories-order-by-last-post
  * ======================================================
  */
+if(!function_exists('proradio_get_sorted_categories')){
 function proradio_get_sorted_categories( $order_by = 'id', $args = array(), $taxonomy = 'category', $post_type = 'post' ){
     global $wpdb;
 
@@ -44,4 +45,4 @@ function proradio_get_sorted_categories( $order_by = 'id', $args = array(), $tax
     } );
 
     return $category;
-}
+}}

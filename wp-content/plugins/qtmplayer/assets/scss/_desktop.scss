@@ -250,6 +250,14 @@
 			border-bottom: 1px solid $border-color;
 		}
 
+		
+		&__volume:hover {
+			overflow: visible;
+			.qtmplayer__vcontainer {
+				height: 150px;
+				border-color: $border-color;
+			}
+		}
 		// Volume control
 		&__vcontainer {
 			display: block;
@@ -267,13 +275,6 @@
 			border: 1px solid transparent;
 			border-top: none;
 			margin-top: -1px;
-		}
-		&__volume:hover {
-			overflow: visible;
-			.qtmplayer__vcontainer {
-				height: 150px;
-				border-color: $border-color;
-			}
 		}
 		&__vcontrol {
 			display: block;
@@ -311,6 +312,8 @@
 				border-width: 8px;
 			}
 		}
+
+		
 
 	}
 

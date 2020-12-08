@@ -61,10 +61,6 @@ if( true == $add_more && !is_wp_error( $terms ) ) {
 	}
 }
 
-
-
-
-
 /**
  * 
  * Execute query

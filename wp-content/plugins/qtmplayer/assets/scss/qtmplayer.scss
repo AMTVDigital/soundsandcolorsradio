@@ -278,6 +278,122 @@ body {
 		cursor: pointer;
 	}
 
+
+	&.qtmplayer--popup {
+		background: red;
+		z-index: 10000;
+	}
+	&.qtmplayer--popup &__vcontainer {
+		display: block;
+		position: absolute;
+		top: 130%;
+		width: $control-size;
+		height: 150px;
+		padding: 0;
+		height: 0;
+		overflow: hidden;
+		transition: height .2s ease-out;
+		transition-delay: .3s;
+		z-index: 8000;
+		border: 1px solid transparent;
+		border-top: none;
+		margin-top: -1px;
+
+
+	}
+	&.qtmplayer--popup &__vcontrol {
+		display: block;
+		left: 0;
+		width: 100%;
+		position: relative;
+		height: 100px;
+		top: 25px;
+	}
+	&.qtmplayer--popup &__vtrack, &.qtmplayer--popup &__vfill {
+		display: block;
+		height: 100px;
+		width: 4px;
+		border-radius: 2px;
+		position: absolute;
+		left: 50%;
+		margin-left: -2px;
+		
+	}
+	&.qtmplayer--popup &__vfill {
+		bottom: 0;
+		top: auto;
+	}
+		
+	&.qtmplayer--popup 	&__vball {
+		top: 0;
+   	 	left: 50%;
+   	 	position: absolute;
+   	 	margin-left: 0px;
+   	 	display: block;
+	}
+		
+
+
+	&.qtmplayer--popup {
+		.qtmplayer__actions {
+			padding-left: 12px;
+			display: flex;
+			z-index: 100;
+			> * {
+				display: inline-flex;
+			}
+		}
+		.qtmplayer__playmob i {
+			width: 100%;
+
+		}
+		.qtmplayer__cart {
+			position: relative;
+		}
+	
+	}
+	&.qtmplayer--popup &__volume {
+		float: none;
+		border: none;
+		height: 62px;
+		width: 62px;
+		line-height: 62px;
+		text-align: center;
+		display: inline-block;
+		vertical-align: middle;
+		width: auto;
+		flex-grow: 1;
+		min-width: 30px;
+		color: inherit;
+		position: relative;
+		&:hover {
+			overflow: visible;
+			.qtmplayer__vcontainer {
+				height: 150px;
+				border-color: $border-color;
+				opacity: 1;
+				transition-delay: 0s;
+				bottom: 62px;
+				border: none;
+				top: auto;
+				bottom: 60px;
+				z-index: 1000;
+				width: 100%;
+				left: 0;
+			}
+		}
+		i {
+			padding: 0 10px;
+			line-height: inherit;
+			max-width: 44px;
+			overflow: hidden;
+		}
+
+	}
+
+	&.qtmplayer--popup &__advanced > &__volume {
+		display: none
+	}
 	
 	&__time, &__length {
 		height: $control-size;
@@ -501,6 +617,8 @@ body {
 		}
 	
 	}
+
+
 
 
 	// Donut player
@@ -858,6 +976,11 @@ body {
 		}
 	}
 
+
+	&-hidebtn {
+		opacity: 0;
+		pointer-events: none;
+	}
 
 }
 

@@ -5,7 +5,7 @@
  * Author: Pro.Radio
  * Author URI: https://pro.radio/
  * Description: Create a filterable video gallery
- * Version: PR.2.2
+ * Version: PR.2.3
  * Domain Path: /languages
  */
 

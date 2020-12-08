@@ -81,7 +81,7 @@ if(!function_exists('members_register_type')){
 		    'show_ui' 					=> true,
 		    'update_count_callback' 	=> '_update_post_term_count',
 		    'query_var' 				=> true,
-		    'rewrite' 					=> array( 'slug' => 'membertype' )
+		    'rewrite' 					=> array( 'slug' => sanitize_title_with_dashes( get_theme_mod('slug_membertype', 'membertype') ) ),
 		);
 		if(function_exists('proradio_core_custom_taxonomy')){
 			proradio_core_custom_taxonomy('membertype','members', $args	);
@@ -149,6 +149,35 @@ if(!function_exists('members_register_type')){
 				'id'    => 'QT_youtube',
 				'type'  => 'text'
 				)
+		   	,array(
+				'label' => esc_html__('Soundcloud link',"proradio" ),
+				'id'    => 'QT_soundcloud',
+				'type'  => 'text'
+				)
+		   	 ,array(
+				'label' => esc_html__('Mixcloud link',"proradio" ),
+				'id'    => 'QT_mixcloud',
+				'type'  => 'text'
+				)
+		   	 ,array( // Repeatable & Sortable Text inputs
+				'label'	=> esc_attr__('Associated shows',"proradio"), // <label>
+				'desc'	=> esc_attr__('Manually pick shows to display in the member page',"proradio"), // description
+				'id'	=> 'members_show_pick', // field id and name
+				'type'	=> 'repeatable', // type of field
+				'sanitizer' => array( // array of sanitizers with matching kets to next array
+					'featured' => 'meta_box_santitize_boolean',
+					'title' => 'sanitize_text_field',
+					'desc' => 'wp_kses_data'
+				),
+				'repeatable_fields' => array ( // array of fields to be repeated
+					array(
+						'label' => esc_html__("Choose a show","proradio"),
+						'id'	=> 'membershow', // field id and name
+						'type' => 'post_chosen',
+						'posttype' => 'shows'
+					)
+				)
+			)
 		);
 		if(class_exists('Custom_Add_Meta_Box')) {
 			$members_meta_box = new Custom_Add_Meta_Box( 'memberss_customtab',  esc_html__('Member details', "proradio"), $fields, 'members', true );

@@ -116,6 +116,7 @@ class Plugin {
 		require_once( __DIR__ . '/widgets/event-featured/event-featured.php' );
 		require_once( __DIR__ . '/widgets/event-countdown/event-countdown.php' );
 		require_once( __DIR__ . '/widgets/radiofeed/radiofeed.php' );
+		require_once( __DIR__ . '/widgets/artwork/artwork.php' );
 		require_once( __DIR__ . '/widgets/onair/onair.php' );
 		require_once( __DIR__ . '/widgets/upcoming-shows-carousel/upcoming-shows-carousel.php' );
 		require_once( __DIR__ . '/widgets/upcoming-shows-slider/upcoming-shows-slider.php' );
@@ -164,6 +165,7 @@ class Plugin {
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\ProradioElementorEventFeatured() );
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\ProradioElementorEventCountdown() );
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\ProradioElementorRadiofeed() );
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\ProradioElementorArtwork() );
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\ProradioElementorOnair() );
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\ProradioElementorUpcomingShowsCarousel() );
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\ProradioElementorUpcomingShowsSlider() );

@@ -385,7 +385,7 @@
 								
 								/**
 								 * @since  3.1
-								 * Load all Contact Form 7 scripts
+								 * Load all elementor scripts
 								 */
 								$.targetScripts = $($.ajaxData).filter('script');
 								if( $.targetScripts.length > 0){
@@ -396,9 +396,6 @@
 										if (/elementor\/assets/i.test( jsurl )){
 											$.getScript(  jsurl );
 										}
-										// if (/contact-form-7/i.test( jsurl ) || /recaptcha/i.test( $(item).attr('src') )){
-										// 	$.getScript(  jsurl );
-										// }
 									});
 								}
 								/**
@@ -410,12 +407,9 @@
 									var cssurl;
 									$.each( $.targetStyles, function(index,item){
 										cssurl = $(item).attr('href');
-										// if ( /elementor\/css/i.test( cssurl ) || /elementor\/assets/i.test( cssurl )  ){
-											// check if this css is already loaded
-											if(jQuery("link[href*='"+cssurl+"']").length == 0 ){
-												$('head').append('<link rel="stylesheet" id="'+$(item).attr('id')+'" href="'+cssurl+'" media="'+$(item).attr('media')+'">');
-											}
-										// }
+										if(jQuery("link[href*='"+cssurl+"']").length == 0 ){
+											$('head').append('<link rel="stylesheet" id="'+$(item).attr('id')+'" href="'+cssurl+'" media="'+$(item).attr('media')+'">');
+										}
 									});
 								}
 								// Reinitialize elementor scripts

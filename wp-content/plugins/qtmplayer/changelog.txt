@@ -1,3 +1,18 @@
+PR.3.3.0 2020 12 02
+[x] Added in customizer options to hide playlist and link to page icons
+
+PR.3.2.9.1 2020 11 30
+[x] Hidden double volume in popup
+
+PR.3.2.9 2020 11 24
+[x] Added volume in popup player desktop
+[x] Added Azuracast titles compatibility
+[x] Added RadioKiing titles compatibility
+[x] Song title split string changed from "-" to " - "
+
+PR.3.2.8 2020 11 18
+[x] qtmplayer-play-button.php and qtmplayer-play-cicle.php added better mp3 scan in audio shortcode
+
 PR.3.2.7 2020 10 12
 [x] Javascript update
 

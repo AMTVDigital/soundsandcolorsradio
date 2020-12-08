@@ -52,7 +52,9 @@
 								json = JSON.parse(json);
 							}
 							if(json.resultCount > 0){
-								thumb = json.results[0].artworkUrl100;
+								thumb = json.results[0].artworkUrl100.split('100x100bb.jpg').join('1000x1000bb.jpg');
+								// thumb = json.results[0].artworkUrl1000;
+								// console.log(json.results[0]);
 								that.cachedThumbsArray[termArray] = thumb;
 								callBack(thumb);
 								return;
@@ -113,7 +115,7 @@
 			qtApplyTitle: function(result, callBack){
 				var that = this;
 				if(result && result !== ''){
-					var feedsplit = result.split("-");
+					var feedsplit = result.split(" - ");
 					var artist;
 					var title;
 					if(feedsplit.length > 1){
@@ -164,6 +166,8 @@
 					qttextfeed 			=  (undefined !== fd.textfeed) ? fd.textfeed : '',
 					qtUseProxy 			=  (undefined !== fd.useproxy) ? fd.useproxy : '',
 					qtlive365 			=  (undefined !== fd.live365) ? fd.live365 : '',
+					qtradioking 		=  (undefined !== fd.radioking) ? fd.radioking : '',
+					qtazuracast 		=  (undefined !== fd.azuracast) ? fd.azuracast : '',
 					qtFeedPlayerTrack = $('#qtFeedPlayerTrack'),
 					qtFeedPlayerAuthor = $('#qtFeedPlayerAuthor'),
 					qtPlayerTrackInfo = $("#qtPlayerTrackInfo"),
@@ -184,7 +188,8 @@
 						});
 						return;
 					}
-					if(qttextfeed === '' && qtradionomy === '' && qtlive365 === '' && qtairtime === '' && (qtradiofeedHost === '' || qtradiofeedPort === '' || typeof(qtradiofeedHost) === 'undefined') && qticecasturl === '' && qtradiodotco === '') {
+					if(qtradioking === '' && qtazuracast === '' && qttextfeed === '' && qtradionomy === '' && qtlive365 === '' && qtairtime === '' && (qtradiofeedHost === '' || qtradiofeedPort === '' || typeof(qtradiofeedHost) === 'undefined') && qticecasturl === '' && qtradiodotco === '') {
+						
 						fn.qtApplyTitle();
 						return;
 					} else {
@@ -421,6 +426,63 @@
 									fn.qtApplyTitle(title, callBack);
 								},
 								error: function(e) {
+								}
+							});
+						}
+						/**
+						 * ===================================================================
+						 *
+						 *	Radioking
+						 *
+						 * ===================================================================
+						 */
+						else if (fd.servertype == 'type-radioking' && qtradioking !== '' ){
+							var rUrl = 'https://api.radioking.io/widget/radio/'+qtradioking+'/track/current';
+							$.ajax({
+								type: 'GET',
+								cache: false,
+								url: rUrl,
+								async: true,
+								contentType: "application/json",
+								success: function(data) {
+									title = data.artist+' - '+data.title;
+									if(data.cover){
+										callBack(data.cover);
+										callBack = false;
+									}
+									fn.qtApplyTitle(title, callBack);
+								},
+								error: function(e) {
+									console.log(e);
+								}
+							});
+						}
+						/**
+						 * ===================================================================
+						 *
+						 *	Azuracast
+						 *
+						 * ===================================================================
+						 */
+						else if (fd.servertype == 'type-azuracast' && qtazuracast !== '' ){
+							var rUrl = '';
+							$.ajax({
+								type: 'GET',
+								cache: false,
+								url: qtazuracast,
+								async: true,
+								contentType: "application/json",
+								success: function(data) {
+									data = data[0];
+									title = data.now_playing.song.title;
+									if(data.cover){
+										callBack(data.cover);
+										callBack = false;
+									}
+									fn.qtApplyTitle(title, callBack);
+								},
+								error: function(e) {
+									console.log(e);
 								}
 							});
 						}

@@ -117,3 +117,104 @@ Kirki::add_field( 'proradio_config', array(
 	'sanitize_callback' => 'proradio_sanitize_permalink',
 	'priority'    => 10
 ));
+
+Kirki::add_field( 'proradio_config', array(
+	'type'        => 'text',
+	'settings'    => 'qtvideo_slug',
+	'label'       => esc_html__( 'Videos', "proradio" ).' '.esc_html__( 'URL permalink', "proradio" ),
+	'description' => esc_html__( 'Once changed, remember to visit Settings > Permalink and save.', "proradio" ),
+	'section'     => 'proradio_advanced_settings',
+	'default'	  => 'qtvideo',
+	'sanitize_callback' => 'proradio_sanitize_permalink',
+	'priority'    => 10
+));
+
+
+
+// Custom taxonomy settings
+// since 1.4.3
+Kirki::add_field( 'proradio_config', array(
+	'type'        => 'text',
+	'settings'    => 'slug_chartcategory',
+	'label'       => esc_html__( 'Taxonomy: ', "proradio" ).' '.esc_html__( 'Chart category', "proradio" ).' '.esc_html__( 'URL permalink', "proradio" ),
+	'description' => esc_html__( 'Once changed, remember to visit Settings > Permalink and save.', "proradio" ),
+	'section'     => 'proradio_advanced_settings',
+	'default'	  => 'chartcategory',
+	'sanitize_callback' => 'proradio_sanitize_permalink',
+	'priority'    => 20
+));
+Kirki::add_field( 'proradio_config', array(
+	'type'        => 'text',
+	'settings'    => 'slug_eventtype',
+	'label'       => esc_html__( 'Taxonomy: ', "proradio" ).' '.esc_html__( 'Event type', "proradio" ).' '.esc_html__( 'URL permalink', "proradio" ),
+	'description' => esc_html__( 'Once changed, remember to visit Settings > Permalink and save.', "proradio" ),
+	'section'     => 'proradio_advanced_settings',
+	'default'	  => 'eventtype',
+	'sanitize_callback' => 'proradio_sanitize_permalink',
+	'priority'    => 20
+));
+
+Kirki::add_field( 'proradio_config', array(
+	'type'        => 'text',
+	'settings'    => 'slug_membertype',
+	'label'       => esc_html__( 'Taxonomy: ', "proradio" ).' '.esc_html__( 'Member type', "proradio" ).' '.esc_html__( 'URL permalink', "proradio" ),
+	'description' => esc_html__( 'Once changed, remember to visit Settings > Permalink and save.', "proradio" ),
+	'section'     => 'proradio_advanced_settings',
+	'default'	  => 'membertype',
+	'sanitize_callback' => 'proradio_sanitize_permalink',
+	'priority'    => 20
+));
+
+
+Kirki::add_field( 'proradio_config', array(
+	'type'        => 'text',
+	'settings'    => 'slug_podcastfilter',
+	'label'       => esc_html__( 'Taxonomy: ', "proradio" ).' '.esc_html__( 'Podcast filter', "proradio" ).' '.esc_html__( 'URL permalink', "proradio" ),
+	'description' => esc_html__( 'Once changed, remember to visit Settings > Permalink and save.', "proradio" ),
+	'section'     => 'proradio_advanced_settings',
+	'default'	  => 'podcastfilter',
+	'sanitize_callback' => 'proradio_sanitize_permalink',
+	'priority'    => 20
+));
+
+Kirki::add_field( 'proradio_config', array(
+	'type'        => 'text',
+	'settings'    => 'slug_radiogenre',
+	'label'       => esc_html__( 'Taxonomy: ', "proradio" ).' '.esc_html__( 'Radio genre', "proradio" ).' '.esc_html__( 'URL permalink', "proradio" ),
+	'description' => esc_html__( 'Once changed, remember to visit Settings > Permalink and save.', "proradio" ),
+	'section'     => 'proradio_advanced_settings',
+	'default'	  => 'radio-genre',
+	'sanitize_callback' => 'proradio_sanitize_permalink',
+	'priority'    => 20
+));
+Kirki::add_field( 'proradio_config', array(
+	'type'        => 'text',
+	'settings'    => 'slug_showgenre',
+	'label'       => esc_html__( 'Taxonomy: ', "proradio" ).' '.esc_html__( 'Show genre', "proradio" ).' '.esc_html__( 'URL permalink', "proradio" ),
+	'description' => esc_html__( 'Once changed, remember to visit Settings > Permalink and save.', "proradio" ),
+	'section'     => 'proradio_advanced_settings',
+	'default'	  => 'showgenre',
+	'sanitize_callback' => 'proradio_sanitize_permalink',
+	'priority'    => 20
+));
+
+Kirki::add_field( 'proradio_config', array(
+	'type'        => 'text',
+	'settings'    => 'slug_showgenre',
+	'label'       => esc_html__( 'Taxonomy: ', "proradio" ).' '.esc_html__( 'Show genre', "proradio" ).' '.esc_html__( 'URL permalink', "proradio" ),
+	'description' => esc_html__( 'Once changed, remember to visit Settings > Permalink and save.', "proradio" ),
+	'section'     => 'proradio_advanced_settings',
+	'default'	  => 'showgenre',
+	'sanitize_callback' => 'proradio_sanitize_permalink',
+	'priority'    => 20
+));
+Kirki::add_field( 'proradio_config', array(
+	'type'        => 'text',
+	'settings'    => 'vdl_filters_slug',
+	'label'       => esc_html__( 'Taxonomy: ', "proradio" ).' '.esc_html__( 'Video filters', "proradio" ).' '.esc_html__( 'URL permalink', "proradio" ),
+	'description' => esc_html__( 'Once changed, remember to visit Settings > Permalink and save.', "proradio" ),
+	'section'     => 'proradio_advanced_settings',
+	'default'	  => 'filter',
+	'sanitize_callback' => 'proradio_sanitize_permalink',
+	'priority'    => 20
+));

@@ -20,7 +20,6 @@ if(!function_exists( 'proradio_posts_slider_owl' )){
 			'el_id'					=> 'qt-post-carousel-'.uniqid( get_the_ID() ),
 			'el_class'				=> '',
 			'grid_id'				=> false, // required for compatibility with WPBakery Page Builder
-			
 
 			// Query parameters
 			'post_type' 			=> 'post',
@@ -43,12 +42,16 @@ if(!function_exists( 'proradio_posts_slider_owl' )){
 			'autoplay_timeout'		=> '6000',
 			'fullheight'			=> false,
 			'fullwidth'			=> false,
+
 		), $atts ) );
 
 		if(false === $grid_id){
 			$grid_id = 'grid'.$el_id;
 		}
 		$grid_id = str_replace(':', '-', $grid_id);
+
+
+
 
 		// ================================================
 		// RETRO COMPATIBILITY
@@ -107,8 +110,6 @@ if(!function_exists( 'proradio_posts_slider_owl' )){
 			}
 		}
 
-
-
 		ob_start();
 
 		$wp_query = new WP_Query( $args );
@@ -116,39 +117,24 @@ if(!function_exists( 'proradio_posts_slider_owl' )){
 		// Max results value, used in pagination
 		$max = $wp_query->max_num_pages;
 		
-
-		/**
-		 * Still missing custom slideshow for custom types
-		 */
 		switch($post_type){
-			case "podcast":
-				$item_template = 'post-podcast';
-				break;
-			case "event":
-				$item_template = 'post-event--featured';
-				break;
 			case "shows":
-				$item_template = 'post-proradio_shows';
+				$item_template = 'slider__item--show';
 				break;
 			default:
 				$item_template = 'slider__item';
 		}
 
-		
 
 		if ( $wp_query->have_posts() ) : 
 			$number = $wp_query->post_count;
-		
 			$container_classes = array('proradio-slider', 'proradio-slider-owl');
-
 			if( $fullheight ){
 				$container_classes[] = 'proradio-slider--fullheight';
 			}
 			if( $fullwidth ){
 				$container_classes[] = 'proradio-slider--fullwidth';
 			}
-
-			
 			$container_classes =  implode(' ', $container_classes);
 			?>
 
@@ -161,10 +147,11 @@ if(!function_exists( 'proradio_posts_slider_owl' )){
 					while ( $wp_query->have_posts() ) : $wp_query->the_post();
 						$post = $wp_query->post;
 						setup_postdata( $post );
+
 						?>
 						<div class="proradio-item">
 							<div class="proradio-itemcontainer">
-								<?php 
+								<?php
 								get_template_part ( 'template-parts/slider/'.$item_template );
 								?>
 							</div>
@@ -203,23 +190,6 @@ if(!function_exists( 'proradio_posts_slider_owl' )){
 					"icon" => get_theme_file_uri( '/inc/proradio-core-setup/theme-functions/img/post-slider.png' ),
 					"category" => esc_html__( "Theme shortcodes", "proradio"),
 					"params" => array_merge(
-						// array(
-						// 	array(
-						// 		"group" 	=> esc_html__( "Data Settings", "proradio" ),
-						// 		'type' => 'dropdown',
-						// 		'heading' => esc_html__( 'Post type', 'proradio' ),
-						// 		'param_name' => 'post_type',
-						// 		'value' => array(
-						// 			esc_html__( "Post", 'proradio' )		=> "post",
-						// 			esc_html__( "Podcast", 'proradio' )		=> "podcast",
-						// 			esc_html__( "Event", 'proradio' )		=> "event",
-						// 			esc_html__( "Shows", 'proradio' )		=> "shows",
-						// 		),
-						// 		'std' => 'post',
-						// 		'admin_label' => true,
-						// 		'edit_field_class' => 'vc_col-sm-7',
-						// 	),
-						// ),
 						proradio_slider_design_fields(),
 						proradio_vc_query_fields($items_per_page_std = 5)
 

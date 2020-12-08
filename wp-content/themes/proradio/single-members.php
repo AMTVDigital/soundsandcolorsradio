@@ -2,7 +2,7 @@
 /**
  * @package WordPress
  * @subpackage proradio
- * @version 1.0.0
+ * @version 1.4.5
  */
 
 get_header(); 
@@ -25,10 +25,20 @@ get_header();
 				<div class="proradio-container">
 					<div class="proradio-entrycontent">
 					<?php 
+
+					/**
+					 * @since 1.4.5
+					 * Related shows for team members
+					 */
+					get_template_part( 'template-parts/single/part-members-shows' ); 
+
+					
 					/**
 					 * Editor content
 					 */
 					the_content();
+
+
 					/**
 					 * Taxonomy output
 					 */

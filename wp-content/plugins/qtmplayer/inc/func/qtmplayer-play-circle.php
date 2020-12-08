@@ -125,10 +125,13 @@ if(!function_exists( 'qtmplayer_play_circle' )) {
 					'airtime' 				=> get_post_meta( $id, 'qtairtime',true ),
 					'radionomy' 			=> get_post_meta( $id, 'qtradionomy',true ),
 					'live365' 				=> get_post_meta( $id, 'qtlive365',true ),
+					'radioking' 			=> get_post_meta( $id, 'qtradioking',true ),
+					'azuracast' 			=> get_post_meta( $id, 'qtazuracast',true ),
 					'textfeed' 				=> get_post_meta( $id, 'qttextfeed',true ),
 					'channel' 				=> get_post_meta( $id, 'qtradiofeedChannel',true ),
 					'useproxy' 				=> get_post_meta( $id, 'proradio-useproxy', true ),
 				);
+				
 				?>
 				<div class="<?php echo esc_attr( $item_classes ); ?>">
 					<div class="qtmplayer-trackitem qtmplayer-donut">
@@ -176,6 +179,9 @@ if(!function_exists( 'qtmplayer_play_circle' )) {
 			$shortcodes = array_keys($matches[2],'audio');
 			if (count($shortcodes) > 0) {
 				$file = $matches[0][0];
+				if( preg_match( '#\[audio\s*.*?\]#s', $file, $matches ) && preg_match('/"([^"]+)"/', $matches[0], $m) ){
+				   $file = $m[1]; 
+				}
 			}
 		}
 

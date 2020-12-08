@@ -1,12 +1,12 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => '2.9.4',
-    'version' => '2.9.4.0',
+    'pretty_version' => '2.9.5',
+    'version' => '2.9.5.0',
     'aliases' => 
     array (
     ),
-    'reference' => '85d0a6ff1f9aaab1c5233f11c78e687339639090',
+    'reference' => 'dd8edc5c0014caf39177d4282030057000fff4da',
     'name' => 'impress-org/give',
   ),
   'versions' => 
@@ -22,12 +22,12 @@
     ),
     'impress-org/give' => 
     array (
-      'pretty_version' => '2.9.4',
-      'version' => '2.9.4.0',
+      'pretty_version' => '2.9.5',
+      'version' => '2.9.5.0',
       'aliases' => 
       array (
       ),
-      'reference' => '85d0a6ff1f9aaab1c5233f11c78e687339639090',
+      'reference' => 'dd8edc5c0014caf39177d4282030057000fff4da',
     ),
     'paypal/paypal-checkout-sdk' => 
     array (

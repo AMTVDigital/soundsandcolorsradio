@@ -519,8 +519,7 @@ if ( ! function_exists( 'proradio_welcome_menupage' ) ) {
 			'proradio-welcome',
 			'proradio_welcome_page_content',
 			get_theme_file_uri('/img/menu-icon.png' ),
-			0
-
+			0 // Order ID
 		);
 	}	
 }

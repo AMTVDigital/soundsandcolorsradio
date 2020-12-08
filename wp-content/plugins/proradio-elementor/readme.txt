@@ -1,9 +1,12 @@
 === ProRadio Elementor ===
 Requires at least: WordPress 5.5
-Tested up to: WordPress 5.5.1
+Tested up to: WordPress 5.5.3
 
 
 === CHANGELOG ===
+Version PR.2.1.0 [2020 12 02]
+[x] Added artwork widget to display song artwork from radio feed if available
+
 
 Version PR.2.0.7 [2020 10 14]
 [x] Added font size for charts widget

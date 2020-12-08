@@ -71,7 +71,7 @@ if(!function_exists( 'proradio_shows_register_type' )){
 			'update_count_callback' => '_update_post_term_count',
 			'query_var' => true,
 			'show_in_rest' => true,
-			'rewrite' => array( 'slug' => 'showgenre' )
+			'rewrite'  => array( 'slug' => sanitize_title_with_dashes( get_theme_mod('slug_showgenre', 'showgenre') ) ),
 		);
 		if(function_exists('proradio_core_custom_taxonomy')){
 			proradio_core_custom_taxonomy('genre','shows',$args	);

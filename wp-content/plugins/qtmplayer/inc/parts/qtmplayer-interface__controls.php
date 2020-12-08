@@ -29,6 +29,19 @@
 				<p class="qtmplayer__artist"></p>
 			</div>
 			<div class="qtmplayer__actions">
+				<?php  
+
+				if(isset($_GET)){
+					if(isset($_GET['proradio-popup'])){
+						?>
+						
+							<?php qtmplayer_volume_control(); ?>
+					
+						<?php
+						
+					}
+				}
+				?>
 				<span class="qtmplayer__prev" data-control="prev">
 					<i class='material-icons'>skip_previous</i>
 				</span>
@@ -39,7 +52,7 @@
 				<span class="qtmplayer__next" data-control="next">
 					<i class='material-icons'>skip_next</i>
 				</span>
-				<a id="qtmplayerCart" href="#" target="_blank" class="qtmplayer__cart">
+				<a id="qtmplayerCart" href="#" target="_blank" class="qtmplayer__cart <?php if('none' === get_theme_mod( 'qtmplayer_icon_cart', 'inline-block' ) ){ echo 'qtmplayer-hidebtn' ; } ?>">
 					<i class='material-icons'></i>
 				</a>
 			</div>
@@ -53,9 +66,12 @@
 					<span id="qtMplayerMiniCue" data-qtmplayer-minicue class="qtmplayer-track-minicue"></span>
 				</div>
 			</div>
+			<?php if(get_theme_mod( 'qtmplayer_icon_playlist', 'inline-block' ) !== 'none'){ ?>
 			<span class="qtmplayer__playlistbtn" data-playlistopen>
 				<i class='material-icons'>playlist_play</i>
 			</span>
+			<?php } ?>
+			<?php  ?>
 			<span class="qtmplayer__plclose qtmplayer__plclose__adv" data-playeropen>
 				<i class='material-icons'>chevron_left</i>
 			</span>
@@ -68,6 +84,7 @@
 			if( !get_theme_mod( 'proradio_vol_header' ) ){
 				qtmplayer_volume_control();
 			}
+			
 			?>
 			<div class="qtmplayer__bgimg"></div>
 		</div>

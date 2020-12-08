@@ -1,5 +1,7 @@
 Pro.Radio Core Changelog
 =======================================
+PR.4.0.5 [2020 11 26]
+* meta_box.php tax_select_disassociated:318 added  all preselect '.esc_attr(selected( $meta, 'all', false )).'
 
 PR.4.0.4 [2020 08 29]
 * live function replace with on in metaboxes-scripts.js

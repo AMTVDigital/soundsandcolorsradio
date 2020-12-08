@@ -210,7 +210,7 @@ function custom_meta_box_field( $field, $meta = null, $repeatable = null ) {
 						$selected = in_array( $item->ID, $meta );
 					}
 
-					echo '<option value="'.esc_attr($item->ID).'"'.esc_attr( selected( $selected ) ).'>'.esc_attr($item->post_title).'</option>';
+					echo '<option value="'.esc_attr($item->ID).'" '.esc_attr( selected( $selected ) ).'>'.esc_attr($item->post_title).'</option>';
 				}
 			}
 			$post_type_object = get_post_type_object( $posttype );
@@ -315,11 +315,11 @@ function custom_meta_box_field( $field, $meta = null, $repeatable = null ) {
 			if($taxtype != ''){
 				echo '<select name="'.esc_attr( $name ).'" id="'.esc_attr( $id ).'">
 						<option value=""> - </option>
-						<option value="all">'.esc_attr__("All (no filters)", "proradio-core").'</option>'; 
+						<option value="all" '.esc_attr(selected( $meta, 'all', false )).'>'.esc_attr__("All (no filters)", "proradio-core").'</option>'; 
 						$terms = get_terms( $taxtype, 'get=all' );
 						if(is_array($terms)){
 							foreach ( $terms as $term ) {
-								echo '<option value="'.esc_attr($term->slug).'"'.esc_attr(selected( $meta, $term->slug, false )).'>'.esc_attr($term->name).'</option>'; 
+								echo '<option value="'.esc_attr($term->slug).'" '.esc_attr(selected( $meta, $term->slug, false )).'>'.esc_attr($term->name).'</option>'; 
 							}
 						}
 				echo '</select>';

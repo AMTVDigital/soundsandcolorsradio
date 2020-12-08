@@ -23,8 +23,8 @@ if ( $related_products ) : ?>
 
 	<section class="related products">
 
-		<h4 class="proradio-caption proradio-caption__m"><?php esc_html_e( 'Related products', 'proradio' ); ?></h4>
-
+		
+		<h4 class="proradio-element-caption proradio-caption proradio-anim" data-qtwaypoints data-qtwaypoints-offset="30"><span><?php esc_html_e( 'Related products', 'proradio' ); ?></span></h4>
 		<?php  
 		/**
 		 * Empty rows for template lines number parification with original WooCommerce file

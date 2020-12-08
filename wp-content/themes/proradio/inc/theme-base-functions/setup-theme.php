@@ -2,7 +2,7 @@
 /**
  * @package WordPress
  * @subpackage proradio
- * @version 1.0.0
+ * @version 1.4.3
 */
 
 /**
@@ -18,6 +18,11 @@ if ( ! function_exists( 'proradio_setup' ) ) {
 	function proradio_setup() {
 		load_theme_textdomain( "proradio", get_theme_file_path( '/languages' ) );
 		
+		// since 1.4.3
+		// Site background
+		add_theme_support( 'custom-background');
+
+
 		// Adding feed links in header
 		add_theme_support( 'automatic-feed-links' );
 		
@@ -94,7 +99,7 @@ if ( ! function_exists( 'proradio_setup' ) ) {
 					'categories', 
 					'tag_cloud'
 				)
-			),
+			)
 		);
 
 		/**

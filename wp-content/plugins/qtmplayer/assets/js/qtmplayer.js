@@ -236,25 +236,7 @@
 				}
 			},
 			play: function(){
-				// $.qtPlayerObj.songdata.callBack = false;
-				// if( $.qtPlayerObj.interface.artwork ){
-				// 	$.qtPlayerObj.imgCover = $.qtPlayerObj.interface.controls.find('.qtmplayer__cover img');
-				// 	var original = $.qtPlayerObj.imgCover.attr('src');
-				// 	if( original ){
-				// 		$.qtPlayerObj.imgCover.attr('data-fallback', original);
-				// 	}
-
-				// 	$.qtPlayerObj.interface.controls.find('.qtmplayer__cover img').attr('data-fallback', original);
-				// 	$.qtPlayerObj.songdata.callBack = this.radioFeedCallback;
-				// }
-				// qtmplayer-radiofeed.js
-				// if('object' === typeof($.qtmplayerRadioFeedObj)){ // check if the file is loaded
-				// 	if( 'radio' === $.qtPlayerObj.songdata.type ){
-				// 		// $.qtmplayerRadioFeedObj.fn.pushFeed( $.qtPlayerObj.songdata );
-				// 	} else {
-				// 		$.qtmplayerRadioFeedObj.fn.stopFeed();
-				// 	}
-				// }
+	
 
 				if ($.qtPlayerObj.uniPlayer.btnPlay.find("i").html() === 'pause') {
 					return;
@@ -434,7 +416,7 @@
 								$.qtPlayerObj.imgCover.attr('data-fallback', original);
 							}
 							$.qtPlayerObj.interface.controls.find('.qtmplayer__cover img').attr('data-fallback', original);
-							$.qtPlayerObj.songdata.callBack = $.qtPlayerObj.uniPlayer .radioFeedCallback;
+							$.qtPlayerObj.songdata.callBack = $.qtPlayerObj.uniPlayer.radioFeedCallback;
 						}
 						$.qtmplayerRadioFeedObj.fn.pushFeed( $.qtPlayerObj.songdata );
 					}
@@ -645,6 +627,7 @@
 
 						// 2019 12 29 new faster remapping of data
 						p.songdata = {};
+						
 						$.each(tr.data() , function(i,c){
 							var newKey = i.replace("qtmplayer", "").toLowerCase();
 							p.songdata[newKey] = c;
@@ -780,16 +763,12 @@
 					params_str, // for URL
 					ot = false, // timeout
 					notif = $('[data-qtmplayerNotif]');
-
-
-					
 				i.body.on("click", "[data-qtmplayer-addrelease]", function(e){
 					e.preventDefault();
 					var that = $(this),
 						url = that.data("qtmplayer-addrelease"),
 						playnow = that.data("playnow"),
 						latestAdded = 'qtmplayer-latestadded';
-
 					if(that.data("qtmplayer-addrelease") == '0'  || that.hasClass("disabled")){
 						return;
 					}
@@ -797,12 +776,9 @@
 						var newitem,
 							special_action,
 							tn = data.length;
-
 						i.doSpinner(true, "+"+tn);
-
 						$.each( data, function( key, val ) {
 							// WooCommerce
-							
 							cartlink = val.buylink;
 							if (val.buylink.match(/^-?\d+$/)) { // is a numeric ID
 								params = { "add-to-cart":val.buylink };
@@ -818,7 +794,6 @@
 								wc_classes = ' product_type_simple add_to_cart_button ajax_add_to_cart ';
 								wc_params = ' data-quantity="1" data-product_id="'+ val.buylink +'" ';
 							}
-
 							special_action = '<i class="material-icons">'+val.icon+'</i>';
 							if( typeof(val.price) !== 'undefined'){
 								if (val.price !== ''){
@@ -826,14 +801,10 @@
 								}
 							}
 							newitem = '<li class="qtmplayer-trackitem dynamic">';
-
 							if(val.cover !== ''){
 								newitem += '<img src="'+val.cover+'">';
 							}
-
 							newitem += '<span class="qtmplayer-play qtmplayer-link-sec qtmplayer-play-btn '+latestAdded+'" data-qtmplayer-type="track" data-qtmplayer-cover="'+val.cover+'" data-qtmplayer-price="'+val.price+'" data-qtmplayer-file="'+val.file+'" data-qtmplayer-title="'+val.title+'"'+'data-qtmplayer-artist="'+val.artist+'"'+'data-qtmplayer-album="'+val.album+'" data-qtmplayer-link="'+val.link+'" data-qtmplayer-buylink="'+val.buylink+'" data-qtmplayer-icon="'+val.icon+'"><i class="material-icons">play_arrow</i></span><p>	<span class="qtmplayer-tit">'+val.title+'</span><br>	<span class="qtmplayer-art">'+val.artist+'</span></p><a href="'+cartlink+'" '+wc_params+' class="qtmplayer-cart '+ wc_classes +'" target="_blank">'+special_action+'</a></li>';
-							
-
 							i.playlist.append(newitem);
 							if(0 === key && playnow){
 								$.qtPlayerObj.interface.justStop();
@@ -844,7 +815,6 @@
 							latestAdded = '';
 						});
 						i.showhide();
-
 						if(that.data("clickonce") === 1){
 							that.hide();
 							
@@ -854,16 +824,12 @@
 							that.addClass('disabled');
 							
 						}
-
 						notif.addClass("wait").delay(1500).promise().done(function(){
 							notif.removeClass("wait");
 							i.doSpinner(false);
 						});
-
 						// Disable the functionality
 						that.attr("data-qtmplayer-addrelease", '0');
-
-
 					});
 				});
 			},
@@ -975,8 +941,11 @@
 					}
 			    }
 			    function vrelocate(l){
-			    	if(l < 0 || l > 100){
-			    		return;
+			    	if(l < 0 ){
+			    		l = 0;
+			    	}
+			    	if(l > 95 ){
+			    		l = 100;
 			    	}
 			    	m.css({'top': 100 -l});
 			    	p = l;

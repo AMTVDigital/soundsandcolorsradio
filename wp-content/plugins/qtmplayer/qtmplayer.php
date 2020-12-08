@@ -5,7 +5,7 @@
  * Plugin URI: http://pro.radio
  * Author: Pro.Radio
  * Author URI: http://pro.radio
- * Version: PR.3.2.7
+ * Version: PR.3.3.0
  * Text Domain: qtmplayer
  * Domain Path: /languages
 */

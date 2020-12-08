@@ -23,11 +23,9 @@
 			e.preventDefault();
 			e.stopPropagation();
 			var t = $(this);
-
 			var cookiename = 'voted-'+t.data('chartid')+'-'+t.data('position');
 			if( '1' == $.cookie(cookiename)){
 				t.addClass('disabled');
-				// alert("You already voted for this track. Only 1 vote a day is allowed.");
 			}else {
 				$.cookie(cookiename, '1', { expires: 1, path: '/' }); 
 				$.ajax({

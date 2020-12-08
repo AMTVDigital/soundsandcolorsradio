@@ -24,9 +24,11 @@ $post_metas = get_post_meta( $post->ID );
 					<?php proradio_postcategories( 1, 'membertype' ); ?>
 				</p>
 				<h3 class="proradio-post__title proradio-h1 proradio-cutme-t-3"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-				<?php 
+				<?php
+
 				$social_a = array('itunes','instagram','linkedin','facebook','twitter','pinterest','vimeo','wordpress','youtube');
 				$socials = '';
+
 				foreach( $social_a as $s ){
 					$meta_val = 'QT_'.$s;
 					if( $post_metas && array_key_exists( $meta_val, $post_metas ) ){
@@ -37,16 +39,15 @@ $post_metas = get_post_meta( $post->ID );
 						}
 					}
 				}
+
 				if($socials != ''){ 
 					?>
 					<p class="proradio-post__social">
 						<?php echo wp_kses_post( $socials, array('a','i') ); ?>
 					</p>
 					<?php 
-				} 
-				?>
+				}
 
-				<?php  
 				/**
 				 * Bio
 				 */

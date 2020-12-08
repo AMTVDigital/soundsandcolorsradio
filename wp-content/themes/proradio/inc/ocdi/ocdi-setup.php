@@ -4,7 +4,7 @@
  * @package WordPress
  * @subpackage One Click Demo Import
  * @subpackage proradio
- * @version 1.4.0
+ * @version 1.4.3
  * Settings for the demo import
  * https://wordpress.org/plugins/one-click-demo-import/
  * 
@@ -44,7 +44,8 @@ if(!function_exists('proradio_ocdi_plugin_intro_text')){
 	function proradio_ocdi_plugin_intro_text( $default_text ) {
 	    $default_text .= '<h2>'.esc_html__('Welcome to the "ProRadio Theme" Demo Import.', 'proradio' ).'</h2>';
 	     $default_text .=  '<h3>'.esc_html__('Please make sure you check the manual before proceeding', 'proradio').'</h3>';
-
+	      $default_text .=  '<p>If you experience 500, 504, 400 or other errors, please check:  <a href="https://github.com/awesomemotive/one-click-demo-import/blob/master/docs/import-problems.md">the official troubleshooting guide</a> </p>';
+	    $default_text .=  '<p style="font-weight:700">'.esc_html__('If the import process gets stuck for more than 2 minutes, and is not complete, please reload this page and click again the Import Demo button. You can repeat the procedure until you see the confirmation message.', 'proradio').'</p>';
 	    return $default_text;
 	}
 }
@@ -57,9 +58,9 @@ if(!function_exists('proradio_ocdi_import_files')){
 			array(
 				'import_file_name'           => 'Default Demo',
 				'categories'                 => array( 'Default' ),
-				'import_file_url'            => $url.'demo1/proradioimportabledemo.WordPress.2020-10-05-v15.xml',
+				'import_file_url'            => $url.'demo1/proradioimportabledemo.WordPress.2020-11-26.xml',
 				'import_widget_file_url'     => $url.'demo1/demo.pro.radio-wp1-import2-widgets.wie',
-				'import_customizer_file_url' => $url.'demo1/proradio-child-export.json', // dat extension triggers security restrictions, renamed to json
+				'import_customizer_file_url' => $url.'demo1/proradio-child-export-2.json', // dat extension triggers security restrictions, renamed to json
 				'import_notice'              => esc_html__( 'IMPORTANT NOTICE: activate the ProRadio Child theme and  any required plugin first.', 'proradio' ),
 				'preview_url'                => 'https://demo.pro.radio/wp1/',
 				'import_preview_image_url'	 => get_template_directory_uri() . '/screenshot.png',

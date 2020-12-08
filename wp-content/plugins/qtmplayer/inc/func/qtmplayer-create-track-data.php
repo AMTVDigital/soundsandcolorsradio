@@ -14,7 +14,7 @@ if(!function_exists('qtmplayer_create_track_data')){
 		$data = array_filter( $data );
 		foreach( $data as $key => $val ){
 			?>
-			data-qtmplayer-<?php echo esc_html( $key ); ?>="<?php echo esc_attr( $val ); ?>"
+			data-testme="1" data-qtmplayer-<?php echo esc_html( $key ); ?>="<?php echo esc_attr( $val ); ?>"
 			<?php 
 		}
 		echo ob_get_clean();

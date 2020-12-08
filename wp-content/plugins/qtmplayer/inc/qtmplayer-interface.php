@@ -57,6 +57,12 @@ function qtmplayer_interface(){
 		$classes[] = 'qtmplayer-hidden';
 	}
 
+	if(isset($_GET)){
+		if(isset($_GET['proradio-popup'])){
+			$classes[] = 'qtmplayer--popup';
+		}
+	}
+
 
 	$classes =implode(' ', $classes );
 
@@ -67,6 +73,9 @@ function qtmplayer_interface(){
 	 */
 	// $autoplay = '';
 	
+
+
+
 	$qtmplayer_design = get_theme_mod( 'qtmplayer_design', 'header' );
 	$qtmplayer_design_class = 'qtmplayer__container--'.$qtmplayer_design;
 

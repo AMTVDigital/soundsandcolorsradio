@@ -155,8 +155,8 @@ if(!function_exists('proradio_chart_tracklist')) {
 									 $event['releasetrack_rating'] = 0;
 								}
 								if(function_exists('qt_chartvote_buttons')){ 
-									echo qt_chartvote_buttons(get_the_ID(), $trackid, $event['releasetrack_rating']);
-									$trackid = $trackid +1;
+									// 2020 11 26 replaced $trackid with $event['trackid']
+									echo qt_chartvote_buttons(get_the_ID(), $event['trackid'], $event['releasetrack_rating']);
 								}
 							}
 							?>

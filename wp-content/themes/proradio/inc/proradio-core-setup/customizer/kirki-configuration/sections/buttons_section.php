@@ -64,6 +64,38 @@ Kirki::add_field( 'proradio_config', [
 	),
 ] );
 
+
+
+$selectors_list = array(
+			'input[type="submit"]', 
+			'#proradio-body.woocommerce .proradio-master #respond input#submit', 
+			'#proradio-body.woocommerce .proradio-master .woocommerce #respond input#submit', 
+			'#proradio-body.woocommerce .proradio-master .woocommerce a.button', 
+			'#proradio-body.woocommerce .proradio-master .woocommerce button.button', 
+			'#proradio-body.woocommerce .proradio-master .woocommerce input.button', 
+			'.proradio-entrycontent .wp-block-button .wp-block-button__link', 
+			'.proradio-entrycontent .wp-block-button .wp-block-file__button', 
+			'.woocommerce #respond input#submit, .woocommerce a.button', 
+			'.woocommerce button.button', 
+			'.woocommerce input.button, .proradio-btn.proradio-active', 
+			'.proradio-btn.proradio-active',  
+			'.proradio-btn-primary', 
+			'.woocommerce a.button',
+			'#proradio-body.woocommerce #proradio-master .button',
+			'#proradio-body.woocommerce #proradio-master .proradio-woocommerce-content a.button',
+			'#proradio-body.woocommerce #proradio-master .proradio-woocommerce-content a.button',  
+			'a.button'
+		);
+
+
+
+
+
+
+
+
+
+
 Kirki::add_field( 'proradio_config', array(
 	'type'        => 'color',
 	'settings'    => 'proradio_btn_background',
@@ -77,30 +109,13 @@ Kirki::add_field( 'proradio_config', array(
 	],
 	'output'    => array(
 		array(
-			'element'       => '.proradio-btn.proradio-active, .proradio-btn.proradio-active,  .proradio-btn-primary, .woocommerce a.button,#proradio-body.woocommerce #proradio-master .button,#proradio-body.woocommerce #proradio-master .proradio-woocommerce-content a.button,#proradio-body.woocommerce #proradio-master .proradio-woocommerce-content a.button,  a.button',
+			'element'       => implode(',',$selectors_list),
 			'property'      => 'background-color',
 		),
 	),
 ));
-Kirki::add_field( 'proradio_config', array(
-	'type'        => 'color',
-	'settings'    => 'proradio_btn_background_h',
-	'label'       => esc_html__( 'Buttons hover', "proradio" ),
-	'section'     => 'proradio_buttons_section',
-	'default'	  => '#be024a',
-	'transport'   => 'auto',
-	'priority'    => 0,
-	'choices'     => [
-		'alpha' => true,
-	],
-	'output'    => array(
-		array(
-			'element'       => '.proradio-btn.proradio-active:hover, .proradio-btn.proradio-active:hover,  .proradio-btn-primary:hover, .woocommerce a.button,#proradio-body.woocommerce #proradio-master .button:hover, #proradio-body.woocommerce #proradio-master .proradio-woocommerce-content a.button:hover,#proradio-body.woocommerce #proradio-master .proradio-woocommerce-content a.button:hover,  a.button:hover',
-			'property'      => 'background-color',
-			'media_query' => '@media (min-width: 1201px)'
-		),
-	),
-));
+
+
 Kirki::add_field( 'proradio_config', array(
 	'type'        => 'color',
 	'settings'    => 'proradio_btn_col',
@@ -114,11 +129,40 @@ Kirki::add_field( 'proradio_config', array(
 	],
 	'output'    => array(
 		array(
-			'element'       => '.proradio-btn.proradio-active, .proradio-btn.proradio-active,  .proradio-btn-primary,  .woocommerce a.button,#proradio-body.woocommerce #proradio-master .button,#proradio-body.woocommerce #proradio-master .proradio-woocommerce-content a.button,#proradio-body.woocommerce #proradio-master .proradio-woocommerce-content a.button,  a.button',
+			'element'       => implode(',',$selectors_list),
 			'property'      => 'color',
 			 'suffix'   => ' !important',
 		),
 	),
 ));
+
+
+// Hover classes array
+$hover_selectors = array();
+foreach( $selectors_list as $selector){
+	$hover_selectors[] = $selector.':hover';
+}
+// Hover background
+Kirki::add_field( 'proradio_config', array(
+	'type'        => 'color',
+	'settings'    => 'proradio_btn_background_h',
+	'label'       => esc_html__( 'Buttons hover', "proradio" ),
+	'section'     => 'proradio_buttons_section',
+	'default'	  => '#be024a',
+	'transport'   => 'auto',
+	'priority'    => 0,
+	'choices'     => [
+		'alpha' => true,
+	],
+	'output'    => array(
+		array(
+			'element'       => implode(',',$hover_selectors),
+			'property'      => 'background-color',
+			'media_query' => '@media (min-width: 100px)',
+			 'suffix'   => ' !important',
+		),
+	),
+));
+
 
 

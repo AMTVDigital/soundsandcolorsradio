@@ -36,7 +36,7 @@ if($max > 1){
 					}
 					if(!empty($link) && ($paged < $max)): ?>
 						<p class="proradio-loadmore-container proradio-clearfix">
-							<a data-proradio-loadmore="#proradio-loop" href="<?php echo esc_url( $link ); ?>"  class="proradio-num proradio-btn pproradio-btn__r  proradio-center noajax">
+							<a data-proradio-loadmore="#proradio-loop" href="<?php echo esc_url( $link ); ?>"  class="proradio-btn pproradio-btn__r  proradio-center noajax">
 							   <span><?php esc_html_e("Load more", "proradio"); ?></span><i class='material-icons'>sync</i>
 							</a>
 						</p>

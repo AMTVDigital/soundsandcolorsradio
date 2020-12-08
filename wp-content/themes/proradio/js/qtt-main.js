@@ -1,7 +1,7 @@
 /**====================================================================
  *
  *  Main Script File
- *  V. 1.3.3
+ *  V. 1.4.4
  *
  *====================================================================*/
 
@@ -223,24 +223,7 @@
 			/** Check if pics are loaded for given cotnainer
 			====================================================================*/
 
-			// In lista da cancellare
-			
-			// imagesLoaded: function (container) {
-				// var f = $.proradioXtendObj.fn;
-				// var $imgs = $(container).find('img[src!=""]');
-				// if (!$imgs.length) {return $.Deferred().resolve().promise();}
-				// var dfds = [];  
-				// $imgs.each(function(){
-				// 	var dfd = $.Deferred();
-				// 	dfds.push(dfd);
-				// 	var img = new Image();
-				// 	img.onload = function(){dfd.resolve();}
-				// 	img.onerror = function(){dfd.resolve();}
-				// 	img.src = this.src;
-				// });
-				// // IE - when all the images are loaded
-				// return $.when.apply($,dfds);
-			// },
+		
 
 			// Website tree menu			
 			treeMenu: function() {
@@ -1017,6 +1000,7 @@
 				var size      = event.page.size;      // Number of items per page
 			},
 			owlCarousel: function(targetContainer){
+				
 				if(!jQuery.fn.owlCarousel) {
 					return;
 				}
@@ -1047,18 +1031,31 @@
 						autoplayTimeout: T.data('autoplay_timeout'),
 						autoplayHoverPause: T.data('pause_on_hover'),
 						callbacks: true,
+						mouseDrag: true,
+						touchDrag: false,
 						responsive:{
 							0:{
-								items: T.data('items_mobile')
+								items: T.data('items_mobile'),
+								mouseDrag: false,
+								touchDrag: true
 							},
 							420:{
-								items: T.data('items_mobile_hori')
+								items: T.data('items_mobile_hori'),
+								mouseDrag: false,
+								touchDrag: true
 							},
 							600:{
-								items: T.data('items_tablet')
+								items: T.data('items_tablet'),
+								mouseDrag: false,
+								touchDrag: true
 							},
 							1025:{
-								items: T.data('items')
+								items: T.data('items'),
+							},
+							1200:{
+								items: T.data('items'),
+								mouseDrag: true,
+								touchDrag: true
 							}
 						},
 						onInitialized:function(){
@@ -1311,6 +1308,8 @@
 					
 					e.preventDefault();
 
+			
+				
 					
 					
 					var settings, parameters, mysettings, b, a, winObj;
@@ -1320,6 +1319,22 @@
 						name = btn.attr("data-name"),
 						width= btn.attr("data-width"),
 						height= btn.attr("data-height");
+
+					// @since 1.4.3
+					// Stop audio if open the popup
+					if( /proradio\-popup/i.test(destination)){
+						if('object' === typeof($.qtPlayerObj)){
+							var o = $.qtPlayerObj;
+							var p = o.uniPlayer;
+							var i = o.interface;
+							var b = i.btnPlay;
+							var state = b.find("i").html();
+							if(state === 'pause'){
+								p.pause();
+							}
+						}
+					}
+
 					settings = {
 						height:600, // sets the height in pixels of the window.
 						width:600, // sets the width in pixels of the window.
@@ -1350,16 +1365,9 @@
 
 					parameters = "location=" + settings.location + ",menubar=" + settings.menubar + ",height=" + settings.height + ",width=" + settings.width + ",toolbar=" + settings.toolbar + ",scrollbars=" + settings.scrollbars  + ",status=" + settings.status + ",resizable=" + settings.resizable + ",left=" + settings.left  + ",screenX=" + settings.left + ",top=" + settings.top  + ",screenY=" + settings.top;
 					winObj = window.open(destination, name, parameters);
-					
-					// if (settings.onUnload) {
-					// 	unloadInterval = setInterval(function() {
-					// 		if (!winObj || winObj.closed) {
-					// 			clearInterval(unloadInterval);	
-					// 			settings.onUnload.call($(this));
-					// 		}
-					// 	},500);
-					// }
-					
+				
+
+
 					e.stopPropagation();
 					return false;
 				});

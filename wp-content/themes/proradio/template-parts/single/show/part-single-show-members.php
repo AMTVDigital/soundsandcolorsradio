@@ -18,7 +18,7 @@ if(is_array($show_members_pick)){
 				<!-- ======================= MANUALLY ASSOCIATED MEMBERS ======================= -->
 				<div class="proradio-container">
 					<hr class="proradio-spacer-m">
-					<h3 class="proradio-element-caption proradio-caption proradio-anim" data-qtwaypoints data-qtwaypoints-offset="30"><span><?php echo get_the_title().' ' .esc_attr__("crew","proradio"); ?></span></h3>
+					<h4 class="proradio-element-caption proradio-caption proradio-anim" data-qtwaypoints data-qtwaypoints-offset="30"><span><?php echo get_the_title().' ' .esc_attr__("crew","proradio"); ?></span></h4>
 					<hr class="proradio-spacer-s">
 					<?php 
 					if( count( $show_members_pick ) == 1 ){
@@ -29,7 +29,9 @@ if(is_array($show_members_pick)){
 						}
 					}
 					?>
+					<hr class="proradio-spacer-s"><hr class="proradio-spacer-m">
 				</div>
+
 				<!-- ======================= RELATED MEMBERS END ======================= -->
 				<?php
 			}

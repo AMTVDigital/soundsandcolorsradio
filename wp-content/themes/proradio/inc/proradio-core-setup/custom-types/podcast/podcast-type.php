@@ -64,7 +64,7 @@ function proradio_podcast_register_type() {
 		'show_ui' => true,
 		'update_count_callback' => '_update_post_term_count',
 		'query_var' => true,
-		'rewrite' => array( 'slug' => 'podcastfilter' )
+		'rewrite' => array( 'slug' => sanitize_title_with_dashes( get_theme_mod('slug_podcastfilter', 'podcastfilter') ) ),
 	);
 	if(function_exists('proradio_core_custom_taxonomy')){
 		proradio_core_custom_taxonomy('podcastfilter','podcast', $args );

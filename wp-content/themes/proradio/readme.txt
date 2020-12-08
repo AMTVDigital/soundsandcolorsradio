@@ -1,8 +1,9 @@
 === ProRadio ===
 Contributors: Pro.Radio
-Requires at least: WordPress 5.5
-Tested up to: WordPress 5.5.1
-Version: 1.4.1
+Requires at least: WordPress 5.5.1
+Requires PHP: 7.3
+Tested up to: WordPress 5.5.3
+Version: 1.4.6
 Tags: two-columns, right-sidebar
 
 == Description ==
@@ -28,7 +29,53 @@ Pro.Radio WordPress Theme, Copyright 2020 ProRadio.com
 == Changelog ==
 https://pro.radio/changelog/
 
-[ ] Optional sidebar for videos
+
+1.4.6 [2020-12-02]
+[x] WooCommerce colors customizer buttons and hover links - updated inc/proradio-core-setup/customizer/kirki-configuration/sections/buttons_section.php
+[x] WooCommerce updated woocommerce.css - enabled cart icon on archives
+[x] Caption item: increased line height to 1.3em, added overflow hidden (small design change, sharper design)
+[x] ADDED related shows field in team members.
+[x] Categories font size decreased from 13 to 11px
+[x] Player Update  PR.3.3.0:  Added in customizer options to hide playlist and link to page icons
+[x] ADDED Cover widget in Elementor (Beta feature)
+[x] Update Proradio Elementor to PR.2.1.0
+
+1.4.5 [2020-12-01]
+[x] member-type.php added soundcloud and mixcloud icons
+
+
+1.4.4 [2020-11-27]
+[x] Carousels fix
+
+1.4.3 [2020-11-26]
+[x] ADDED: Optional sidebar for videos single page
+[x] ADDED: popup volume
+[x] ADDED: mobile CTA colors from customizer https://pro.radio/shop/mypradmin/supporttickets.php?action=view&id=183
+[x] ADDED: full site wide background image in customizer
+[x] ADDED: qtt-main.js:1311 stop audio if popup opens
+[x] ADDED: Custom taxonomy custom slug https://pro.radio/shop/mypradmin/supporttickets.php?action=view&id=245
+[x] ADDED: Custom slug for Videos
+[x] ADDED: Radio king provider
+[x] ADDED: Azuracast radio provider
+[x] FIX: Current show fix in template-parts/slider/slider__item--show.php
+[x] FIX: Fix scroll gesture on owl carousels https://pro.radio/shop/mypradmin/supporttickets.php?action=view&id=304
+[x] FIX: Show pages hide sections if empty https://pro.radio/shop/mypradmin/supporttickets.php?action=view&id=322
+[x] FIX: Chart vote (FILE inc/proradio-core-setup/theme-functions/theme-function-chart-tracklist.php:159 replaced $trackid with $event['trackid']): bug when reorder is enabled https://pro.radio/shop/mypradmin/supporttickets.php?action=view&id=293
+[x] FIX: WOOCOMMERCE Fixed related caption design woocommerce/single-product/related.php
+[x] FIX: WOOCOMMERCE disabled comments script from WP causing force reflow in product pages
+[x] WooCOmmerce updates
+[x] Update plugin player in repository (3.2.9)
+[x] Update plugin Video galleries in repository
+[x] Update plugin Theme Core in repository
+[x] Update plugin Ajax Page Load
+[x] Update plugin Chart Vote
+[x] Demo content: use GUID reset and reexported
+
+
+1.4.2 [2020-10-28]
+[x] Load more pagination button fix in mobile
+[x] pagination fix
+
 
 1.4.1 [2020-10-14]
 [x] Added related news posts to single show page template

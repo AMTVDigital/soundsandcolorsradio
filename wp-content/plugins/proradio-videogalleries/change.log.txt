@@ -1,3 +1,6 @@
+V2.3 2020 11 22
+[x] Dynamic permalink parameter linked to theme option
+
 V2.2 2020 06 09
 [x] Restored custom URL field
 

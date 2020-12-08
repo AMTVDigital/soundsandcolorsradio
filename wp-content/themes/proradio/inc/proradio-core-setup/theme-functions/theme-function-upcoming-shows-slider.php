@@ -43,7 +43,7 @@ if(!function_exists( 'proradio_upcoming_shows_slider' )){
 			$schedulefilter = str_replace('schedulefilter:', '', $schedulefilter);
 		}
 		$return_only_today = true;
-		$data_extraction 	= proradio_extract_schedule_days( $schedulefilter, $return_only_today ); // $schedulefilter, $today []
+		$data_extraction 	= proradio_extract_schedule_days( $schedulefilter, $return_only_today );
 
 		if(!$data_extraction){ 
 			return esc_html__( 'No schedules selected', 'proradio' ); 
@@ -57,7 +57,6 @@ if(!function_exists( 'proradio_upcoming_shows_slider' )){
 
 		// Today's shows
 		$shows = $schedules[0]->shows;
-		
 		if( !is_array($shows) ){
 			return esc_html__( 'Sorry, there is no show schedules at this moment.', 'proradio' );
 		}

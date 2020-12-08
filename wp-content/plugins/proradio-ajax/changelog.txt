@@ -2,11 +2,14 @@
  * Plugin Name: ProRadio Ajax Pageload
  * Plugin URI: http://pro.radio
  * Description: Adds page load with ajax to keep music playing across pages
- * Version: PR.3.4.7
+ * Version: PR.3.4.8
  * Author: ProRadio
  * Author URI: http://pro.radio
  */
 
+
+PR.3.4.8 [2020 10 19]
+* removed script 'wc-add-to-cart', to avoid double add to cart
 
 PR.3.4.7 [2020 10 09]
 * Improved preloader styling

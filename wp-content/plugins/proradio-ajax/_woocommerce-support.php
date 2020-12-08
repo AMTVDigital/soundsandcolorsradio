@@ -71,7 +71,7 @@ if(!function_exists('proradio_ajax_wc_script_reload')){
 				// 'wc-checkout',
 				// 'wc-country-select',
 				// 'wc-credit-card-form',
-				'wc-add-to-cart',
+				// 'wc-add-to-cart',
 				'wc-add-to-cart-variation',
 				// 'wc-geolocation',
 				// 'wc-lost-password',

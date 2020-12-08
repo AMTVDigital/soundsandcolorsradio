@@ -5,7 +5,7 @@
  * Author: Pro.Radio
  * Author URI: http://pro.radio
  * Description: Adds page load with ajax to keep music playing across pages
- * Version: PR.3.4.7
+ * Version: PR.3.4.8
 */
 
 
@@ -186,13 +186,6 @@ if(!function_exists('proradio_ajax_preloader_html')){
 		?>
 		</style>
 		<?php
-
-
-
-		
-
-
-
 
 	}
 }

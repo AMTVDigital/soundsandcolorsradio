@@ -40,5 +40,13 @@ if(!function_exists( 'proradio_widgets_init' )){
 			'after_title'   => '</span></h6>',
 			'after_widget'  => '</li>'
 		));
+		register_sidebar( array(
+			'name'          => esc_html__( 'Video Sidebar', "proradio" ),
+			'id'            => 'proradio-video-sidebar',
+			'before_widget' => '<li id="%1$s" class="proradio-widget proradio-widget--videopage proradio-col proradio-s12 proradio-m12 proradio-l12  %2$s">',
+			'before_title'  => '<h6 class=" proradio-caption proradio-caption__s proradio-anim" data-qtwaypoints-offset="30" data-qtwaypoints><span>',
+			'after_title'   => '</span></h6>',
+			'after_widget'  => '</li>'
+		));
 	}
 }

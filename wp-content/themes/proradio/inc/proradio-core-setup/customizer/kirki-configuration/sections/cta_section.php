@@ -225,3 +225,60 @@ Kirki::add_field( 'proradio_config', array(
 		]
 	],
 ));
+
+
+Kirki::add_field( 'proradio_config', array(
+	'type'        => 'color',
+	'settings'    => 'proradio_cta_background',
+	'label'       => esc_html__( 'Button background', "proradio" ),
+	'section'     => 'proradio_cta_section',
+	'transport'   => 'auto',
+	'priority'    => 12,
+	'choices'     => [
+		'alpha' => true,
+	],
+	'output'    => array(
+		array(
+			'element'       => '.proradio-btn-ctaheader',
+			'property'      => 'background-color',
+		),
+	),
+));
+
+Kirki::add_field( 'proradio_config', array(
+	'type'        => 'color',
+	'settings'    => 'proradio_cta_background_h',
+	'label'       => esc_html__( 'Button background hover', "proradio" ),
+	'section'     => 'proradio_cta_section',
+	'transport'   => 'auto',
+	'priority'    => 12,
+	'choices'     => [
+		'alpha' => true,
+	],
+	'output'    => array(
+		array(
+			'element'       => '.proradio-btn-ctaheader:hover',
+			'property'      => 'background-color',
+			'suffix'   => ' !important',
+		),
+	),
+));
+
+Kirki::add_field( 'proradio_config', array(
+	'type'        => 'color',
+	'settings'    => 'proradio_cta_colort',
+	'label'       => esc_html__( 'Button text', "proradio" ),
+	'section'     => 'proradio_cta_section',
+	'transport'   => 'auto',
+	'priority'    => 13,
+	'choices'     => [
+		'alpha' => false,
+	],
+	'output'    => array(
+		array(
+			'element'       => '#proradio-menu .proradio-btn-ctaheader, #proradio-overlay .proradio-btn-ctaheader',
+			'property'      => 'color',
+			'suffix'   => ' !important',
+		),
+	),
+));

@@ -26,9 +26,9 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 
 
 	if( $hassidebar ){
-		$post_class = 'proradio-pagecontent proradio-single proradio-single__sidebar';
+		$post_class = 'proradio-pagecontent proradio-single proradio-single__sidebar proradio-bg';
 	} else {
-		$post_class = 'proradio-pagecontent proradio-single proradio-single__nosidebar';
+		$post_class = 'proradio-pagecontent proradio-single proradio-single__nosidebar proradio-bg';
 	}
 
 	?>

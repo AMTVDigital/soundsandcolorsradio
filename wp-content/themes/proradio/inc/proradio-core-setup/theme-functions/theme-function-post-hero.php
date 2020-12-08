@@ -57,11 +57,14 @@ if(!function_exists( 'proradio_template_post_hero' )){
 		if ( $wp_query->have_posts() ) : 
 
 			switch($post_type){
+				case "show":
+					$item_template = 'template-parts/post/post-hero--show';
+					break;
 				case "members":
-					$item_template = 'post-hero--members';
+					$item_template = 'template-parts/post/post-hero--members';
 					break;
 				default:
-					$item_template = 'post-hero';
+					$item_template = 'template-parts/post/post-hero';
 			}
 			?>
 			<div id="<?php echo esc_attr( $list_id ); ?>" class="proradio-sc-archive-posthero">
@@ -70,7 +73,7 @@ if(!function_exists( 'proradio_template_post_hero' )){
 					$post = $wp_query->post;
 					setup_postdata( $post );
 					set_query_var('proradio_post_excerpt', $proradio_post_excerpt );
-					get_template_part( 'template-parts/post/'.$item_template );
+					get_template_part( $item_template );
 					wp_reset_postdata();
 				endwhile; 
 			include 'helpers/loadmore.php';

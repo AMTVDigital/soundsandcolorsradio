@@ -5,7 +5,7 @@
 * Author: Pro.Radio
 * Author URI: http://pro.radio
 * Description: Adds a vote button to tracks in charts
-* Version: PR.3.0.1
+* Version: PR.3.0.2
 * Text Domain: proradio-chartvote
 * Domain Path: /languages
 * @package proradio-chartvote

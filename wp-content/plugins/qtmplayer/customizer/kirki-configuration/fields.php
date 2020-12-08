@@ -32,6 +32,52 @@ qtmplayerKirki_Kirki::add_field( 'qtmplayer_config', array(
 		)
 ) );
 
+qtmplayerKirki_Kirki::add_field( 'qtmplayer_config', array(
+	'type'        => 'select',
+	'settings'    => 'qtmplayer_icon_cart',
+	'label'       => esc_html__( 'Show radio or cart icon in player', "qtmplayer" ),
+	'section'     => 'qtmplayer_options_section',
+	'description' => esc_html__( 'Show icon linked to the single album or radio channel in the player bar', "qtmplayer" ),
+	'priority'    => 10,
+	'default'     => 'inline-block',
+	'choices'     => array(
+		'inline-block'   	=> esc_attr__( 'Show', 'proradio' ),
+		'none'   	=> esc_attr__( 'Hide', 'proradio' ),
+	),
+	'transport'   => 'auto',
+	'output'    => array(
+		array(
+			'element'       => '.qtmplayer__cart',
+			'property'      => 'display',
+			'suffix'      => ' !important'
+		),
+	),
+));
+
+
+qtmplayerKirki_Kirki::add_field( 'qtmplayer_config', array(
+	'type'        => 'select',
+	'settings'    => 'qtmplayer_icon_playlist',
+	'label'       => esc_html__( 'Playlist open button', "qtmplayer" ),
+	'section'     => 'qtmplayer_options_section',
+	'description' => esc_html__( 'Show icon to open the playlist from the player bar', "qtmplayer" ),
+	'priority'    => 10,
+	'default'     => 'inline-block',
+	'choices'     => array(
+		'inline-block'   	=> esc_attr__( 'Show', 'proradio' ),
+		'none'   	=> esc_attr__( 'Hide', 'proradio' ),
+	),
+	'transport'   => 'auto',
+	'output'    => array(
+		array(
+			'element'       => '.qtmplayer__playlistbtn',
+			'property'      => 'display',
+			'suffix'      => ' !important; color: green;'
+		),
+	),
+));
+
+
 
 qtmplayerKirki_Kirki::add_field( 'qtmplayer_config', array(
 	'type'        => 'switch',

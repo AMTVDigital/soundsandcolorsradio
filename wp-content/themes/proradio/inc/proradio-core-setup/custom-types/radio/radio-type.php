@@ -70,7 +70,7 @@ if(!function_exists('proradio_radiochannel_register_type')){
 			'update_count_callback' => '_update_post_term_count',
 			'query_var' => true,
 			'show_in_rest' => true,
-			'rewrite' => array( 'slug' => 'radio-genre' )
+			'rewrite' 	=> array( 'slug' => sanitize_title_with_dashes( get_theme_mod('slug_radiogenre', 'radio-genre') ) ),
 		);
 		if(function_exists('proradio_core_custom_taxonomy')){
 			register_taxonomy('radio-genre','radiochannel', $args );
@@ -145,6 +145,14 @@ function proradio_radiochannel_capabilities(){
 				array(
 					'label' => esc_html__( 'Live365', "proradio" ), 
 					'value' => 'type-live365' ,	
+				),
+				array(
+					'label' => esc_html__( 'RadioKing', "proradio" ), 
+					'value' => 'type-radioking' ,	
+				),
+				array(
+					'label' => esc_html__( 'Azuracast', "proradio" ), 
+					'value' => 'type-azuracast' ,	
 				),
 				array(
 					'label' => esc_html__( 'Plain text (author - title)', "proradio" ), 
@@ -296,7 +304,33 @@ function proradio_radiochannel_capabilities(){
 					'value'	=> 'type-live365'
 				)
 			),
+		),
+		array(
+			'label' => esc_html__('RadioKing',  'proradio' ),
+			'id'    => 'qtradioking',
+			'type'  => 'text',
+			'desc' => esc_html__('RadioKing ID. Example: if your stream is https://www.radioking.com/play/radio-something, the ID is radio-something',  'proradio' ),
+			'condition' => array(
+				array(
+					'field' => 'proradio_servertype',
+					'value'	=> 'type-radioking'
+				)
 			),
+		),
+		array(
+			'label' => esc_html__('Azuracast',  'proradio' ),
+			'id'    => 'qtazuracast',
+			'type'  => 'text',
+			'desc' => esc_html__('Example: http://your-azuracast-site.example.com/api/nowplaying - Documentation https://www.azuracast.com/developers/nowplaying.html#standard-now-playing-api',  'proradio' ),
+			'condition' => array(
+				array(
+					'field' => 'proradio_servertype',
+					'value'	=> 'type-azuracast'
+				)
+			),
+		),
+
+
 		array(
 			'label' => esc_html__('Exclude from playlist', 'proradio'),
 			'id'    => 'qt-excludefromplaylist',

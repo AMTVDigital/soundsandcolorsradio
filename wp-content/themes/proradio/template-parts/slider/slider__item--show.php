@@ -17,7 +17,7 @@ $series = false;
  */
 $event = get_query_var( 'event', false );
 $current = false;
-if( $event ){
+/*if( $event ){
 	$neededEvents = array('show_id','show_time','show_time_end', 'day');
 	foreach($neededEvents as $n){
 	  if(!array_key_exists($n,$event)){
@@ -42,6 +42,73 @@ if( $event ){
 	if($now >  $event['show_time_end']){
 		$current = true;
 	}
+
+}*/
+
+
+if( $event ){
+	$neededEvents = array('show_id','show_time','show_time_end', 'day');
+	foreach($neededEvents as $n){
+	  if(!array_key_exists($n,$event)){
+	      $event[$n] = false;
+	  }
+	}
+	$day = $event['day'];
+	$show_time_d = $event['show_time'];
+	$show_time_end_d = $event['show_time_end'];
+	$now = current_time("H:i");
+
+
+
+	/**
+	 * ===============================================================
+	 * Check if this is the current show
+	 * @since  20200904
+	 * // 2 cases:
+		// case 1: show started yesterday > Just check if is still on
+		// case 2: show starting today > Check also if NOW is > ShowStart
+	 * ===============================================================
+	 */
+	$current_show = false;
+	$isactive = get_query_var( 'scheduleday_is_active', false );
+	if( $isactive && !$current_show ){
+		$found_active_show = false;
+
+
+		$show_time_end_d_comparison = $show_time_end_d;
+		if( $show_time_end_d_comparison === '00:00' ){
+			$show_time_end_d_comparison = '24:00';
+		}
+
+		if( $show_time_end_d_comparison < $show_time_d ){
+			// Show started yesterday
+			if( $now < $show_time_end_d_comparison ) {
+				$current_show = true;
+			}
+		} else {
+			// Show started today (same day)
+			if(  $now > $show_time_d && $now < $show_time_end_d_comparison ) {
+				$current_show = true;
+			}
+		}
+	}
+
+
+
+
+
+	if($show_time_d === "24:00"){
+		$show_time_d === "00:00";
+	}
+	if($show_time_end_d === "24:00"){
+		$show_time_end_d === "00:00";
+	}
+	// 12 hours format
+	if(get_theme_mod('QT_timing_settings', '12') == '12'){
+		$show_time_d = date("g:i a", strtotime($show_time_d));
+		$show_time_end_d = date("g:i a", strtotime($show_time_end_d));
+	}
+	
 }
 
 // Show details
@@ -75,7 +142,7 @@ $format = 'std';
 		<div class="proradio-container">			
 			<p class="proradio-cats">
 				<?php proradio_postcategories( 1, 'genre' ); ?>
-				<?php if( $current ){
+				<?php if( $current_show ){
 					?><?php esc_html_e('Now on air', 'proradio'); ?><?php
 				} ?>
 			</p>

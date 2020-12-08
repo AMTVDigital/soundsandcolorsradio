@@ -126,9 +126,13 @@ if(!function_exists('proradio_styles_inclusion')){
 
 
 
-
-
-		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		$load_comment_script = true;
+		if(function_exists('is_product')){
+			if(is_product()){
+				$load_comment_script = false;
+			}
+		}
+		if ( $load_comment_script && is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
 		if( wp_style_is('font-awesome') ){

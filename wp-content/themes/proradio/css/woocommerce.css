@@ -62,11 +62,13 @@
 
 #proradio-body.woocommerce .proradio-master .proradio-post__product .proradio-p-catz a { z-index: 2; position: relative; }
 
-#proradio-body.woocommerce .proradio-master .proradio-post__product .proradio-a0 { top: 50%; position: absolute; margin-top: -30px; margin-left: -30px; z-index: 3; }
+#proradio-body.woocommerce .proradio-master .proradio-post__product .proradio-a0 { top: 50%; position: absolute; margin-top: -20px; margin-left: -20px; z-index: 3; left: 50%; width: 40px; }
 
-#proradio-body.woocommerce .proradio-master .proradio-post__product .proradio-a0 i::before { content: '\e854'; }
+#proradio-body.woocommerce .proradio-master .proradio-post__product .proradio-a0 i { font-size: 40px; }
 
 #proradio-body.woocommerce .proradio-master .proradio-post__product .proradio-a0.added i::before { content: '\e5ca'; }
+
+#proradio-body.woocommerce .proradio-master .proradio-post__product .added_to_cart { width: 100%; text-align: center; z-index: 10; }
 
 #proradio-body.woocommerce .proradio-master .proradio-post__product .price { float: left; display: inline-block; color: inherit; font-size: inherit; line-height: inherit; }
 

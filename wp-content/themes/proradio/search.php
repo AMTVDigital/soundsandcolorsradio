@@ -15,7 +15,7 @@ get_header();
 	 */
 	get_template_part( 'template-parts/pageheader/pageheader-search' ); 
 	?>
-	<div class="proradio-section">
+	<div class="proradio-section proradio-bg">
 		<div id="proradio-loop" class="proradio-container">
 			<?php 
 			/**

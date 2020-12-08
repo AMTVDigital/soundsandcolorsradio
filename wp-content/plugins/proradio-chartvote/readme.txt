@@ -10,6 +10,9 @@
 
 CHANGELOG
 ===============================
+V PR.3.0.2 [2020 11 26]
+* Fix chartvote function when track reordering is enabled
+
 V PR.3.0 [2020 04 16]
 * Renaming
 

@@ -5,7 +5,7 @@
  * Plugin URI: http://pro.radio
  * Author: Pro.Radio
  * Author URI: http://pro.radio
- * Version: PR.2.0.7
+ * Version: PR.2.1.0
  * Text Domain: proradio-elementor
  * Domain Path: /languages
  */
