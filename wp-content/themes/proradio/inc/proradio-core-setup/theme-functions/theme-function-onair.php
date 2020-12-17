@@ -65,6 +65,7 @@ if(!function_exists('proradio_onair')) {
 				$show_time_end = "24:00";
 			}
 			set_query_var( 'event', $show );
+			set_query_var( 'currentshow', true );
 			global $post;
 
 			if( $now < $show_time_end && $counter < $quantity ){

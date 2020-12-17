@@ -90,7 +90,7 @@ if(!function_exists( 'proradio_upcoming_shows_slider' )){
 			}
 			$container_classes =  implode(' ', $container_classes);
 
-
+			set_query_var( 'currentshow', false );
 			?>
 
 			<div id="<?php echo esc_attr($grid_id); ?>" class="<?php echo esc_attr( $container_classes ); ?>" data-proradio-autorefresh>
@@ -117,6 +117,12 @@ if(!function_exists( 'proradio_upcoming_shows_slider' )){
 									$show_time_end = "24:00";
 								}
 								set_query_var( 'event', $show );
+
+
+								
+
+
+
 								global $post;
 								if( $counter < $quantity ){
 									// extract all shows today

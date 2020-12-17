@@ -187,17 +187,17 @@ Kirki::add_field( 'proradio_config', array(
 		array(
 			'element'       => 'a:hover, .proradio-menu-tree li ul li.proradio-open > a:not(.proradio-openthis):hover, .proradio-widget ul li .comment-author-link a:hover, .proradio-widget ul li:hover::before, .proradio-widget ul li a:hover , .proradio-widget .tagcloud a:hover',
 			'property'      => 'color',
-			'media_query' => '@media (min-width: 1200px)'
+			// 'media_query' => '@media (min-width: 1200px)'
 		),
 		array(
 			'element'       => '.proradio-post__social a:hover, #proradio-body.woocommerce #proradio-master .woocommerce button.button:hover, #proradio-body.woocommerce #proradio-master .woocommerce a.button:hover, .woocommerce a.button:hover,#proradio-body.woocommerce #proradio-master .woocommerce a.button:hover, .woocommerce a.button:hover,.proradio-btn-primary:hover, #proradio-body #proradio-master form input[type="submit"]:hover, #proradio-body #proradio-master form button:hover, .woocommerce a.button:hover, .proradio-btn__white:hover, .proradio-btn-primary:hover, #proradio-body #proradio-master form input[type="submit"]:hover, #proradio-body #proradio-master form button:hover, .woocommerce a.button:hover',
 			'property'      => 'background-color',
-			'media_query' => '@media (min-width: 1200px)'
+			// 'media_query' => '@media (min-width: 1200px)'
 		),
 		array(
 			'element'       => '.proradio-btn:hover, #proradio-body #proradio-master form button.button:hover,#proradio-body.woocommerce #proradio-master .woocommerce button.button:hover',
 			'property'      => 'background-color',
-			'media_query' => '@media (min-width: 1200px)'
+			// 'media_query' => '@media (min-width: 1200px)'
 		),
 	),
 ));
@@ -226,7 +226,7 @@ Kirki::add_field( 'proradio_config', array(
 		array(
 			'element'       => '.proradio-btn:hover i',
 			'property'      => 'color',
-			'media_query' => '@media (min-width: 1200px)'
+			// 'media_query' => '@media (min-width: 1200px)'
 		),
 
 	),

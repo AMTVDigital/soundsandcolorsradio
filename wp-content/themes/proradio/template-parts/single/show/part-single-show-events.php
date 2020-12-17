@@ -1,7 +1,7 @@
 <?php
 $eventtype = get_post_meta( get_the_ID(), 'show_eventslist', true );
 if($eventtype != ''){
-	if( $eventtype !=='all' ){ $eventtype = 'eventtype:'.$category;}
+	if( $eventtype !=='all' ){ $eventtype = 'eventtype:'.$eventtype; }
 	$html_output = false;
 	if(shortcode_exists('qt-events' )){
 		$html_output = do_shortcode('[qt-events items_per_page="1" e_loadmore="true" tax_filter="'.$eventtype.'" hideold="true"]' );

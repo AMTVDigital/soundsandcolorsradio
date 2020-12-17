@@ -2,8 +2,8 @@
 Contributors: Pro.Radio
 Requires at least: WordPress 5.5.1
 Requires PHP: 7.3
-Tested up to: WordPress 5.5.3
-Version: 1.4.6
+Tested up to: 5.6
+Version: 1.5.2
 Tags: two-columns, right-sidebar
 
 == Description ==
@@ -30,6 +30,28 @@ Pro.Radio WordPress Theme, Copyright 2020 ProRadio.com
 https://pro.radio/changelog/
 
 
+1.5.2 [2020-12-09:17.40CET]
+[x] Added new ProRadio Swipebox Video and Gallery plugin V 5.6 to replace Easy Swipebox for WP 5.6
+[x] QT Music Player plugin update to version PR.3.3.1
+[x] qtt-main.js reinitialize Swipebox after ajax
+
+1.5.1 [2020-12-09]
+[x] Updated template-parts/pageheader/part-sociallinks-members.php
+
+1.5.0 [2020-12-09]
+[x] WP5.6 update inc/tgm-plugin-activation/conf.php added force easy swipebox deactivation
+
+1.4.9 [2020-12-09]
+[x] Solved duplicated current show label while using both OnAir banner and Upcoming Shows slider in theme-function-upcoming-shows-slider.php
+
+1.4.8 [2020-12-09]
+[x] theme-function-onair.php and slider__item--show.php updated to override db query cache
+[x] extract-schedule-day.php added cache prevention (fetch new shows results)
+
+1.4.7 [2020-12-08]
+[x] ADDED Pl Translation
+[x] FIXED show events list template-parts/single/show/part-single-show-events.php
+
 1.4.6 [2020-12-02]
 [x] WooCommerce colors customizer buttons and hover links - updated inc/proradio-core-setup/customizer/kirki-configuration/sections/buttons_section.php
 [x] WooCommerce updated woocommerce.css - enabled cart icon on archives
@@ -42,7 +64,6 @@ https://pro.radio/changelog/
 
 1.4.5 [2020-12-01]
 [x] member-type.php added soundcloud and mixcloud icons
-
 
 1.4.4 [2020-11-27]
 [x] Carousels fix

@@ -23,7 +23,7 @@ foreach( $social as $s ){
 		$link = $post_metas[ $meta_val ][0];
 		if( $link && $link!== ''){
 			$i = 'qt-socicon-'.$s;
-			?><a href="<?php echo esc_attr( $link ); ?>" target="_blank"><i class="<?php echo esc_attr( $i ); ?>"></i></a><?php
+			?><a href="<?php echo esc_attr( $link ); ?>" class="qt-disableembedding" target="_blank"><i class="<?php echo esc_attr( $i ); ?>"></i></a><?php
 		}
 	}
 	

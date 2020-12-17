@@ -1709,9 +1709,13 @@
 				if("function" === typeof($.fn.qtChartvoteInit)) {
 					$.fn.qtChartvoteInit();
 				}
+				if("function" === typeof($.qtSwipeboxFunction)) {
+					$.qtSwipeboxFunction();
+				}
 				if("function" === typeof jQuery.vdl_Init){
 					jQuery.vdl_Init();
 				}
+				
 				if("function" === typeof $.fn.qtDynamicMaps){
 					$.fn.qtDynamicMaps();
 				}

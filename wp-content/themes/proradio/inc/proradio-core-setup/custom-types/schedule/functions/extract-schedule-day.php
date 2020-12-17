@@ -31,6 +31,8 @@ if(!function_exists('proradio_extract_schedule_days')){
 			'posts_per_page' => 100,
 			'post_status' => 'publish',
 			'orderby' => 'menu_order',
+			'cache_results'  => false,
+			'update_post_meta_cache' => false,
 			'order'   => 'ASC'
 		);
 

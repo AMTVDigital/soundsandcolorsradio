@@ -1,0 +1,18 @@
+.proradio-servercheck { padding: 5px 20px; font-size: 13px; margin: 0; max-width: 600px; }
+
+.proradio-servercheck h3 { font-size: 15px; }
+
+.proradio-servercheck__table { background: #fff; margin-bottom: 20px; width: 100%; }
+
+.proradio-servercheck__table td, .proradio-servercheck__table th { padding: 0px 8px; border-bottom: 1px solid #ededed; text-align: left; font-size: 10px; }
+
+.proradio-servercheck__fail { color: red; }
+
+.proradio-servercheck__success { color: green; }
+
+.proradio-servercheck__test { padding: 10px; background: white; margin-bottom: 20px; }
+
+.proradio-servercheck__test p { margin: 0 0 10px 0; }
+
+.proradio-servercheck__test__failed { border-left: 4px solid red; }
+/*# sourceMappingURL=proradio-servercheck-style.css.map */
