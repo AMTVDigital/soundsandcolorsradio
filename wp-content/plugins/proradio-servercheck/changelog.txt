@@ -1,0 +1,17 @@
+PR.1.0.6 [2021 january 24]
+[x] Removed sodium requirement
+[x] Better imagick-gd check
+[x] Fixed XML library check
+
+PR.1.0.5 [2020 December 03]
+[x] Added modules check
+
+1.0.3 [2019 July 04]
+[x] Now connected to the proxy
+[x] Updated messages
+
+1.0.2
+[x] Now using the proxy to check
+
+1.0.1
+[x] Changed wp_remote_post to wp_remote_get for first test

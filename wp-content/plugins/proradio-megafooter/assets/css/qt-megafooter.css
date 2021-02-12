@@ -1,0 +1,11 @@
+/**==============================================================
+/*  QT MegaFooter Plugin 
+/* ============================================================== */
+.proradio-megafooter { overflow: hidden; display: block; }
+
+.proradio-megafooter__container { position: relative; width: 100%; display: block; height: auto; top: 0; left: 0; overflow: hidden; }
+
+.proradio-megafooter__item { position: relative; display: block; width: 100%; }
+
+#proradio-megafooter.proradio-megafooter__container { z-index: 2; }
+/*# sourceMappingURL=qt-megafooter.css.map */

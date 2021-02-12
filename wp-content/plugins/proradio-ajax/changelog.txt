@@ -1,0 +1,118 @@
+/**
+ * Plugin Name: ProRadio Ajax Pageload
+ * Plugin URI: http://pro.radio
+ * Description: Adds page load with ajax to keep music playing across pages
+ * Version: PR.3.4.8
+ * Author: ProRadio
+ * Author URI: http://pro.radio
+ */
+
+
+PR.3.4.8 [2020 10 19]
+* removed script 'wc-add-to-cart', to avoid double add to cart
+
+PR.3.4.7 [2020 10 09]
+* Improved preloader styling
+* Added customizer background and spinner color options
+
+
+
+
+PR.3.4.6 [2020 10 09]
+* added fallback page loading if the next page cannot be parsed in assets/js/proradio-ajax-pageload.js:268 (error can be caused by some plugins like wrong w3tc settigs)
+* Performance improvement: loading minified js
+* Performance improvement: loading minified CSS
+
+PR.3.4.5 [2020 09 12]
+* Fixed admin js issue
+
+PR.3.4.3 [2020 08 18]
+* Javascript udpate to retrigger song titles
+
+PR.3.4.1 [2020 04 30]
+* Removed in js [if ( /elementor\/css/i.test( cssurl ) ]
+
+PR.3.4 [2020 04 28]
+* Admin message change
+
+PR.3.3 [2020 04 18]
+* Emergency timeout improved
+* added plain preloader
+
+3.2 [2020 03 25]
+* emergency preloader timeout
+
+3.1 [2020 03 24]
+* Added admin notification in frontend
+* added CF7 support
+
+3.0 [2019 12 10]
+* Woocommerce reload js
+* load only unminified style
+
+
+
+2.4 [2019 11 27]
+* ADDED post-ajax reload script option to admin
+	- qt-ajax-pageload.js added getScript
+	- qt-ajax-pageload.php added function proradio_ajax_get_version
+	- qt-ajax-pageload.php added function proradio_ajax_get_version, proradio_ajax_customscript_url, proradio_ajax_customscript_output
+	
+	Example code:
+
+	//test
+	console.log('hello!');
+
+2.3 [2019 07 19]
+* WRAPPED eval in try catch
+
+2.2 [2019 06 02]
+* ADDED custom field to exclude ajax loading
+
+2.1 [2019 06 01]
+* fix for new page builder js_composer_front_css
+
+2.0 [2019 05 27]
+* qt-ajax-pageload.js_146+198->207 updated Page Builder css identified
+
+1.9 [2019 04 18]
+// Since 2019 04 18 + support internal links (search this in code)
+
+1.8 [2019 01 16]
+* ADDED wpml menu language switch support
+
+1.7 [2018 12 10]
+* FIXED js regex dot
+
+
+1.6 [2018 07 02]
+* FIXED js regex dot
+
+1.5 [2018 06 27]
+* FIXED js regex and added download products exclusion
+
+1.4 [2018 06 01]
+* Added call to $.fn.initializeOnlyAfterAjax
+
+1.2  [20180105]
+* js fixes on click back
+
+1.1.1  [20171118]
+* js fixes for wp 4.9
+
+1.1.0 [20171112]
+* js improvements ( eval page js before running main.js)
+
+1.0.5 [20171010]
+* minor js version fixes
+
+1.0.4 [20170806]
+* better body class recognition
+
+
+1.0.2 [20170623]
+* css is now in external file qt-apl-style.css
+
+
+1.0.1 [20170504]
+* added exception for link with anchor #noajax

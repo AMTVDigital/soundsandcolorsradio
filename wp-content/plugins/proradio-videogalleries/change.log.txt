@@ -1,0 +1,17 @@
+V2.3 2020 11 22
+[x] Dynamic permalink parameter linked to theme option
+
+V2.2 2020 06 09
+[x] Restored custom URL field
+
+V2.1 2020 03 26
+[x] removed atts to shortcode-qtvideo.php and removed from qtvide-grid.php
+
+V2.0 2019 12 27
+[x] All code refactored
+[x] Replaced quicksand with masonry
+[x] New CSS, PHP and HTML
+[x] Removed options panel
+
+TO DO:
+[] Documentation

@@ -1,0 +1,68 @@
+/*
+ Theme Name:   ProRadio Child
+ Theme URI:    https://pro.radio/
+ Description:  The child theme allows easier customizations and template overrides
+ Author:       Pro.Radio
+ Author URI:   https://pro.radio/
+ Template:     proradio
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         right-sidebar
+ Text Domain:  proradio-child
+*/
+
+/***************************************************************
+****************************************************************
+************* PUT YOUR CUSTOM STYLES BELOW ********************/
+
+/*keeping the navbar black
+*/
+.proradio-menu.proradio-paper {
+	background-color: #0A0A0A;
+}
+
+.proradio-loadmore-container .proradio-btn {
+    color: #5e5e5e;
+}
+
+/* Header */
+
+.proradio-pageheader__contents { 
+padding: 40px 0; 
+position: relative; 
+z-index: 8; 
+background: rgba(0, 0, 0, 0.2); }
+
+.proradio-pageheader .proradio-bgimg { 
+-webkit-filter: none; 
+filter: none; 
+}
+
+.proradio-pageheader .proradio-bgimg.proradio-greyscale 
+{ -webkit-filter: brightness(0.9) contrast(1.4) grayscale(40%); 
+filter: brightness(0.9) contrast(1.4) grayscale(40%); 
+}
+
+/* Header image */
+
+.proradio-bgimg img {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: auto;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    max-width: 100%;
+    min-width: 100%;
+    vertical-align: bottom;
+}
+
+/*hides featured image on single podcast episodes*/
+.proradio-single--podcast .proradio-pageheader .proradio-bgimg img {
+  display:none;  
+}
+
+

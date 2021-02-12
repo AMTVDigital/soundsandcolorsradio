@@ -1,0 +1,1 @@
+jQuery(document).ready(function(a){0<a("#proradio-ajax-textarea").length&&wp.codeEditor.initialize(a("#proradio-ajax-textarea"),cm_settings)});

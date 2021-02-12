@@ -1,0 +1,1 @@
+!function(n){var e=function(n,e){console.log(n)};n(window).on("elementor/frontend/init",function(){elementorFrontend.hooks.addAction("frontend/element_ready/qt-3dheader.default",e)})}(jQuery);

@@ -1,0 +1,28 @@
+
+// Media Query Ranges
+$small-screen: 600px;
+$small-screen-up: 601px;
+$medium-screen: 992px;
+$medium-screen-up: 993px;
+$large-screen: 1025px;
+$large-screen-up: 1026px;
+$themevariable-max-container-size: 1170px;
+
+@function calculateRem($size) {
+  $remSize: $size / $themevariable-base-mobile;
+  @return $remSize;
+}
+
+$small-and-up: "only screen and (min-width : #{$small-screen-up})"; // > 600px
+$medium-and-up: "only screen and (min-width : #{$medium-screen-up})"; // > 993px
+$large-and-up: "only screen and (min-width : #{$large-screen-up})"; // > 1201px
+$small-and-down: "only screen and (max-width : #{$small-screen})"; // <= 600px;
+$medium-and-down: "only screen and (max-width : #{$medium-screen})"; // <= 992px;
+$large-and-down:  "only screen and (max-width : #{$large-screen})"; // <= 1200px;
+$medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$large-screen})";
+$tablets-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$large-screen})";
+
+
+$num-cols: 12;
+$element-top-margin:0;
+$element-bottom-margin: 0;

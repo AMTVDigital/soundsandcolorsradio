@@ -1,0 +1,1531 @@
+# WordPress Blank Pot
+# Copyright (C) 2014 ...
+# This file is distributed under the GNU General Public License v2 or later.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: "
+"Elementor Proradio\n"
+"POT-Creation-Date: "
+"2020-03-28 10:49+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Your "
+"Name <you@example.com>\n"
+"Language-Team: Pro."
+"radio\n"
+"Report-Msgid-Bugs-To: "
+"Translator Name "
+"<translations@example."
+"com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/"
+"plain; charset=UTF-8\n"
+"Content-Transfer-"
+"Encoding: 8bit\n"
+"Plural-Forms: "
+"nplurals=2; plural=n != "
+"1;\n"
+"X-Textdomain-Support: "
+"yesX-Generator: Poedit "
+"1.6.4\n"
+"X-Poedit-SourceCharset: "
+"UTF-8\n"
+"X-Poedit-KeywordsList: "
+"__;_e;esc_html_e;"
+"esc_html_x:1,2c;"
+"esc_html__;esc_attr_e;"
+"esc_attr_x:1,2c;"
+"esc_attr__;_ex:1,2c;"
+"_nx:4c,1,2;"
+"_nx_noop:4c,1,2;_x:1,2c;"
+"_n:1,2;_n_noop:1,2;"
+"__ngettext:1,2;"
+"__ngettext_noop:1,2;_c,"
+"_nc:4c,1,2\n"
+"X-Poedit-Basepath: ..\n"
+"Language: en_US\n"
+"X-Generator: Poedit "
+"1.8.9\n"
+"X-Poedit-"
+"SearchPath-0: .\n"
+
+#: _plugin.php:186
+msgid "ProRadio"
+msgstr ""
+
+#: controls.php:24
+#: widgets/3d-header/3d-header.php:191
+#: widgets/3d-header/3d-header.php:201
+msgid "Choose Image"
+msgstr ""
+
+#: controls.php:38
+msgid "Text Color"
+msgstr ""
+
+#: controls.php:49
+#: controls.php:64
+#: widgets/3d-header/3d-header.php:107
+msgid "Event countdown"
+msgstr ""
+
+#: controls.php:53
+#: controls.php:68
+msgid "My Key"
+msgstr ""
+
+#: elementor-proradio.php:90
+#, php-format
+msgid ""
+"\"%1$s\" requires \"%2$s"
+"\" to be installed and "
+"activated."
+msgstr ""
+
+#: elementor-proradio.php:91
+#: elementor-proradio.php:114
+#: elementor-proradio.php:138
+msgid "ProRadio Builder"
+msgstr ""
+
+#: elementor-proradio.php:92
+#: elementor-proradio.php:115
+msgid "Elementor"
+msgstr ""
+
+#: elementor-proradio.php:113
+#: elementor-proradio.php:137
+#, php-format
+msgid ""
+"\"%1$s\" requires \"%2$s"
+"\" version %3$s or "
+"greater."
+msgstr ""
+
+#: elementor-proradio.php:139
+msgid "PHP"
+msgstr ""
+
+#: widgets/3d-header/3d-header.php:25
+msgid "3D Header"
+msgstr ""
+
+#: widgets/3d-header/3d-header.php:49
+#: widgets/3d-header/3d-header.php:70
+#: widgets/cards-horizontal/cards-horizontal.php:45
+#: widgets/cards/cards.php:45
+#: widgets/section-caption/section-caption.php:49
+msgid "Content"
+msgstr ""
+
+#: widgets/3d-header/3d-header.php:56
+#: widgets/section-caption/section-caption.php:56
+msgid "Intro text"
+msgstr ""
+
+#: widgets/3d-header/3d-header.php:63
+#: widgets/caption/caption.php:25
+#: widgets/caption/caption.php:45
+#: widgets/caption/caption.php:53
+#: widgets/section-caption/section-caption.php:63
+msgid "Caption"
+msgstr ""
+
+#: widgets/3d-header/3d-header.php:77
+#: widgets/cards/cards.php:58
+#: widgets/pricing-table/pricing-table.php:71
+#: widgets/section-caption/section-caption.php:70
+msgid "Subtitle"
+msgstr ""
+
+#: widgets/3d-header/3d-header.php:85
+msgid "Use negative colors"
+msgstr ""
+
+#: widgets/3d-header/3d-header.php:100
+#: widgets/event-countdown/event-countdown.php:25
+#: widgets/event-featured/event-featured.php:102
+msgid "Countdown"
+msgstr ""
+
+#: widgets/3d-header/3d-header.php:127
+#: widgets/section-caption/section-caption.php:88
+msgid "Intro effect"
+msgstr ""
+
+#: widgets/3d-header/3d-header.php:133
+#: widgets/section-caption/section-caption.php:108
+msgid "Effect"
+msgstr ""
+
+#: widgets/3d-header/3d-header.php:138
+#: widgets/section-caption/section-caption.php:113
+msgid "Oslo"
+msgstr ""
+
+#: widgets/3d-header/3d-header.php:139
+#: widgets/section-caption/section-caption.php:114
+msgid "Tokyo"
+msgstr ""
+
+#: widgets/3d-header/3d-header.php:140
+#: widgets/section-caption/section-caption.php:115
+msgid "London"
+msgstr ""
+
+#: widgets/3d-header/3d-header.php:141
+#: widgets/section-caption/section-caption.php:116
+msgid "Paris"
+msgstr ""
+
+#: widgets/3d-header/3d-header.php:142
+#: widgets/section-caption/section-caption.php:117
+msgid "Ibiza"
+msgstr ""
+
+#: widgets/3d-header/3d-header.php:143
+#: widgets/section-caption/section-caption.php:118
+msgid "New York"
+msgstr ""
+
+#: widgets/3d-header/3d-header.php:150
+#: widgets/section-caption/section-caption.php:125
+msgid "Color 1"
+msgstr ""
+
+#: widgets/3d-header/3d-header.php:158
+#: widgets/section-caption/section-caption.php:133
+msgid "Color 2"
+msgstr ""
+
+#: widgets/3d-header/3d-header.php:166
+#: widgets/section-caption/section-caption.php:141
+msgid "Color 3"
+msgstr ""
+
+#: widgets/3d-header/3d-header.php:184
+#: widgets/cards-horizontal/cards-horizontal.php:140
+msgid "Background"
+msgstr ""
+
+#: widgets/3d-header/3d-header.php:211
+#: widgets/event-countdown/event-countdown.php:135
+msgid "Border color"
+msgstr ""
+
+#: widgets/3d-header/3d-header.php:218
+msgid "Background color"
+msgstr ""
+
+#: widgets/3d-header/3d-header.php:235
+#: widgets/button/button.php:25
+#: widgets/button/button.php:38
+#: widgets/cards-horizontal/cards-horizontal.php:83
+#: widgets/cards/cards.php:74
+#: widgets/pricing-table/pricing-table.php:201
+msgid "Button"
+msgstr ""
+
+#: widgets/3d-header/3d-header.php:241
+msgid ""
+"Play a radio channel on "
+"click"
+msgstr ""
+
+#: widgets/3d-header/3d-header.php:251
+#: widgets/button/button.php:53
+#: widgets/cards-horizontal/cards-horizontal.php:97
+#: widgets/cards/cards.php:88
+#: widgets/pricing-table/pricing-table.php:215
+#: widgets/socialicons/socialicons.php:52
+msgid "Button link"
+msgstr ""
+
+#: widgets/3d-header/3d-header.php:258
+#: widgets/button/button.php:45
+#: widgets/cards-horizontal/cards-horizontal.php:89
+#: widgets/cards/cards.php:80
+#: widgets/pricing-table/pricing-table.php:207
+#: widgets/socialicons/socialicons.php:44
+msgid "Button label"
+msgstr ""
+
+#: widgets/_helpers/carousel-fields.php:23
+msgid "Items per row"
+msgstr ""
+
+#: widgets/_helpers/carousel-fields.php:35
+msgid ""
+"Items per row tablet"
+msgstr ""
+
+#: widgets/_helpers/carousel-fields.php:48
+msgid ""
+"Items per row mobile"
+msgstr ""
+
+#: widgets/_helpers/carousel-fields.php:61
+msgid "Gap"
+msgstr ""
+
+#: widgets/_helpers/carousel-fields.php:73
+#: widgets/_helpers/slider-fields.php:25
+msgid "Autoplay timeout"
+msgstr ""
+
+#: widgets/_helpers/carousel-fields.php:74
+#: widgets/_helpers/slider-fields.php:26
+msgid "0 = disabled"
+msgstr ""
+
+#: widgets/_helpers/carousel-fields.php:86
+#: widgets/_helpers/slider-fields.php:38
+msgid "Pause on hover"
+msgstr ""
+
+#: widgets/_helpers/carousel-fields.php:94
+#: widgets/_helpers/slider-fields.php:47
+msgid "Loop"
+msgstr ""
+
+#: widgets/_helpers/carousel-fields.php:102
+#: widgets/button/button.php:95
+#: widgets/caption/caption.php:84
+#: widgets/socialicons/socialicons.php:93
+msgid "Center"
+msgstr ""
+
+#: widgets/_helpers/carousel-fields.php:110
+#: widgets/_helpers/slider-fields.php:57
+msgid "Arrows"
+msgstr ""
+
+#: widgets/_helpers/carousel-fields.php:112
+#: widgets/_helpers/carousel-fields.php:123
+#: widgets/_helpers/slider-fields.php:59
+#: widgets/_helpers/slider-fields.php:70
+msgid "Show"
+msgstr ""
+
+#: widgets/_helpers/carousel-fields.php:113
+#: widgets/_helpers/carousel-fields.php:124
+#: widgets/_helpers/slider-fields.php:60
+#: widgets/_helpers/slider-fields.php:71
+msgid "Hide"
+msgstr ""
+
+#: widgets/_helpers/carousel-fields.php:121
+#: widgets/_helpers/slider-fields.php:68
+msgid "Dots"
+msgstr ""
+
+#: widgets/_helpers/query-fields.php:23
+msgid ""
+"Posts by ID, comma "
+"separated list of "
+"numeric IDs"
+msgstr ""
+
+#: widgets/_helpers/query-fields.php:24
+msgid ""
+"Display only the "
+"contents with these IDs. "
+"All other parameters "
+"will be ignored."
+msgstr ""
+
+#: widgets/_helpers/query-fields.php:31
+#: widgets/event-featured/event-featured.php:64
+#: widgets/event-list/event-list.php:80
+#: widgets/upcoming-shows-carousel/upcoming-shows-carousel.php:79
+#: widgets/upcoming-shows-slider/upcoming-shows-slider.php:79
+msgid "Max items"
+msgstr ""
+
+#: widgets/_helpers/query-fields.php:43
+msgid "Order by"
+msgstr ""
+
+#: widgets/_helpers/query-fields.php:47
+msgid "Date"
+msgstr ""
+
+#: widgets/_helpers/query-fields.php:48
+msgid "Post ID"
+msgstr ""
+
+#: widgets/_helpers/query-fields.php:49
+msgid "Author"
+msgstr ""
+
+#: widgets/_helpers/query-fields.php:50
+#: widgets/cards-horizontal/cards-horizontal.php:59
+#: widgets/cards/cards.php:51
+#: widgets/pricing-table/pricing-table.php:64
+#: widgets/radiofeed/radiofeed.php:53
+msgid "Title"
+msgstr ""
+
+#: widgets/_helpers/query-fields.php:51
+msgid "Last modified date"
+msgstr ""
+
+#: widgets/_helpers/query-fields.php:52
+msgid "Post/page parent ID"
+msgstr ""
+
+#: widgets/_helpers/query-fields.php:53
+msgid "Number of comments"
+msgstr ""
+
+#: widgets/_helpers/query-fields.php:54
+msgid "Menu order"
+msgstr ""
+
+#: widgets/_helpers/query-fields.php:55
+msgid "Meta value"
+msgstr ""
+
+#: widgets/_helpers/query-fields.php:56
+msgid "Random"
+msgstr ""
+
+#: widgets/_helpers/query-fields.php:63
+#: widgets/cards/cards.php:156
+msgid "Order"
+msgstr ""
+
+#: widgets/_helpers/query-fields.php:67
+msgid "Descending"
+msgstr ""
+
+#: widgets/_helpers/query-fields.php:68
+msgid "Ascending"
+msgstr ""
+
+#: widgets/_helpers/query-fields.php:75
+msgid "Meta key"
+msgstr ""
+
+#: widgets/_helpers/query-fields.php:76
+msgid ""
+"Order based on this meta "
+"key"
+msgstr ""
+
+#: widgets/_helpers/query-fields.php:86
+msgid "Offset"
+msgstr ""
+
+#: widgets/_helpers/query-fields.php:87
+msgid ""
+"Number of grid elements "
+"to displace or pass over."
+msgstr ""
+
+#: widgets/_helpers/query-fields.php:94
+msgid "Exclude"
+msgstr ""
+
+#: widgets/_helpers/query-fields.php:95
+msgid ""
+"Comma-separated list of "
+"IDs to exclude"
+msgstr ""
+
+#: widgets/_helpers/slider-fields.php:79
+msgid "Full height"
+msgstr ""
+
+#: widgets/_helpers/slider-fields.php:87
+msgid "Full width"
+msgstr ""
+
+#: widgets/appicons/appicons.php:25
+msgid "Streaming App Icons"
+msgstr ""
+
+#: widgets/appicons/appicons.php:38
+#: widgets/socialicons/socialicons.php:38
+msgid "Icons"
+msgstr ""
+
+#: widgets/appicons/appicons.php:44
+msgid "Blackberry"
+msgstr ""
+
+#: widgets/appicons/appicons.php:51
+msgid "iTunes"
+msgstr ""
+
+#: widgets/appicons/appicons.php:58
+msgid "Windows"
+msgstr ""
+
+#: widgets/appicons/appicons.php:65
+msgid "WinAmp"
+msgstr ""
+
+#: widgets/appicons/appicons.php:72
+msgid "TuneIn"
+msgstr ""
+
+#: widgets/appicons/appicons.php:79
+msgid "Media Player"
+msgstr ""
+
+#: widgets/appicons/appicons.php:86
+#: widgets/socialicons/socialicons.php:105
+msgid "Android"
+msgstr ""
+
+#: widgets/appicons/appicons.php:93
+msgid "iPhone"
+msgstr ""
+
+#: widgets/bullet-list/bullet-list.php:25
+msgid "Bullet list"
+msgstr ""
+
+#: widgets/bullet-list/bullet-list.php:38
+#: widgets/pricing-table/pricing-table.php:142
+msgid "Items"
+msgstr ""
+
+#: widgets/bullet-list/bullet-list.php:45
+#: widgets/cards-horizontal/cards-horizontal.php:67
+#: widgets/pricing-table/pricing-table.php:149
+msgid "Text"
+msgstr ""
+
+#: widgets/bullet-list/bullet-list.php:48
+#: widgets/pricing-table/pricing-table.php:152
+msgid "Your list item"
+msgstr ""
+
+#: widgets/bullet-list/bullet-list.php:55
+#: widgets/pricing-table/pricing-table.php:183
+msgid "List"
+msgstr ""
+
+#: widgets/button/button.php:47
+#: widgets/cards-horizontal/cards-horizontal.php:91
+#: widgets/cards/cards.php:82
+#: widgets/pricing-table/pricing-table.php:209
+#: widgets/socialicons/socialicons.php:46
+msgid "Click here"
+msgstr ""
+
+#: widgets/button/button.php:60
+#: widgets/cards-horizontal/cards-horizontal.php:104
+#: widgets/cards/cards.php:95
+#: widgets/pricing-table/pricing-table.php:222
+#: widgets/socialicons/socialicons.php:59
+msgid "Button target"
+msgstr ""
+
+#: widgets/button/button.php:64
+#: widgets/button/button.php:76
+#: widgets/button/button.php:92
+#: widgets/button/button.php:106
+#: widgets/cards-horizontal/cards-horizontal.php:108
+#: widgets/cards-horizontal/cards-horizontal.php:120
+#: widgets/cards-horizontal/cards-horizontal.php:185
+#: widgets/cards/cards.php:99
+#: widgets/cards/cards.php:111
+#: widgets/cards/cards.php:148
+#: widgets/chart-tracklist/chart-tracklist.php:87
+#: widgets/event-countdown/event-countdown.php:118
+#: widgets/pricing-table/pricing-table.php:162
+#: widgets/pricing-table/pricing-table.php:225
+#: widgets/section-caption/section-caption.php:99
+#: widgets/socialicons/socialicons.php:63
+#: widgets/socialicons/socialicons.php:75
+#: widgets/socialicons/socialicons.php:90
+msgid "Default"
+msgstr ""
+
+#: widgets/button/button.php:65
+#: widgets/cards-horizontal/cards-horizontal.php:109
+#: widgets/cards/cards.php:100
+#: widgets/pricing-table/pricing-table.php:226
+#: widgets/socialicons/socialicons.php:64
+msgid "New tab"
+msgstr ""
+
+#: widgets/button/button.php:72
+#: widgets/cards-horizontal/cards-horizontal.php:116
+#: widgets/cards/cards.php:107
+#: widgets/event-countdown/event-countdown.php:114
+#: widgets/socialicons/socialicons.php:71
+msgid "Style"
+msgstr ""
+
+#: widgets/button/button.php:77
+#: widgets/cards-horizontal/cards-horizontal.php:121
+#: widgets/cards/cards.php:112
+#: widgets/socialicons/socialicons.php:76
+msgid "Primary"
+msgstr ""
+
+#: widgets/button/button.php:78
+#: widgets/cards-horizontal/cards-horizontal.php:122
+#: widgets/cards/cards.php:113
+#: widgets/socialicons/socialicons.php:77
+msgid "White"
+msgstr ""
+
+#: widgets/button/button.php:79
+#: widgets/cards-horizontal/cards-horizontal.php:123
+#: widgets/cards/cards.php:114
+#: widgets/socialicons/socialicons.php:78
+msgid "Bold"
+msgstr ""
+
+#: widgets/button/button.php:80
+#: widgets/cards-horizontal/cards-horizontal.php:124
+#: widgets/cards/cards.php:115
+#: widgets/socialicons/socialicons.php:79
+msgid "Text only"
+msgstr ""
+
+#: widgets/button/button.php:88
+#: widgets/caption/caption.php:78
+#: widgets/socialicons/socialicons.php:86
+msgid "Alignment"
+msgstr ""
+
+#: widgets/button/button.php:93
+#: widgets/caption/caption.php:83
+#: widgets/socialicons/socialicons.php:91
+msgid "Left"
+msgstr ""
+
+#: widgets/button/button.php:94
+#: widgets/socialicons/socialicons.php:92
+msgid "Right"
+msgstr ""
+
+#: widgets/button/button.php:102
+#: widgets/caption/caption.php:61
+#: widgets/event-countdown/event-countdown.php:64
+#: widgets/section-caption/section-caption.php:94
+#: widgets/spacer/spacer.php:44
+msgid "Size"
+msgstr ""
+
+#: widgets/button/button.php:107
+#: widgets/gallery/gallery.php:53
+#: widgets/gallery/gallery.php:66
+msgid "Large"
+msgstr ""
+
+#: widgets/button/button.php:114
+#: widgets/caption/caption.php:91
+msgid "CSS Class"
+msgstr ""
+
+#: widgets/caption/caption.php:65
+#: widgets/spacer/spacer.php:50
+msgid "XS"
+msgstr ""
+
+#: widgets/caption/caption.php:66
+#: widgets/spacer/spacer.php:51
+msgid "S"
+msgstr ""
+
+#: widgets/caption/caption.php:67
+#: widgets/spacer/spacer.php:52
+msgid "M"
+msgstr ""
+
+#: widgets/caption/caption.php:68
+#: widgets/spacer/spacer.php:53
+msgid "L"
+msgstr ""
+
+#: widgets/caption/caption.php:69
+msgid "XL"
+msgstr ""
+
+#: widgets/caption/caption.php:70
+msgid "XXL"
+msgstr ""
+
+#: widgets/caption/caption.php:71
+msgid "XXXL"
+msgstr ""
+
+#: widgets/caption/caption.php:98
+msgid "Animation"
+msgstr ""
+
+#: widgets/cards-horizontal/cards-horizontal.php:25
+msgid "Cards horizontal"
+msgstr ""
+
+#: widgets/cards-horizontal/cards-horizontal.php:52
+msgid "Pre title"
+msgstr ""
+
+#: widgets/cards-horizontal/cards-horizontal.php:147
+#: widgets/cards/cards.php:171
+msgid "Image"
+msgstr ""
+
+#: widgets/cards-horizontal/cards-horizontal.php:149
+#: widgets/cards/cards.php:173
+msgid "Squared, 370px"
+msgstr ""
+
+#: widgets/cards-horizontal/cards-horizontal.php:158
+#: widgets/cards/cards.php:182
+msgid "Backgorund image"
+msgstr ""
+
+#: widgets/cards-horizontal/cards-horizontal.php:168
+#: widgets/cards/cards.php:192
+msgid "Background opacity"
+msgstr ""
+
+#: widgets/cards-horizontal/cards-horizontal.php:172
+#: widgets/cards/cards.php:196
+#: widgets/event-countdown/event-countdown.php:96
+#: widgets/gallery/gallery.php:67
+msgid "Full"
+msgstr ""
+
+#: widgets/cards-horizontal/cards-horizontal.php:173
+#: widgets/cards/cards.php:197
+msgid "Half"
+msgstr ""
+
+#: widgets/cards-horizontal/cards-horizontal.php:174
+#: widgets/cards/cards.php:198
+msgid "Low"
+msgstr ""
+
+#: widgets/cards-horizontal/cards-horizontal.php:181
+msgid "Layout"
+msgstr ""
+
+#: widgets/cards-horizontal/cards-horizontal.php:186
+msgid ""
+"Invert image and text"
+msgstr ""
+
+#: widgets/cards/cards.php:25
+msgid "Card"
+msgstr ""
+
+#: widgets/cards/cards.php:131
+msgid "Design"
+msgstr ""
+
+#: widgets/cards/cards.php:137
+#: widgets/pricing-table/pricing-table.php:85
+msgid "Featured"
+msgstr ""
+
+#: widgets/cards/cards.php:144
+msgid "Format"
+msgstr ""
+
+#: widgets/cards/cards.php:149
+msgid "Taller"
+msgstr ""
+
+#: widgets/cards/cards.php:160
+msgid "Image + Text"
+msgstr ""
+
+#: widgets/cards/cards.php:161
+msgid "Text + Image"
+msgstr ""
+
+#: widgets/category-grid/category-grid.php:25
+msgid "Category Grid"
+msgstr ""
+
+#: widgets/category-grid/category-grid.php:38
+#: widgets/cf7/cf7.php:45
+#: widgets/chart-tracklist/chart-tracklist.php:38
+#: widgets/post-carousel/post-carousel.php:52
+#: widgets/post-slider/post-slider.php:55
+#: widgets/qt-video/qt-video.php:39
+#: widgets/radiocard/radiocard.php:39
+#: widgets/radiofeed/radiofeed.php:38
+#: widgets/spacer/spacer.php:38
+#: widgets/sponsors/sponsors.php:52
+#: widgets/upcoming-shows-carousel/upcoming-shows-carousel.php:55
+#: widgets/upcoming-shows-slider/upcoming-shows-slider.php:55
+msgid "Settings"
+msgstr ""
+
+#: widgets/category-grid/category-grid.php:45
+msgid "Amount"
+msgstr ""
+
+#: widgets/category-grid/category-grid.php:54
+msgid "Columns desktop"
+msgstr ""
+
+#: widgets/category-grid/category-grid.php:58
+#: widgets/category-grid/category-grid.php:73
+#: widgets/post-cards/post-cards.php:55
+#: widgets/post-cards/post-cards.php:69
+#: widgets/post-grid/post-grid.php:57
+#: widgets/post-grid/post-grid.php:71
+#: widgets/qt-video/qt-video.php:49
+msgid "1"
+msgstr ""
+
+#: widgets/category-grid/category-grid.php:59
+#: widgets/category-grid/category-grid.php:74
+#: widgets/post-cards/post-cards.php:56
+#: widgets/post-cards/post-cards.php:70
+#: widgets/post-grid/post-grid.php:58
+#: widgets/post-grid/post-grid.php:72
+#: widgets/qt-video/qt-video.php:50
+msgid "2"
+msgstr ""
+
+#: widgets/category-grid/category-grid.php:60
+#: widgets/category-grid/category-grid.php:75
+#: widgets/post-cards/post-cards.php:57
+#: widgets/post-cards/post-cards.php:71
+#: widgets/post-grid/post-grid.php:59
+#: widgets/post-grid/post-grid.php:73
+#: widgets/qt-video/qt-video.php:51
+msgid "3"
+msgstr ""
+
+#: widgets/category-grid/category-grid.php:61
+#: widgets/category-grid/category-grid.php:76
+#: widgets/post-cards/post-cards.php:58
+#: widgets/post-cards/post-cards.php:72
+#: widgets/post-grid/post-grid.php:60
+#: widgets/post-grid/post-grid.php:74
+#: widgets/qt-video/qt-video.php:52
+msgid "4"
+msgstr ""
+
+#: widgets/category-grid/category-grid.php:69
+#: widgets/category-grid/category-grid.php:84
+#: widgets/post-cards/post-cards.php:65
+#: widgets/post-grid/post-grid.php:67
+msgid "Columns tablet"
+msgstr ""
+
+#: widgets/category-grid/category-grid.php:86
+msgid ""
+"Please install the "
+"plugin QT Taxonomy "
+"Background to set the "
+"images of each term"
+msgstr ""
+
+#: widgets/category-grid/category-grid.php:89
+msgid "Category"
+msgstr ""
+
+#: widgets/category-grid/category-grid.php:90
+msgid "Post tag"
+msgstr ""
+
+#: widgets/category-grid/category-grid.php:91
+msgid ""
+"WooCommerce categories"
+msgstr ""
+
+#: widgets/category-grid/category-grid.php:92
+msgid "WooCommerce tags"
+msgstr ""
+
+#: widgets/category-grid/category-grid.php:93
+msgid "Event types"
+msgstr ""
+
+#: widgets/category-grid/category-grid.php:94
+msgid "Chart category"
+msgstr ""
+
+#: widgets/category-grid/category-grid.php:95
+msgid "Member type"
+msgstr ""
+
+#: widgets/category-grid/category-grid.php:96
+msgid "Podcast filter"
+msgstr ""
+
+#: widgets/category-grid/category-grid.php:97
+msgid "Shows genre"
+msgstr ""
+
+#: widgets/category-grid/category-grid.php:105
+msgid ""
+"Include by id, comma "
+"separated"
+msgstr ""
+
+#: widgets/category-grid/category-grid.php:113
+msgid ""
+"Exclude by id, comma "
+"separated"
+msgstr ""
+
+#: widgets/category-grid/category-grid.php:121
+msgid ""
+"Only sub-categories of "
+"this specific category "
+"(Numeric ID)"
+msgstr ""
+
+#: widgets/cf7/cf7.php:25
+msgid "Contact Form 7"
+msgstr ""
+
+#: widgets/cf7/cf7.php:52
+msgid "Form"
+msgstr ""
+
+#: widgets/chart-tracklist/chart-tracklist.php:25
+msgid "Chart tracklist"
+msgstr ""
+
+#: widgets/chart-tracklist/chart-tracklist.php:45
+msgid "Select chart"
+msgstr ""
+
+#: widgets/chart-tracklist/chart-tracklist.php:48
+msgid ""
+"If not specified, use "
+"the first result"
+msgstr ""
+
+#: widgets/chart-tracklist/chart-tracklist.php:57
+msgid ""
+"Number of tracks to "
+"display"
+msgstr ""
+
+#: widgets/chart-tracklist/chart-tracklist.php:58
+msgid ""
+"If smaller than the "
+"chart tracks, a button "
+"to the chart page will "
+"appear."
+msgstr ""
+
+#: widgets/chart-tracklist/chart-tracklist.php:67
+msgid "Show chart title"
+msgstr ""
+
+#: widgets/chart-tracklist/chart-tracklist.php:75
+msgid ""
+"Display featured image"
+msgstr ""
+
+#: widgets/chart-tracklist/chart-tracklist.php:83
+msgid "Chart style"
+msgstr ""
+
+#: widgets/chart-tracklist/chart-tracklist.php:88
+msgid "Compact"
+msgstr ""
+
+#: widgets/event-countdown/event-countdown.php:47
+#: widgets/event-featured/event-featured.php:47
+#: widgets/event-list/event-list.php:47
+#: widgets/post-cards/post-cards.php:37
+#: widgets/post-carousel/post-carousel.php:71
+#: widgets/post-grid/post-grid.php:37
+#: widgets/post-hero/post-hero.php:37
+#: widgets/post-inline/post-inline.php:38
+#: widgets/post-list/post-list.php:38
+#: widgets/post-list_old/post-list.php:37
+#: widgets/post-mosaic/post-mosaic.php:37
+#: widgets/post-slider/post-slider.php:73
+msgid "Query"
+msgstr ""
+
+#: widgets/event-countdown/event-countdown.php:53
+#: widgets/event-featured/event-featured.php:54
+#: widgets/event-list/event-list.php:70
+msgid ""
+"Specific items by title"
+msgstr ""
+
+#: widgets/event-countdown/event-countdown.php:76
+#: widgets/radiofeed/radiofeed.php:81
+msgid "Align"
+msgstr ""
+
+#: widgets/event-countdown/event-countdown.php:80
+#: widgets/radiofeed/radiofeed.php:85
+msgid "center"
+msgstr ""
+
+#: widgets/event-countdown/event-countdown.php:81
+#: widgets/radiofeed/radiofeed.php:86
+msgid "left"
+msgstr ""
+
+#: widgets/event-countdown/event-countdown.php:82
+#: widgets/radiofeed/radiofeed.php:87
+msgid "right"
+msgstr ""
+
+#: widgets/event-countdown/event-countdown.php:83
+#: widgets/radiofeed/radiofeed.php:88
+msgid "inline"
+msgstr ""
+
+#: widgets/event-countdown/event-countdown.php:91
+msgid "Labels"
+msgstr ""
+
+#: widgets/event-countdown/event-countdown.php:95
+msgid "Hidden"
+msgstr ""
+
+#: widgets/event-countdown/event-countdown.php:97
+msgid "Inline"
+msgstr ""
+
+#: widgets/event-countdown/event-countdown.php:105
+msgid "Show milliseconds"
+msgstr ""
+
+#: widgets/event-countdown/event-countdown.php:119
+msgid "Bricks"
+msgstr ""
+
+#: widgets/event-countdown/event-countdown.php:120
+msgid "Boxed"
+msgstr ""
+
+#: widgets/event-countdown/event-countdown.php:128
+msgid "Text color"
+msgstr ""
+
+#: widgets/event-countdown/event-countdown.php:142
+msgid ""
+"Countdown Background"
+msgstr ""
+
+#: widgets/event-countdown/event-countdown.php:149
+msgid "Numbers background"
+msgstr ""
+
+#: widgets/event-featured/event-featured.php:25
+msgid "Event featured"
+msgstr ""
+
+#: widgets/event-featured/event-featured.php:78
+#: widgets/event-list/event-list.php:91
+#: widgets/post-cards/post-cards.php:79
+#: widgets/post-carousel/post-carousel.php:94
+#: widgets/post-grid/post-grid.php:100
+#: widgets/post-hero/post-hero.php:51
+#: widgets/post-inline/post-inline.php:52
+#: widgets/post-list-horizontal/post-list-horizontal.php:44
+#: widgets/post-list/post-list.php:44
+#: widgets/post-list_old/post-list.php:43
+#: widgets/post-mosaic/post-mosaic.php:43
+#: widgets/post-slider/post-slider.php:95
+msgid "Category filters"
+msgstr ""
+
+#: widgets/event-featured/event-featured.php:91
+#: widgets/event-list/event-list.php:101
+msgid "Hide old events"
+msgstr ""
+
+#: widgets/event-list/event-list.php:25
+msgid "Events list"
+msgstr ""
+
+#: widgets/event-list/event-list.php:54
+#: widgets/post-cards/post-cards.php:43
+#: widgets/post-grid/post-grid.php:45
+#: widgets/post-hero/post-hero.php:44
+#: widgets/post-inline/post-inline.php:45
+#: widgets/post-list-horizontal/post-list-horizontal.php:54
+#: widgets/post-list/post-list.php:55
+msgid "Load more button"
+msgstr ""
+
+#: widgets/event-list/event-list.php:62
+msgid "Display countdown"
+msgstr ""
+
+#: widgets/gallery/gallery.php:25
+msgid "ProRadio Gallery"
+msgstr ""
+
+#: widgets/gallery/gallery.php:38
+msgid "Gallery"
+msgstr ""
+
+#: widgets/gallery/gallery.php:44
+msgid "Image size"
+msgstr ""
+
+#: widgets/gallery/gallery.php:49
+msgid "Squared small"
+msgstr ""
+
+#: widgets/gallery/gallery.php:50
+msgid "Squared medium"
+msgstr ""
+
+#: widgets/gallery/gallery.php:51
+msgid "Thumbnail"
+msgstr ""
+
+#: widgets/gallery/gallery.php:52
+#: widgets/gallery/gallery.php:65
+msgid "Medium"
+msgstr ""
+
+#: widgets/gallery/gallery.php:60
+msgid "Linked size"
+msgstr ""
+
+#: widgets/gallery/gallery.php:74
+msgid "Add Images"
+msgstr ""
+
+#: widgets/onair/onair.php:25
+msgid "Show On Air"
+msgstr ""
+
+#: widgets/onair/onair.php:38
+#: widgets/schedule/schedule.php:46
+#: widgets/upcoming-shows-carousel/upcoming-shows-carousel.php:73
+#: widgets/upcoming-shows-slider/upcoming-shows-slider.php:73
+msgid "Filters"
+msgstr ""
+
+#: widgets/onair/onair.php:45
+msgid "Schedule filter"
+msgstr ""
+
+#: widgets/post-cards/post-cards.php:25
+msgid "Blog cards"
+msgstr ""
+
+#: widgets/post-cards/post-cards.php:51
+#: widgets/post-grid/post-grid.php:53
+#: widgets/qt-video/qt-video.php:45
+msgid "Columns"
+msgstr ""
+
+#: widgets/post-carousel/post-carousel.php:25
+msgid "Post carousel"
+msgstr ""
+
+#: widgets/post-carousel/post-carousel.php:77
+#: widgets/post-grid/post-grid.php:82
+msgid "Post type"
+msgstr ""
+
+#: widgets/post-carousel/post-carousel.php:81
+#: widgets/post-grid/post-grid.php:86
+msgid "Post"
+msgstr ""
+
+#: widgets/post-carousel/post-carousel.php:82
+#: widgets/post-grid/post-grid.php:87
+msgid "Podcast"
+msgstr ""
+
+#: widgets/post-carousel/post-carousel.php:83
+#: widgets/post-grid/post-grid.php:88
+msgid "Event"
+msgstr ""
+
+#: widgets/post-carousel/post-carousel.php:84
+#: widgets/post-grid/post-grid.php:89
+msgid "Shows"
+msgstr ""
+
+#: widgets/post-carousel/post-carousel.php:85
+#: widgets/post-grid/post-grid.php:90
+msgid "Place"
+msgstr ""
+
+#: widgets/post-carousel/post-carousel.php:86
+#: widgets/post-grid/post-grid.php:91
+msgid "Team member"
+msgstr ""
+
+#: widgets/post-carousel/post-carousel.php:87
+#: widgets/post-grid/post-grid.php:92
+msgid "Product"
+msgstr ""
+
+#: widgets/post-grid/post-grid.php:25
+msgid "Post grid"
+msgstr ""
+
+#: widgets/post-hero/post-hero.php:25
+msgid "Post hero"
+msgstr ""
+
+#: widgets/post-inline/post-inline.php:25
+msgid "Post inline"
+msgstr ""
+
+#: widgets/post-list-horizontal/post-list-horizontal.php:25
+#: widgets/post-list-horizontal/post-list-horizontal.php:37
+msgid ""
+"Post list horizontal"
+msgstr ""
+
+#: widgets/post-list/post-list.php:25
+msgid "Post list large"
+msgstr ""
+
+#: widgets/post-list_old/post-list.php:25
+msgid "super Post list"
+msgstr ""
+
+#: widgets/post-mosaic/post-mosaic.php:25
+msgid "Post mosaic"
+msgstr ""
+
+#: widgets/post-slider/post-slider.php:25
+msgid "Post slider"
+msgstr ""
+
+#: widgets/pricing-table/iconstest.php:16
+msgid "Icons Test Widget"
+msgstr ""
+
+#: widgets/pricing-table/iconstest.php:23
+#: widgets/pricing-table/iconstest.php:30
+#: widgets/pricing-table/pricing-table.php:56
+#: widgets/pricing-table/pricing-table.php:159
+#: widgets/socialicons/socialicons.php:100
+msgid "Icon"
+msgstr ""
+
+#: widgets/pricing-table/pricing-table.php:26
+msgid "Pricing table"
+msgstr ""
+
+#: widgets/pricing-table/pricing-table.php:45
+msgid "General settings"
+msgstr ""
+
+#: widgets/pricing-table/pricing-table.php:78
+msgid "Footer text"
+msgstr ""
+
+#: widgets/pricing-table/pricing-table.php:100
+msgid "Price settings"
+msgstr ""
+
+#: widgets/pricing-table/pricing-table.php:106
+msgid "Price"
+msgstr ""
+
+#: widgets/pricing-table/pricing-table.php:113
+msgid "Cents"
+msgstr ""
+
+#: widgets/pricing-table/pricing-table.php:120
+msgid "Coin symbol"
+msgstr ""
+
+#: widgets/pricing-table/pricing-table.php:127
+msgid "Details"
+msgstr ""
+
+#: widgets/pricing-table/pricing-table.php:163
+msgid "check"
+msgstr ""
+
+#: widgets/pricing-table/pricing-table.php:164
+msgid "close"
+msgstr ""
+
+#: widgets/pricing-table/pricing-table.php:165
+msgid "add"
+msgstr ""
+
+#: widgets/pricing-table/pricing-table.php:166
+msgid "chevron_right"
+msgstr ""
+
+#: widgets/pricing-table/pricing-table.php:174
+msgid "Status"
+msgstr ""
+
+#: widgets/pricing-table/pricing-table.php:175
+msgid ""
+"Is this feature included "
+"in the plan?"
+msgstr ""
+
+#: widgets/qt-video/qt-video.php:25
+msgid "QT-VideoGallery"
+msgstr ""
+
+#: widgets/qt-video/qt-video.php:60
+msgid "Show filters"
+msgstr ""
+
+#: widgets/qt-video/qt-video.php:70
+msgid "Show title"
+msgstr ""
+
+#: widgets/qt-video/qt-video.php:80
+msgid "Show tags"
+msgstr ""
+
+#: widgets/qt-video/qt-video.php:89
+msgid "Open in lightbox"
+msgstr ""
+
+#: widgets/qt-video/qt-video.php:99
+msgid "Quantity"
+msgstr ""
+
+#: widgets/radiocard/radiocard.php:25
+msgid "Radio card"
+msgstr ""
+
+#: widgets/radiocard/radiocard.php:45
+msgid "Choose radio"
+msgstr ""
+
+#: widgets/radiofeed/radiofeed.php:25
+msgid "Radio feed titles"
+msgstr ""
+
+#: widgets/radiofeed/radiofeed.php:44
+msgid "Important Note"
+msgstr ""
+
+#: widgets/radiofeed/radiofeed.php:45
+msgid ""
+"<h2><strong>This text "
+"becomes visible only "
+"after playing a radio "
+"stream with valid song "
+"feed details.</strong></"
+"h2>"
+msgstr ""
+
+#: widgets/radiofeed/radiofeed.php:54
+msgid "Now playing:"
+msgstr ""
+
+#: widgets/radiofeed/radiofeed.php:55
+msgid ""
+"Label for the song title"
+msgstr ""
+
+#: widgets/radiofeed/radiofeed.php:63
+msgid "Container tag"
+msgstr ""
+
+#: widgets/radiofeed/radiofeed.php:67
+msgid "No container"
+msgstr ""
+
+#: widgets/radiofeed/radiofeed.php:68
+msgid "Heading 1"
+msgstr ""
+
+#: widgets/radiofeed/radiofeed.php:69
+msgid "Heading 2"
+msgstr ""
+
+#: widgets/radiofeed/radiofeed.php:70
+msgid "Heading 3"
+msgstr ""
+
+#: widgets/radiofeed/radiofeed.php:71
+msgid "Heading 4"
+msgstr ""
+
+#: widgets/radiofeed/radiofeed.php:72
+msgid "Heading 5"
+msgstr ""
+
+#: widgets/radiofeed/radiofeed.php:73
+msgid "Heading 6"
+msgstr ""
+
+#: widgets/radiofeed/radiofeed.php:74
+msgid "Paragraph"
+msgstr ""
+
+#: widgets/schedule/schedule.php:25
+msgid "Schedule"
+msgstr ""
+
+#: widgets/schedule/schedule.php:52
+#: widgets/upcoming-shows-carousel/upcoming-shows-carousel.php:90
+#: widgets/upcoming-shows-slider/upcoming-shows-slider.php:90
+msgid "Schedule filters"
+msgstr ""
+
+#: widgets/section-caption/section-caption.php:25
+msgid "Section caption"
+msgstr ""
+
+#: widgets/section-caption/section-caption.php:100
+msgid "Big"
+msgstr ""
+
+#: widgets/section-caption/section-caption.php:101
+msgid "Bigger"
+msgstr ""
+
+#: widgets/socialicons/socialicons.php:25
+msgid "Social Icons"
+msgstr ""
+
+#: widgets/socialicons/socialicons.php:104
+msgid "No icon"
+msgstr ""
+
+#: widgets/socialicons/socialicons.php:106
+msgid "Amazon"
+msgstr ""
+
+#: widgets/socialicons/socialicons.php:107
+msgid "Beatport"
+msgstr ""
+
+#: widgets/socialicons/socialicons.php:108
+msgid "Blogger"
+msgstr ""
+
+#: widgets/socialicons/socialicons.php:109
+msgid "Facebook"
+msgstr ""
+
+#: widgets/socialicons/socialicons.php:110
+msgid "Flickr"
+msgstr ""
+
+#: widgets/socialicons/socialicons.php:111
+msgid "Instagram"
+msgstr ""
+
+#: widgets/socialicons/socialicons.php:112
+msgid "Itunes"
+msgstr ""
+
+#: widgets/socialicons/socialicons.php:113
+msgid "Juno"
+msgstr ""
+
+#: widgets/socialicons/socialicons.php:114
+msgid "Kuvo"
+msgstr ""
+
+#: widgets/socialicons/socialicons.php:115
+msgid "Linkedin"
+msgstr ""
+
+#: widgets/socialicons/socialicons.php:116
+msgid "Trackitdown"
+msgstr ""
+
+#: widgets/socialicons/socialicons.php:117
+msgid "Spotify"
+msgstr ""
+
+#: widgets/socialicons/socialicons.php:118
+msgid "Soundcloud"
+msgstr ""
+
+#: widgets/socialicons/socialicons.php:119
+msgid "Snapchat"
+msgstr ""
+
+#: widgets/socialicons/socialicons.php:120
+msgid "Skype"
+msgstr ""
+
+#: widgets/socialicons/socialicons.php:121
+msgid "Reverbnation"
+msgstr ""
+
+#: widgets/socialicons/socialicons.php:122
+msgid "Resident Advisor"
+msgstr ""
+
+#: widgets/socialicons/socialicons.php:123
+msgid "Pinterest"
+msgstr ""
+
+#: widgets/socialicons/socialicons.php:124
+msgid "Myspace"
+msgstr ""
+
+#: widgets/socialicons/socialicons.php:125
+msgid "Mixcloud"
+msgstr ""
+
+#: widgets/socialicons/socialicons.php:126
+msgid "RSS"
+msgstr ""
+
+#: widgets/socialicons/socialicons.php:127
+msgid "Twitter"
+msgstr ""
+
+#: widgets/socialicons/socialicons.php:128
+msgid "Vimeo"
+msgstr ""
+
+#: widgets/socialicons/socialicons.php:129
+msgid "VK.com"
+msgstr ""
+
+#: widgets/socialicons/socialicons.php:130
+msgid "YouTube"
+msgstr ""
+
+#: widgets/socialicons/socialicons.php:131
+msgid "Whatsapp"
+msgstr ""
+
+#: widgets/spacer/spacer.php:25
+msgid "Responsive spacer"
+msgstr ""
+
+#: widgets/spacer/spacer.php:45
+msgid ""
+"The visual size depends "
+"on the screen size. "
+"Perfect for responsive "
+"design."
+msgstr ""
+
+#: widgets/spacer/spacer.php:49
+msgid "XXS"
+msgstr ""
+
+#: widgets/sponsors/sponsors.php:25
+msgid "Sponsors carousel"
+msgstr ""
+
+#: widgets/upcoming-shows-carousel/upcoming-shows-carousel.php:25
+msgid ""
+"Upcoming shows carousel"
+msgstr ""
+
+#: widgets/upcoming-shows-slider/upcoming-shows-slider.php:25
+msgid ""
+"Upcoming shows slider"
+msgstr ""

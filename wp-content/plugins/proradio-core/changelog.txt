@@ -1,0 +1,112 @@
+Pro.Radio Core Changelog
+=======================================
+PR.4.1.1 [2021 02 10]
+* Files saved as media ID in Metaboxes
+
+PR.4.1.0 [2021 01 08]
+* meta_box.css fixed css issue with show dropdown
+
+PR.4.0.9 [2021 01 06]
+* added Prevent WP from closing the schedule tab when moving the shows
+
+PR.4.0.8 [2021 01 06]
+* metaboxes-script.js update. Added lines 234 and 235 Fix issue when movig shows
+$('.chosen').chosen({ allow_single_deselect: true }); 
+$('#'+thisID).closest('.postbox-container').find('.inside').css({'display': 'block'});
+
+PR.4.0.7 [2021 01 04]
+* chosen.js update
+
+PR.4.0.5 [2020 11 26]
+* meta_box.php tax_select_disassociated:318 added  all preselect '.esc_attr(selected( $meta, 'all', false )).'
+
+PR.4.0.4 [2020 08 29]
+* live function replace with on in metaboxes-scripts.js
+* meta_box.php line 205 added array variable control to prevent error throwing in php
+* Updated jQuery Chosen componend (chosen.js + chosen.css files udpated)
+* Customizer mobile viewport modern sizes
+
+PR.4.0.3 [2020 08 13]
+* Updated meta_box.php
+
+PR.4.0.2 [2020 06 18]
+* updated meta_box.php
+
+PR.4.0.1
+* metaboxes js updated with Strict more on and rewritten actions
+
+PR.4.0.0
+* New version for Pro.Radio core
+
+3.0.0
+* Rebrand in Theme Core
+* Removed Kirki customizer
+
+2.1.2
+* fix to css of metaboxes to fix buttons in editor
+* metaboxes.js added check on undefined name before replacing
+
+2.1.1
+* Custom fields fixes
+
+2.1.0
+* Function names changed to avoid false positive on theme check
+* metaboxes version 20180608
+* Gutemberg compatibility fixes on meta boxes
+
+1.3.1 [08 June 2018]
+* meta_box.php fix selected format
+
+1.3.0 [07 June 2018]
+* meta_box.php line 195 added data check
+
+1.2.9 [02 May 2018]
+* Minor improvement to metaboxes file field
+
+1.2.8 [19 feb 2018]
+* removed img border
+* Better conditional fields hide / show
+
+1.2.5
+* added flush_rewrite_rules in posttype.php
+
+1.2.4
+* metaboxes update 20171206 for css img uploader background
+
+1.2.3
+* metaboxes update 20171129 for css img uploader background
+
+1.2.2 [2017 Nov 09]
+* autocompile music fields
+
+1.2.1 [2017 Nov 07]
+* updated kirki
+
+1.2.0
+* metaboxes.php and metaboxes-script.js: updated file uploader
+
+1.1.1 [2017 oct 22]
+* added timecue input type
+
+1.1.0 [2017 oct 12]
+* post_chosen custom type
+* updated meta_box.php:190 ($post_type > $posttype)
+
+1.0.6
+* updated google font URL in kirki customizer
+
+1.0.5
+* updated meta-box.php to version 20170428
+
+1.0.4
+* updated meta-box.php to version 20170425
+
+1.0.3
+* added Author thumbail url in author-meta.php
+
+1.0.2
+* qt-thumb -> proradio-thumb
+
+1.0.1 
+* meta_box.php:301 fixed taxonomy link
+* added tax_select_disassociated in metaboxes
